@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>Feedback</title>
+</head>
+<body>
+	<h1 class="jumbotron">Feedback Form</h1>
+	<div class="container">
+		<form method="Post" action="feedback.php" id="feedback_form">
+			<label for="textarea">Enter Your Valuable Feedback here:</label><br>
+			<textarea name="feedback1" id="feedback_input" cols="30" rows="10" placeholder="Enter your feedback here...."></textarea>
+		</form>
+	</div>
+	<div class="container">
+		<div id="dropdown-list" class="btn-group">
+			<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" area-expanded="false">Category <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="">Mess</a></li>
+				<li><a href="">Sports</a></li>
+				<li><a href="">Medical</a></li>
+				<li><a href="">Transport</a></li>
+				<li><a href="">Academics</a></li>
+				<li><a href="">Others</a></li>
+			</ul>
+		</div>
+		<div id="post_button">
+			<input type="submit" form="feedback_form" value="Post Feedback" class="btn btn-info">
+		</div>
+	</div>
+
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src = "https://code.jquery.com/jquery.js"></script>
+      
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src = "js/bootstrap.min.js"></script>
+</body>
+</html>
