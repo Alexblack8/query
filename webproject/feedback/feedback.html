@@ -1,21 +1,26 @@
 <!DOCTYPE html>
+<!-- only for Vishal Maurya - always refer to the photo saved in the pictures for form-controls -->
 <html lang="en">
 <head>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet" type="text/css">
 	<meta charset="UTF-8">
 	<title>Feedback</title>
 </head>
 <body>
-	<h1 class="jumbotron">Feedback Form</h1>
+	<header>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Feedback form</h1>
+			</div>
+		</div>
+	</header>
 	<div class="container">
 		<form method="Post" action="feedback.php" id="feedback_form">
-			<label for="textarea">Enter Your Valuable Feedback here:</label><br>
-			<textarea name="feedback1" id="feedback_input" cols="30" rows="10" placeholder="Enter your feedback here...."></textarea>
-		</form>
-	</div>
-	<div class="container">
-		<div id="dropdown-list" class="btn-group">
+			<div class="form-group">
+				<label for="feedback_input">Enter Your Valuable Feedback here:</label>
+				<textarea name="feedback1" id="feedback_input" rows="16" placeholder="Enter your feedback here...." class="form-control"></textarea>
+			</div>
+			<div id="dropdown-list" class="form-group" class="btn-group">
 			<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" area-expanded="false">Category <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 				<li><a href="">Mess</a></li>
@@ -26,9 +31,10 @@
 				<li><a href="">Others</a></li>
 			</ul>
 		</div>
-		<div id="post_button">
+		<div id="post_button" class="form-group">
 			<input type="submit" form="feedback_form" value="Post Feedback" class="btn btn-info">
 		</div>
+		</form>
 	</div>
 
 	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
