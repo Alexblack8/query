@@ -8,4 +8,5 @@ if(!$conn)
 {
     	 die( "error in connecting to database"); 
 }
+echo "hi";
 ?>
