@@ -15,7 +15,8 @@ include 'connectuser.php';
              {
                   $row=mysqli_fetch_array($result);
                   $_SESSION['user_id']=$row[0];
-                  echo "hello";
+                  header("Location:http://localhost/webproject/sign-up-login-form/ask_question.php");
+
              }
              else
              {

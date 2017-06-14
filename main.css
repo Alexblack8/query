@@ -1,0 +1,23 @@
+body
+{
+  margin:0 ;  	
+}
+.navigation
+{
+	text-align:center;
+	
+	height: 200px;
+}
+.navigation li
+{
+	
+    display: inline-block;
+    margin: 30px 30px;
+    font-size: 25px;
+
+}
+.navigation a
+{
+	    text-decoration:none ;
+
+}

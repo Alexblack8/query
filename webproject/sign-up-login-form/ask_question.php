@@ -36,7 +36,7 @@ else
 {
 	echo "error in posting question";
 }
-}
+}	
 
 ?>
 </body>
