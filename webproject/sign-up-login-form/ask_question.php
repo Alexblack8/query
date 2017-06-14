@@ -36,7 +36,11 @@ else
 {
 	echo "error in posting question";
 }
+<<<<<<< HEAD
 }	
+=======
+}
+>>>>>>> 0d607c24808b4ea68e2732d508510e59283b83d4
 
 ?>
 </body>
