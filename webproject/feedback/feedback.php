@@ -63,8 +63,7 @@
 							</div>
 
 							<div class="modal-footer">
-								<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-								<a href="" class="btn btn-primary">Save</a>
+								<a href="#" class="btn btn-warning" data-dismiss="modal">Close</a>
 							</div>
 						</div>
 					</div>
@@ -89,8 +88,7 @@
 							</div>
 
 							<div class="modal-footer">
-								<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-								<a href="" class="btn btn-primary">Save</a>
+								<a href="#" class="btn btn-warning" data-dismiss="modal">Close</a>
 							</div>
 						</div>
 					</div>
@@ -114,8 +112,7 @@
 							</div>
 
 							<div class="modal-footer">
-								<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-								<a href="" class="btn btn-primary">Save</a>
+								<a href="#" class="btn btn-warning" data-dismiss="modal">Close</a>
 							</div>
 						</div>
 					</div>
