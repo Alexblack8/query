@@ -13,13 +13,13 @@ $email=$_POST['email'];
 //to check whether an user already exists in the database
 $query1="SELECT * FROM user WHERE user_name='$username' AND
 password='$password'";
-$result=mysqli_connect($conn,$query1);
-if(mysqli_num_rows($result)==0) //if no user exists then the block executes
+$result=mysqli_query($conn,$query1);
+//if(mysqli_num_rows($result)==0) //if no user exists then the block executes
 {
 	//insert data in database
 	$query2="INSERT INTO user (first_name,last_name,user_name,password,email_id)
    	 	VALUES ('$first','$last','$username','$password','$email')";
-	mysqli_connect($conn,$query2);
+	$result=mysqli_query($conn,$query2);
 }
 
 
