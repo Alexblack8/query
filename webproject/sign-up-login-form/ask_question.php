@@ -15,7 +15,8 @@ include 'connectuser.php';
 <form action="ask_question.php" method="post">
 
 
-<label>Username: <?php 
+<label>Username: 
+<?php 
 $username=get_username();
 echo $username;
 ?></label><br/>
@@ -28,20 +29,19 @@ echo $username;
 if(isset($_POST['question']) &&!empty($_POST['question']))
 {
 	$question=$_POST['question'];
-if(add_question($question))
-{
-    echo "POSTED";
-}
-else
-{
-	echo "error in posting question";
-}
-<<<<<<< HEAD
-}	
-=======
-}
->>>>>>> 0d607c24808b4ea68e2732d508510e59283b83d4
+	  $my_id=$_SESSION['user_id'];
+     $query="INSERT INTO question (user_id, question, upvotes, downvotes, score)
+     VALUES ('$my_id','$question','0','0','0')";
 
+      if(mysqli_query($conn,$query))
+    { 
+        echo "added successfully";
+    }
+    else
+    {
+    	echo "error in posting question";
+    }
+}
 ?>
 </body>
 </html>
