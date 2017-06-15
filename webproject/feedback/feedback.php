@@ -152,7 +152,6 @@
     	
 	    }
 	    else {
-	    	echo "i am being posted";
 	    	$connect = mysqli_connect("localhost","root","","soc");
 	    	if(!$connect) die("database missing");
 			$insert_in_table = "INSERT INTO feedback (feedback,tags) VALUES ('$get_feedback','$get_category')";
