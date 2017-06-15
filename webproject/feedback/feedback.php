@@ -55,7 +55,7 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Modal title</h4>
+								<h4 class="modal-title">FEEDBACK MISSING!</h4>
 							</div>
 
 							<div class="modal-body">
@@ -81,7 +81,7 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Modal title</h4>
+								<h4 class="modal-title">CATEGORY MISSING!</h4>
 							</div>
 
 							<div class="modal-body">
@@ -106,7 +106,7 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Modal title</h4>
+								<h4 class="modal-title">FEEDBACK RECORDED</h4>
 							</div>
 
 							<div class="modal-body">
