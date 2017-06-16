@@ -59,7 +59,11 @@ include 'connectuser.php';
           }
           else
           {
-            echo "error in posting question";
+            ?>
+            <p class="text-danger">
+            <?php echo "Error In Posting Question"; ?>
+          </p>
+          <?php
           }
       }
       ?>
