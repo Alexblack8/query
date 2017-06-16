@@ -55,14 +55,18 @@ include 'connectuser.php';
 
             if(mysqli_query($conn,$query))
           { 
-              echo "added successfully";
+            ?>
+            <h4 class="text-success">
+              <?php echo "Added Successfully!!!!"; ?>
+            </h4>
+              <?php
           }
           else
           {
             ?>
-            <p class="text-danger">
+            <h4 class="text-danger">
             <?php echo "Error In Posting Question"; ?>
-          </p>
+          </h4>
           <?php
           }
       }
