@@ -32,3 +32,20 @@ include 'connectuser.php';
 	?>
 </body>
 </html>
+<?php
+if(isset($_POST['like']) &&!empty($_POST['like']))
+{
+	$query1="SELECT upvotes FROM question WHERE question_id='$row[0]'";
+	$result=mysqli_query($conn,$query1);
+	$row=mysqli_fetch_array($result);
+	$likes=$row[0];
+	echo "$likes<br/>";
+	$likes=$likes+1;
+	echo "$likes<br/>";
+
+	$query2="UPDATE question SET upvotes='$likes' WHERE question_id='$row[0]'";
+	if(!mysqli_connect($conn,$query2))
+	{
+       echo "error";
+	}
+}
