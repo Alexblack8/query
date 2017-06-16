@@ -18,7 +18,7 @@ include 'connectuser.php';
 	   <div class"questions">
 	   <h2><?php 
         $name=get_user2($row[1]);
-	   echo "<a href='?user=$row[1]'>$name</a>";
+	   echo "<a href='?user_id=$row[1]?question_id=$row[0]'>$name</a>";
 	   ?></h2>
 	   <h3><?php echo $row[2];?></h1><br/>
       <form action="" method="post" >
@@ -35,11 +35,12 @@ include 'connectuser.php';
 <?php
 if(isset($_POST['like']) &&!empty($_POST['like']))
 {
-	$query1="SELECT upvotes FROM question WHERE question_id='$row[0]'";
+	$quest_id=$_GET['question_id'];
+	$query1="SELECT upvotes FROM question WHERE question_id='$quest_id'";
 	$result=mysqli_query($conn,$query1);
 	$row=mysqli_fetch_array($result);
 	$likes=$row[0];
-	echo "$likes<br/>";
+	
 	$likes=$likes+1;
 	echo "$likes<br/>";
 
