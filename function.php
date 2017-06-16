@@ -1,8 +1,9 @@
 
 <?php
 
-include 'connectuser.php';
 
+?>
+<?php
 function isloggedin()//to check whether the user is logged in or not
 {
 
@@ -17,10 +18,11 @@ function isloggedin()//to check whether the user is logged in or not
 }
 function get_username()//this gets the username of the function
 {
+  include 'connectuser.php';
 
 	if(isloggedin())
 	{
-    $conn=mysqli_connect("localhost","root","1234","webproject");
+    
 	  $my_id=$_SESSION['user_id'];
       $query="SELECT * FROM user WHERE user_id='$my_id'";
         
@@ -35,6 +37,7 @@ function get_name()//this gets the name of the function
 
 	if(isloggedin())
 	{
+    include 'connectuser.php';
 	   $my_id=$_SESSION['user_id'];
        $query="SELECT * FROM user WHERE user_id='$my_id'";
        
@@ -51,7 +54,7 @@ function get_user2($id)
 {
   if(isloggedin())
   {
-     $conn=mysqli_connect("localhost","root","1234","webproject");
+     include 'connectuser.php';
      $query="SELECT * FROM user WHERE user_id='$id'";
        $result=mysqli_query($conn,$query);
        $row=mysqli_fetch_array($result);
