@@ -124,25 +124,25 @@ include 'connectuser.php';
 					   
 					<?php
 						}
-						if(isset($_POST['like']) &&!empty($_POST['like']))
-						{
-							$quest_id=$_GET['quest_id'];
+							if(isset($_POST['like']) &&!empty($_POST['like'])) {
 							
-							$query1="SELECT upvotes FROM question WHERE question_id='$quest_id'";
-							$result=mysqli_query($conn,$query1);
-							$row=mysqli_fetch_array($result);
-							$likes=$row[0];
-							
-							$likes=$likes+1;
-							
+								$quest_id=$_GET['quest_id'];
 
-							$query2="UPDATE question SET upvotes='$likes' WHERE question_id='$quest_id'";
-							if(!mysqli_query($conn,$query2))
-							{
-						       echo "error";
+								$query1="SELECT upvotes FROM question WHERE question_id='$quest_id'";
+								$result=mysqli_query($conn,$query1);
+								$row=mysqli_fetch_array($result);
+								$likes=$row[0];
+								
+								$likes=$likes+1;
+								
+							      
+								$query2="UPDATE question SET upvotes='$likes' WHERE question_id='$quest_id'";
+								if(!mysqli_query($conn,$query2))
+								{
+							       echo "error";
+								}
 							}
-						}
-					?>
+						?>
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->
 		</div> <!-- end container --> 
