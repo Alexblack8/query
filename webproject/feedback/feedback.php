@@ -149,7 +149,7 @@
     	
 	    }
 	    else {
-	    	$connect = mysqli_connect("localhost","root","","soc");
+	    	$connect = mysqli_connect("localhost","root","","webproject");
 	    	if(!$connect) die("database missing");
 			$insert_in_table = "INSERT INTO feedback (feedback,tags) VALUES ('$get_feedback','$get_category')";
 			mysqli_query($connect,$insert_in_table);
