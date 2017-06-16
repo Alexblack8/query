@@ -18,7 +18,7 @@ include 'connectuser.php';
 	   <div class="questions">
 	   <h2><?php 
         $name=get_user2($row[1]);
-        echo $name;
+        
 	   echo "<a href='?user_id=$row[1]&quest_id=$row[0]'>$name</a>";
 	   ?></h2>
 	   <h3><?php echo $row[2];?><br/></h3>
