@@ -16,8 +16,17 @@ include 'connectuser.php';
 	{
 		?>
 	   <div class"questions">
-	   <h1><?php echo $row[2];?></h1>
-	   <br/>
+	   <h2><?php 
+        $name=get_user2($row[1]);
+	   echo "<a href='?user=$row[1]'>$name</a>";
+	   ?></h2>
+	   <h3><?php echo $row[2];?></h1><br/>
+      <form action="" method="post" >
+      <input type="submit" name="reply" value="Reply">
+      <input type="submit" name="like" value="Like">
+      <input type="submit" name="dislike" value="Dislike">
+      </form>
+
 	   <?php	
 	}
 	?>
