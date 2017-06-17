@@ -48,7 +48,7 @@ include 'connectuser.php';
 										<div class="form-group">						
 								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $row[0]; ?>" name="reply"><strong>Reply</strong></button>
 
-								       		<button type="submit" class="btn btn-link" name="like"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
+								       		<button type="submit" class="btn btn-link" name="like-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
 
 								       		<button type="submit" class="btn btn-link" name="dislike"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
 							   			</div>
@@ -85,25 +85,19 @@ include 'connectuser.php';
 								</div>
 							</div>
 					<?php
-						}
-							if(isset($_POST['like']) &&!empty($_POST['like'])) {
-
-								$quest_id=$_GET['quest_id'];
-
-								$query1="SELECT upvotes FROM question WHERE question_id='$quest_id'";
-								$result=mysqli_query($conn,$query1);
-								$row=mysqli_fetch_array($result);
-								$likes=$row[0];
-								
-								$likes=$likes+1;
-								
-							      
-								$query2="UPDATE question SET upvotes='$likes' WHERE question_id='$quest_id'";
-								if(!mysqli_query($conn,$query2))
-								{
-							       echo "error";
-								}
+						$astring =  "like-".$row[0];						
+						if($_SERVER["REQUEST_METHOD"] == "POST") {
+							if(isset($_POST[$astring])) {
+								$quest_id = $row[0];
+								$likess = $row[3];
+								$likess++;
+								$query3 = "UPDATE question SET upvotes='$likess' WHERE question_id = '$quest_id' ";
+								if(!mysqli_query($conn, $query3))
+									echo "failed to post";
 							}
+						}
+					
+					}
 						?>
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->
@@ -116,4 +110,3 @@ include 'connectuser.php';
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
-</html>

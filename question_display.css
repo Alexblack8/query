@@ -3,6 +3,10 @@
 	/*border: 1px solid blue;*/
 }
 
+body {
+	background-color: #fffcfc;
+}
+
 #question_heading {
 	margin-top: 0;
 }
