@@ -50,7 +50,7 @@ include 'connectuser.php';
 
 								       		<button type="submit" class="btn btn-link" name="like-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
 
-								       		<button type="submit" class="btn btn-link" name="dislike"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
+								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
 							   			</div>
 							       	</form>
 						       	</div>					     
@@ -85,6 +85,7 @@ include 'connectuser.php';
 								</div>
 							</div>
 					<?php
+						// upvotes
 						$astring =  "like-".$row[0];						
 						if($_SERVER["REQUEST_METHOD"] == "POST") {
 							if(isset($_POST[$astring])) {
@@ -96,7 +97,18 @@ include 'connectuser.php';
 									echo "failed to post";
 							}
 						}
-					
+						// downvotes
+						$astring2 =  "dislike-".$row[0];						
+						if($_SERVER["REQUEST_METHOD"] == "POST") {
+							if(isset($_POST[$astring2])) {
+								$quest_id = $row[0];
+								$dislikess = $row[4];
+								$dislikess++;
+								$query4 = "UPDATE question SET downvotes='$dislikess' WHERE question_id = '$quest_id' ";
+								if(!mysqli_query($conn, $query4))
+									echo "failed to post";
+							}
+						}
 					}
 						?>
 				</div> <!-- end col-md-7 -->
