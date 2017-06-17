@@ -59,7 +59,6 @@ function get_user2($id)
        $result=mysqli_query($conn,$query);
        $row=mysqli_fetch_array($result);
        $name=$row[1].' '.$row[2];//this gets the firstname and lastname respectively from the database
-      
        return $name;  
   }
     

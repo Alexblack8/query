@@ -1,0 +1,57 @@
+* {
+	font-family: q_serif;
+	/*border: 1px solid blue;*/
+}
+
+#question_heading {
+	margin-top: 0;
+}
+
+#heading_helpblock {
+	margin-bottom: 0;
+}
+
+#logo {
+	font-size: 35px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 8px;
+}
+
+#jumbotron {
+	text-align: center;
+	background-color: #424ef4;
+}
+
+#header_heading {
+	color: #fff;
+}
+
+#card:hover {
+	background-color: #f2f5f9
+	;
+}
+
+#card {
+	padding: 2%;
+}
+
+#hr_top {
+	/*margin-bottom : 0 !important;
+	padding-bottom: 0 !important;*/
+	background-color: #e6eaef;
+}
+
+/*#hr-bottom {
+	margin-top: 0;
+	padding-top: 0;
+}*/
+
+#simple:hover {
+	/*border-color: #5bc0de;
+	background-color: #fff;*/
+}
+
+#upvote {
+	font-size: 18px;
+}
