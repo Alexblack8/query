@@ -54,4 +54,19 @@
 
 #upvote {
 	font-size: 18px;
+<<<<<<< HEAD
 }
+=======
+}
+
+#logo1 {
+	font-size: 25px;
+}
+
+.modal-header, .close {
+      background-color: #e89119;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+>>>>>>> ce7ea088c4e001e964abe6ecfd75fbb8d5a22281
