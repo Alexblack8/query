@@ -69,10 +69,39 @@ include 'connectuser.php';
 							             		echo "<a href='#'>$username</a><br/>";
 							             	$reply_print=get_reply($row2[0]);
 							             	echo $reply_print;
-								   	        ?></strong></h3>     
-								   	        <?php                               
+								   	        ?></strong>
+								   	        <form method="post">
+								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
+
+								       		<button type="submit" class="btn btn-link" name="reply_dislike_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
+								       		</h3>
+								       		<label>Likes:  <?php echo $row2[4];?></label><br/>
+								       		<label>DisLikes:  <?php echo $row2[5];?></label><br/>
+								       		
+								       		</form>
+								   	        <?php  
+								   	        $astring1 =  "reply_like_".$row2[0];	
+						                    $astring2 = "reply_dislike_".$row2[0];			
+								   	    if(isset($_POST[$astring1])) {
+								              $reply_id = $row2[0];
+								              $likess = $row2[4];
+								              $likess++;
+								              $query3 = "UPDATE replies SET upvotes='$likess' WHERE reply_id = '$reply_id' ";
+								            if(!mysqli_query($conn, $query3))
+							 		         echo "failed to post";
+							                 }
+						               	if(isset($_POST[$astring2])) 
+						               	{
+						            		  $reply_id = $row2[0];
+						            		$dislikess = $row2[5];
+						               		$dislikess++;
+							            	$query3 = "UPDATE replies SET downvotes='$dislikess' WHERE reply_id = '$reply_id' ";
+						            		if(!mysqli_query($conn, $query3))
+									        echo "failed to post";
+							           }                     
 							       	}
 							       	?>
+
 
 
 						       								     
@@ -133,8 +162,8 @@ include 'connectuser.php';
 							{
 								$quest_id=$row[0];
 								$my_id=$_SESSION['user_id'];
-			     				$query="INSERT INTO replies(quest_id,user_id,reply)
-			     				VALUES ('$quest_id','$my_id','$reply')";
+			     				$query="INSERT INTO replies(quest_id,user_id,reply,upvotes,downvotes)
+			     				VALUES ('$quest_id','$my_id','$reply',0,0)";
 			     				if(mysqli_query($conn,$query))
 			     				{
 			     					echo "reply registered";
