@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include 'function.php';
 include 'connectuser.php';
 ?>
@@ -30,7 +29,6 @@ include 'connectuser.php';
 				    <?php
 				    $query="SELECT * FROM question";
 				    $result=mysqli_query($conn,$query);
-
 				    while($row=mysqli_fetch_array($result))
 					{
 						?>									   
@@ -39,12 +37,12 @@ include 'connectuser.php';
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
-								   	echo "<a href='?user_id=$row[1]&quest_id=$row[0]'>$name</a>";
+								   	echo "<a href='#	'>$name</a>";
 								   	?></strong></h3>
 									<p>
 						   			<blockquote><?php echo $row[2];?></blockquote>
 									</p>
-							       	<form action="" method="post" >
+							       	<form 	method="post" >
 										<div class="form-group">						
 								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $row[0]; ?>" name="reply"><strong>Reply</strong></button>
 
@@ -53,6 +51,26 @@ include 'connectuser.php';
 								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
 							   			</div>
 							       	</form>
+							       	<?php
+							       	$quest_id=$row[0];
+							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id'";
+							       	$result2=mysqli_query($conn,$query2);
+							       	echo "Replies";
+							       	while($row2=mysqli_fetch_array($result2))
+							       	{
+                                         $user_id=$row2[2];
+                                         $username=get_user2($user_id);
+                                         ?>
+                                           <div id="card">
+                                        	<h3 id="question_heading"><strong>
+								         	<?php
+							             		echo "<a href='#'>$username</a><br/>";
+							             	$reply_print=get_reply($row2[0]);
+							             	echo $reply_print;
+								   	        ?></strong></h3>     
+								   	        <?php                               
+							       	}
+							       	?>
 						       	</div>					     
 							</div>					
 					   	
@@ -66,13 +84,13 @@ include 'connectuser.php';
 											</div>
 
 											<div class="modal-body">
-												<form>
+												<form method="post">
 													<div class="form-group">
 														<label for="reply">Enter Your Answer:</label>
-														<textarea class="form-control" name="reply_answer" placeholder="Enter your answer..." rows="10"></textarea>
+														<textarea class="form-control" name="text-<?php echo $row[0];?>" placeholder="Enter your answer..." rows="10"></textarea>
 													</div>
 													<div class="form-group">
-														<button type="submit" class="btn btn-success btn-block" style="font-size: 1.25em;">Submit</button>
+														<button type="submit" name="reply-<?php echo $row[0];?>" class="btn btn-success btn-block" style="font-size: 1.25em;">Submit</button>
 													</div>
 												</form>
 											</div>
@@ -85,10 +103,13 @@ include 'connectuser.php';
 								</div>
 							</div>
 					<?php
-						// upvotes
-						$astring =  "like-".$row[0];						
+						$astring1 =  "like-".$row[0];	
+						$astring2 = "dislike-".$row[0];					
+						$astring3 = "reply-".$row[0];
+						$astring4 =  "text-".$row[0];
+						$reply    =	$_POST[$astring4];			
 						if($_SERVER["REQUEST_METHOD"] == "POST") {
-							if(isset($_POST[$astring])) {
+							if(isset($_POST[$astring1])) {
 								$quest_id = $row[0];
 								$likess = $row[3];
 								$likess++;
@@ -96,19 +117,31 @@ include 'connectuser.php';
 								if(!mysqli_query($conn, $query3))
 									echo "failed to post";
 							}
-						}
-						// downvotes
-						$astring2 =  "dislike-".$row[0];						
-						if($_SERVER["REQUEST_METHOD"] == "POST") {
 							if(isset($_POST[$astring2])) {
 								$quest_id = $row[0];
 								$dislikess = $row[4];
 								$dislikess++;
-								$query4 = "UPDATE question SET downvotes='$dislikess' WHERE question_id = '$quest_id' ";
-								if(!mysqli_query($conn, $query4))
+								$query3 = "UPDATE question SET downvotes='$dislikess' WHERE question_id = '$quest_id' ";
+								if(!mysqli_query($conn, $query3))
 									echo "failed to post";
 							}
+							if(isset($_POST[$astring3]))
+							{
+								$quest_id=$row[0];
+								$my_id=$_SESSION['user_id'];
+			     				$query="INSERT INTO replies(quest_id,user_id,reply)
+			     				VALUES ('$quest_id','$my_id','$reply')";
+			     				if(mysqli_query($conn,$query))
+			     				{
+			     					echo "reply registered";
+			     				}
+			     				else
+			     				{
+			     					echo "error";
+			     				}
+							}
 						}
+					
 					}
 						?>
 				</div> <!-- end col-md-7 -->
