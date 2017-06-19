@@ -64,7 +64,7 @@ include 'connectuser.php';
                                          $username=get_user2($user_id);
                                          ?>
                                          
-                                        	<h3 id="question_heading"><strong>
+                                        	<h3><strong>
 								         	<?php
 							             		echo "<a href='#'>$username</a><br/>";
 							             	$reply_print=get_reply($row2[0]);
@@ -77,7 +77,7 @@ include 'connectuser.php';
 
 						       								     
 								</div>					
-					   	
+					   		</div>
 					   		<div class="container">
 								<div class="modal animation fade" id="modal-<?php echo $row[0]; ?>" tabindex="-1" role="dialog">
 									<div class="modal-dialog">
