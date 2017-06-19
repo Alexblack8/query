@@ -51,6 +51,8 @@ include 'connectuser.php';
 								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
 							   			</div>
 							       	</form>
+
+
 							       	<?php
 							       	$quest_id=$row[0];
 							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id'";
@@ -61,7 +63,7 @@ include 'connectuser.php';
                                          $user_id=$row2[2];
                                          $username=get_user2($user_id);
                                          ?>
-                                           <div id="card">
+                                         
                                         	<h3 id="question_heading"><strong>
 								         	<?php
 							             		echo "<a href='#'>$username</a><br/>";
@@ -71,8 +73,10 @@ include 'connectuser.php';
 								   	        <?php                               
 							       	}
 							       	?>
-						       	</div>					     
-							</div>					
+
+
+						       								     
+								</div>					
 					   	
 					   		<div class="container">
 								<div class="modal animation fade" id="modal-<?php echo $row[0]; ?>" tabindex="-1" role="dialog">
