@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: webproject
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.17.04.1
+-- Server version	5.7.18-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,17 +24,13 @@ DROP TABLE IF EXISTS `feedback`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `feedback` (
   `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `feedback` text,
-  `upvote` int(11) DEFAULT NULL,
-  `downvote` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `feedback` text NOT NULL,
+  `upvotes` int(11) DEFAULT NULL,
+  `downvotes` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
-  `tags` text,
-  PRIMARY KEY (`feedback_id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  CONSTRAINT `feedback_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  CONSTRAINT `feedback_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+  `tags` int(11) NOT NULL,
+  PRIMARY KEY (`feedback_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -44,7 +40,7 @@ CREATE TABLE `feedback` (
 
 LOCK TABLES `feedback` WRITE;
 /*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
-INSERT INTO `feedback` VALUES (1,NULL,'Heiehr',NULL,NULL,NULL,'other');
+INSERT INTO `feedback` VALUES (1,2,'hellos',NULL,NULL,NULL,2);
 /*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +59,7 @@ CREATE TABLE `question` (
   `downvotes` int(11) NOT NULL,
   `score` int(11) NOT NULL,
   PRIMARY KEY (`question_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,8 +68,37 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (1,1,'thsi is smmyf jfafjl; ',0,0,0),(2,1,'hdfkjljkjldgkjl',0,0,0),(3,1,'jvjfdkjljlkkjlj\r\n\r\njdfsjdfsfkjldfs',0,0,0),(4,1,'hey',0,0,0),(5,1,'jfjfjjf',0,0,0);
+INSERT INTO `question` VALUES (5,1,'my name is pranav please help in coming to iit',28,29,0),(6,1,'asdsdsaadssasadsdsa',5,4,0),(7,1,'dassssssss',16,0,0),(8,3,'Is pav bhaji really delicious.PLease answer',1,0,0),(9,3,'asdsdsdsdsaasd',0,1,0);
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `replies`
+--
+
+DROP TABLE IF EXISTS `replies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `replies` (
+  `reply_id` int(11) NOT NULL AUTO_INCREMENT,
+  `quest_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `reply` text NOT NULL,
+  `upvotes` int(11) DEFAULT NULL,
+  `downvotes` int(11) DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  PRIMARY KEY (`reply_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `replies`
+--
+
+LOCK TABLES `replies` WRITE;
+/*!40000 ALTER TABLE `replies` DISABLE KEYS */;
+INSERT INTO `replies` VALUES (1,5,1,'Hello yes\r\n',NULL,NULL,NULL),(2,5,1,'Hello yes\r\n',NULL,NULL,NULL),(3,6,1,'saddsasas',NULL,NULL,NULL),(4,6,1,'saddsasas',NULL,NULL,NULL),(5,6,1,'saddsasas',NULL,NULL,NULL),(6,6,1,'saddsasas',NULL,NULL,NULL),(7,6,1,'saddsasas',NULL,NULL,NULL),(8,6,1,'saddsasas',NULL,NULL,NULL),(9,6,1,'asddssda',NULL,NULL,NULL),(10,6,1,'asddssda',NULL,NULL,NULL),(11,6,1,'asddssda',NULL,NULL,NULL),(12,6,1,'asddssda',NULL,NULL,NULL),(13,5,1,'iit\r\n',NULL,NULL,NULL),(14,5,1,'iit\r\n',NULL,NULL,NULL),(15,5,1,'iit\r\n',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -85,13 +110,13 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `frist_name` varchar(128) NOT NULL,
+  `first_name` varchar(128) NOT NULL,
   `last_name` varchar(128) NOT NULL,
   `user_name` varchar(128) NOT NULL,
   `password` varchar(16) NOT NULL,
   `email_id` varchar(128) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +125,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com'),(2,'vishal','maurya','vishal','12345678','vish@gmail.com');
+INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com'),(2,'pkoqwwkdl`','lwldwkl`','sdlkdaslkd','kjskska','ranav@GMAIL,COM'),(3,'jkjk','ghhgjhj','hjhjhj','uhghgh','hjhjhj');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -113,4 +138,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-16 23:42:23
+-- Dump completed on 2017-06-19 15:21:51
