@@ -58,7 +58,7 @@ CREATE TABLE `question` (
   `question` text NOT NULL,
   `upvotes` int(11) NOT NULL,
   `downvotes` int(11) NOT NULL,
-  `score` int(11) NOT NULL,
+  `score` double NOT NULL,
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`question_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
@@ -70,7 +70,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (5,1,'my name is pranav please help in coming to iit',31,29,0,'2017-06-20 15:09:52'),(6,1,'asdsdsaadssasadsdsa',6,4,0,'2017-06-20 15:09:52'),(7,1,'dassssssss',16,0,0,'2017-06-20 15:09:52'),(8,3,'Is pav bhaji really delicious.PLease answer',1,0,0,'2017-06-20 15:09:52'),(9,3,'asdsdsdsdsaasd',0,1,0,'2017-06-20 15:09:52');
+INSERT INTO `question` VALUES (5,1,'my name is pranav please help in coming to iit',34,29,0.91799222655824,'2017-06-20 15:09:52'),(6,1,'asdsdsaadssasadsdsa',13,4,1.1732647316615,'2017-06-20 15:09:52'),(7,1,'dassssssss',16,0,1.4231422048781,'2017-06-20 15:09:52'),(8,3,'Is pav bhaji really delicious.PLease answer',1,0,0.21902222222222,'2017-06-20 15:09:52'),(9,3,'asdsdsdsdsaasd',0,1,-0.21902222222222,'2017-06-20 15:09:52');
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +100,7 @@ CREATE TABLE `replies` (
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
-INSERT INTO `replies` VALUES (1,5,1,'dsaadssddsasdadsadsa',2,6,0.32548221355018,'2017-06-20 14:08:18'),(2,5,1,'saddsadsdsa',2,NULL,0.52180777344176,'2017-06-20 14:50:09'),(3,5,1,'saddsadsdsa',NULL,NULL,0,'2017-06-20 14:50:28'),(4,5,1,'ddasdasasads',NULL,NULL,0,'2017-06-20 17:29:14'),(5,5,1,'ddasdasasads',1,NULL,0.0068666666666667,'2017-06-20 17:30:36'),(6,5,1,'ddasdasasads',NULL,NULL,0,'2017-06-20 17:30:39');
+INSERT INTO `replies` VALUES (1,5,1,'dsaadssddsasdadsadsa',4,6,-0.00010333766935211,'2017-06-20 14:08:18'),(2,5,1,'saddsadsdsa',6,NULL,1.023484583717,'2017-06-20 14:50:09'),(3,5,1,'saddsadsdsa',NULL,NULL,0,'2017-06-20 14:50:28'),(4,5,1,'ddasdasasads',NULL,NULL,0,'2017-06-20 17:29:14'),(5,5,1,'ddasdasasads',1,NULL,0.0314,'2017-06-20 17:30:36'),(6,5,1,'ddasdasasads',1,NULL,0.031333333333333,'2017-06-20 17:30:39');
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-20 23:07:50
+-- Dump completed on 2017-06-20 23:42:58
