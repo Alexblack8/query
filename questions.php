@@ -162,8 +162,8 @@ include 'connectuser.php';
 							{
 								$quest_id=$row[0];
 								$my_id=$_SESSION['user_id'];
-			     				$query="INSERT INTO replies(quest_id,user_id,reply,upvotes,downvotes)
-			     				VALUES ('$quest_id','$my_id','$reply',0,0)";
+								$query="INSERT INTO replies (quest_id,user_id,reply)
+			     				VALUES ('$quest_id','$my_id','$reply')";
 			     				if(mysqli_query($conn,$query))
 			     				{
 			     					echo "reply registered";
@@ -188,3 +188,4 @@ include 'connectuser.php';
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
+</html>
