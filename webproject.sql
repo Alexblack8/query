@@ -88,10 +88,10 @@ CREATE TABLE `replies` (
   `reply` text NOT NULL,
   `upvotes` int(11) DEFAULT NULL,
   `downvotes` int(11) DEFAULT NULL,
-  `score` int(11) DEFAULT NULL,
+  `score` double DEFAULT NULL,
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`reply_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `replies` (
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
-INSERT INTO `replies` VALUES (1,5,1,'dsaadssddsasdadsadsa',2,6,NULL,'2017-06-20 14:08:18'),(2,5,1,'saddsadsdsa',NULL,NULL,NULL,'2017-06-20 14:50:09'),(3,5,1,'saddsadsdsa',NULL,NULL,NULL,'2017-06-20 14:50:28');
+INSERT INTO `replies` VALUES (1,5,1,'dsaadssddsasdadsadsa',2,6,0.32548221355018,'2017-06-20 14:08:18'),(2,5,1,'saddsadsdsa',2,NULL,0.52180777344176,'2017-06-20 14:50:09'),(3,5,1,'saddsadsdsa',NULL,NULL,0,'2017-06-20 14:50:28'),(4,5,1,'ddasdasasads',NULL,NULL,0,'2017-06-20 17:29:14'),(5,5,1,'ddasdasasads',1,NULL,0.0068666666666667,'2017-06-20 17:30:36'),(6,5,1,'ddasdasasads',NULL,NULL,0,'2017-06-20 17:30:39');
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-20 20:44:43
+-- Dump completed on 2017-06-20 23:07:50
