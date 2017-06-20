@@ -114,7 +114,7 @@ function get_score($reg_time,$upvotes,$downvotes)
   
   return $score;
 }
-function store_scores()
+function store_score_replies()
 {
   include 'connectuser.php';
   $query1="SELECT * FROM replies";
@@ -123,6 +123,23 @@ function store_scores()
   {
       $score=get_score($row[7],$row[4],$row[5]);
       $query2 = "UPDATE replies SET score='$score' WHERE reply_id = '$row[0]' ";
+      if(!mysqli_query($conn,$query2))
+      {
+        echo "error in storing scores";
+      }
+  }
+  
+
+ }
+ function store_score_question()
+{
+  include 'connectuser.php';
+  $query1="SELECT * FROM question";
+  $result=mysqli_query($conn,$query1);
+  while($row=mysqli_fetch_array($result))
+  {
+      $score=get_score($row[6],$row[3],$row[4]);
+      $query2 = "UPDATE question SET score='$score' WHERE question_id = '$row[0]' ";
       if(!mysqli_query($conn,$query2))
       {
         echo "error in storing scores";
