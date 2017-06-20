@@ -27,7 +27,8 @@ include 'connectuser.php';
 
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
-				    $query="SELECT * FROM question";
+				    store_score_question();
+				    $query="SELECT * FROM question ORDER BY score DESC";
 				    $result=mysqli_query($conn,$query);
 				    while($row=mysqli_fetch_array($result))
 					{
@@ -55,7 +56,7 @@ include 'connectuser.php';
 
 							       	<?php
 							       	$quest_id=$row[0];
-							       	store_scores();
+							       	store_score_replies();
 							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
 							       	ORDER BY score DESC";
 							       	$result2=mysqli_query($conn,$query2);
