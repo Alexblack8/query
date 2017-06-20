@@ -55,7 +55,9 @@ include 'connectuser.php';
 
 							       	<?php
 							       	$quest_id=$row[0];
-							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id'";
+							       	store_scores();
+							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
+							       	ORDER BY score DESC";
 							       	$result2=mysqli_query($conn,$query2);
 							       	echo "Replies";
 							       	while($row2=mysqli_fetch_array($result2))
