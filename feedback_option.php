@@ -1,7 +1,8 @@
-<?php
+	<?php
 session_start();
 include 'function.php';
 include 'connectuser.php';
+$tag_id=$_GET['tag_id'];
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 ?>
 <html>
@@ -9,7 +10,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 		<!-- required bootstrap framework -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-	    <title>Feedbacks!!</title>
+	    <title>Transport Feedbacks!!</title>
 	    <link href="question_display.css" rel="stylesheet">
 	</head>
 	<body>
@@ -30,10 +31,8 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 				    <?php
 				    store_score_question();
 				    
-				    for($i=1;$i<=6;$i++)
-				    {
-				    	$query="SELECT * FROM feedback 
-                         WHERE tags='$i'
+				       	$query="SELECT * FROM feedback 
+                         WHERE tags='$tag_id'
 						 ORDER BY score DESC
 						 ";
 				         $result=mysqli_query($conn,$query);
@@ -42,8 +41,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 					{
 						 
 						?>	
-						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo "<a href='feedback_option.php?tag_id=". 
-						    $row[6]."'>".$tags[$i-1]."</a>";?></h1>
+						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo $tags[$tag_id-1];?></h1>
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
 						   			
@@ -90,7 +88,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 							
 						}
 					}
-				}
+				
 						?>
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->
