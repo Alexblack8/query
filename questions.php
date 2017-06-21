@@ -35,7 +35,7 @@ include 'connectuser.php';
 						?>									   
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
-						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>
+						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
 								   	echo "<a href='#	'>$name</a>";
