@@ -2,6 +2,7 @@
 session_start();
 include 'function.php';
 include 'connectuser.php';
+$tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 ?>
 <html>
 	<head>
@@ -28,11 +29,20 @@ include 'connectuser.php';
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
 				    store_score_question();
-				    $query="SELECT * FROM feedback ORDER BY score DESC";
-				    $result=mysqli_query($conn,$query);
-				    while($row=mysqli_fetch_array($result))
+				    
+				    for($i=1;$i<=6;$i++)
+				    {
+				    	$query="SELECT * FROM feedback 
+                         WHERE tags='$i'
+						 ORDER BY score DESC
+						 ";
+				         $result=mysqli_query($conn,$query);
+				    	
+				    	while($row=mysqli_fetch_array($result))
 					{
-						?>									   
+						 
+						?>	
+						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo "<a href='#'>".$tags[$i-1]."</a>";?></h1>
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
 						   			
@@ -52,17 +62,13 @@ include 'connectuser.php';
 								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
 							   			</div>
 							       	</form>
-
-
-							      
-
-
-
-						       								     
-								</div>					
+    							</div>					
 					   		</div>
-					   		
+                         </div>
+                     
+				    
 					<?php
+					
 						$astring1 =  "like-".$row[0];	
 						$astring2 = "dislike-".$row[0];					
 						if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -84,17 +90,13 @@ include 'connectuser.php';
 							}
 							
 						}
-					
 					}
+				}
 						?>
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->
 		</div> <!-- end container --> 
-
-		<!-- Modal Window -->
-			
-		
-
+	<!-- Modal Window -->
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
