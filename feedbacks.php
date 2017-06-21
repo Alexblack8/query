@@ -55,8 +55,6 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 									</p>
 							       	<form 	method="post" >
 										<div class="form-group">						
-								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $row[0]; ?>" name="reply"><strong>Reply</strong></button>
-
 								       		<button type="submit" class="btn btn-link" name="like-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
 
 								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
