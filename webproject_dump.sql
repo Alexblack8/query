@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: webproject
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.7.18-0ubuntu0.17.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,7 +41,7 @@ CREATE TABLE `feedback` (
 
 LOCK TABLES `feedback` WRITE;
 /*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
-INSERT INTO `feedback` VALUES (1,2,'hellos',NULL,NULL,NULL,2,'2017-06-20 15:10:23');
+INSERT INTO `feedback` VALUES (1,1,'hellos',NULL,NULL,NULL,2,'2017-06-20 15:10:23');
 /*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,8 +60,9 @@ CREATE TABLE `question` (
   `downvotes` int(11) NOT NULL,
   `score` double NOT NULL,
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `question_heading` text,
   PRIMARY KEY (`question_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +71,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (5,1,'my name is pranav please help in coming to iit',34,29,0.91799222655824,'2017-06-20 15:09:52'),(6,1,'asdsdsaadssasadsdsa',13,4,1.1732647316615,'2017-06-20 15:09:52'),(7,1,'dassssssss',16,0,1.4231422048781,'2017-06-20 15:09:52'),(8,3,'Is pav bhaji really delicious.PLease answer',1,0,0.21902222222222,'2017-06-20 15:09:52'),(9,3,'asdsdsdsdsaasd',0,1,-0.21902222222222,'2017-06-20 15:09:52');
+INSERT INTO `question` VALUES (1,1,'this is question no 1',8,29,-2.8349362608216,'2017-06-20 15:09:52','Question 1'),(2,1,'this is question no 2',6,4,4.4581855512195,'2017-06-20 15:09:52','Question 2'),(3,1,'this is question no 3',52,25,5.5885193197145,'2017-06-20 15:09:52','Question 3'),(4,3,'this is 4',13,8,4.8561255598916,'2017-06-20 15:09:52','Question 4'),(5,3,'this is questiion no 5',20,1,5.4359091565084,'2017-06-20 15:09:52','Question 5');
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +101,7 @@ CREATE TABLE `replies` (
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
-INSERT INTO `replies` VALUES (1,5,1,'dsaadssddsasdadsadsa',4,6,-0.00010333766935211,'2017-06-20 14:08:18'),(2,5,1,'saddsadsdsa',6,NULL,1.023484583717,'2017-06-20 14:50:09'),(3,5,1,'saddsadsdsa',NULL,NULL,0,'2017-06-20 14:50:28'),(4,5,1,'ddasdasasads',NULL,NULL,0,'2017-06-20 17:29:14'),(5,5,1,'ddasdasasads',1,NULL,0.0314,'2017-06-20 17:30:36'),(6,5,1,'ddasdasasads',1,NULL,0.031333333333333,'2017-06-20 17:30:39');
+INSERT INTO `replies` VALUES (1,5,1,'dsaadssddsasdadsadsa',8,6,4.5402966623306,'2017-06-20 14:08:18'),(2,5,1,'saddsadsdsa',9,NULL,5.137709176106,'2017-06-20 14:50:09'),(3,5,1,'saddsadsdsa',2,NULL,4.4840744401084,'2017-06-20 14:50:28'),(4,5,1,'ddasdasasads',9,NULL,4.9255980649949,'2017-06-20 17:29:14'),(5,5,1,'ddasdasasads',3,NULL,4.446654588053,'2017-06-20 17:30:36'),(6,5,1,'ddasdasasads',3,NULL,4.4465879213863,'2017-06-20 17:30:39');
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +120,7 @@ CREATE TABLE `user` (
   `password` varchar(16) NOT NULL,
   `email_id` varchar(128) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +129,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com'),(2,'pkoqwwkdl`','lwldwkl`','sdlkdaslkd','kjskska','ranav@GMAIL,COM'),(3,'jkjk','ghhgjhj','hjhjhj','uhghgh','hjhjhj');
+INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com'),(2,'pkoqwwkdl`','lwldwkl`','sdlkdaslkd','kjskska','ranav@GMAIL,COM'),(3,'someone','ghhgjhj','hjhjhj','uhghgh','hjhjhj'),(4,'','','','',''),(5,'','','','',''),(6,'Vishal','Maurya','vishal','1234','vishalmry@gmail.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -141,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-20 23:42:58
+-- Dump completed on 2017-06-23  1:00:18

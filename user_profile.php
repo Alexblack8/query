@@ -19,13 +19,13 @@
 	<body>
 		<header>
 			<div class="container">
-				<!-- heading -->
+				<!-- user's description -->
 				<div class="row">
 					<div class="col-md-2">
 						<img src="welcome.jpg" title="welcome" class="img-responsive" style="margin-top: 2em;">
 					</div>
 					<div class="col-md-7">
-						<h2 style="color:#41f450;">
+						<h2 style="color:#8c1919; font-weight:900; ">
 							<?php 
 								echo ucfirst($user_array['first_name'])." ".ucfirst($user_array['last_name']);
 							?>
@@ -52,7 +52,7 @@
 						?>
 						<div id="card">
 							<!-- question heading -->
-							<h2 style="color: #f4b042;"><?php echo $question_dis_array['q_heading'];?></h2>
+							<h2 style="color: #f4b042;"><strong><?php echo $question_dis_array['q_heading'];?></strong></h2>
 							<!-- question content -->
 							<blockquote>
 								<p><?php echo $question_dis_array['question']; ?></p>
