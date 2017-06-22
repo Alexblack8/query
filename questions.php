@@ -37,12 +37,14 @@ include 'connectuser.php';
 
 
 						?>									   
-					   		<div class="container-fluid"><hr id="hr_top">
+					   			<hr id="hr_top">
 					   			<div id="card">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
-								   	echo "<a href='#	'>$name</a>";
+
+							       	$get_user_id = $row['user_id'];
+								   	echo '<a href="user_profile.php?userId='.$get_user_id.'">'.ucfirst($name).'</a>';
 								   	?></strong></h3>
 									<p>
 						   			<blockquote><?php echo $row[2];?></blockquote>
@@ -134,7 +136,7 @@ include 'connectuser.php';
 
 						       								     
 								</div>					
-					   		</div>
+					   		
 					   		<div class="container">
 								<div class="modal animation fade" id="modal-<?php echo $row[0]; ?>" tabindex="-1" role="dialog">
 									<div class="modal-dialog">

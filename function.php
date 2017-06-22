@@ -56,7 +56,7 @@ function get_user2($user_id)
      $query="SELECT * FROM user WHERE user_id='$user_id'";
        $result=mysqli_query($conn,$query);
        $row=mysqli_fetch_array($result);
-       $name=$row[1].' '.$row[2];//this gets the firstname and lastname respectively from the database
+       $name=ucfirst($row[1]).' '.ucfirst($row[2]);//this gets the firstname and lastname respectively from the database
        return $name;  
   }
     
