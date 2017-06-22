@@ -70,7 +70,3 @@ body {
       text-align: center;
       font-size: 30px;
   }
-
-
-
-  .like{font-weight:400;color:#337ab7;border-radius:0}.like,.like.active,.like:active,.like[disabled],fieldset[disabled] .like{background-color:transparent;-webkit-box-shadow:none;box-shadow:none}.like,.like:active,.like:focus,.like:hover{border-color:transparent}.like:focus,.like:hover{color:#23527c;text-decoration:underline;background-color:transparent}.like[disabled]:focus,.like[disabled]:hover,fieldset[disabled] .like:focus,fieldset[disabled] .like:hover{color:#777;text-decoration:none}

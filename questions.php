@@ -65,10 +65,10 @@ include 'connectuser.php';
 								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $question_id; ?>" name="reply"><strong>Reply</strong></button>
 
 
-								       		<button type="button" class="like" id="like-<?php echo $question_id;?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $like_count; ?></span>)&nbsp;
+								       		<button type="button" class="btn btn-link like" id="like-<?php echo $question_id;?>-l"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $like_count; ?></span>)&nbsp;
 
 
-								       		<button type="button" class="btn btn-link" class="dislike23" id="dislike-<?php echo $question_id;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $dislike_count;?></span>)&nbsp;
+								       		<button type="button" class="btn btn-link dislike" class="dislike23" id="dislike-<?php echo $question_id;?>-disl"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $dislike_count;?></span>)&nbsp;
 
 							   			</div>
 							       	</form>
