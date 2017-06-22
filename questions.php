@@ -10,6 +10,8 @@ include 'connectuser.php';
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	    <title>Questions!!</title>
 	    <link href="question_display.css" rel="stylesheet">
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="like_unlike.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<!-- header and heading -->
@@ -32,6 +34,8 @@ include 'connectuser.php';
 				    $result=mysqli_query($conn,$query);
 				    while($row=mysqli_fetch_array($result))
 					{
+
+
 						?>									   
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
@@ -43,17 +47,35 @@ include 'connectuser.php';
 									<p>
 						   			<blockquote><?php echo $row[2];?></blockquote>
 									</p>
-							       	<form 	method="post" >
+							       	
+									<!-- counting likes and dislikes -->
+									
+									<?php
+										$question_id = $row['question_id'];
+										$like_count = $row['upvotes'];
+										$dislike_count = $row['downvotes'];
+									?>
+									
+									<!-- end counting likes and dislikes -->
+
+									<!-- reply and like unlike button -->
+							       	<form method="post" >
 										<div class="form-group">						
-								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $row[0]; ?>" name="reply"><strong>Reply</strong></button>
+								       		
+								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $question_id; ?>" name="reply"><strong>Reply</strong></button>
 
-								       		<button type="submit" class="btn btn-link" name="like-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
 
-								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
+								       		<button type="button" class="like" id="like-<?php echo $question_id;?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $like_count; ?></span>)&nbsp;
+
+
+								       		<button type="button" class="btn btn-link" class="dislike23" id="dislike-<?php echo $question_id;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $dislike_count;?></span>)&nbsp;
+
 							   			</div>
 							       	</form>
-
-
+									<!-- end reply like unlike button -->
+									
+							       	
+									<!-- THE REPLY SECTION -->
 							       	<?php
 							       	$quest_id=$row[0];
 							       	store_score_replies();
@@ -75,7 +97,7 @@ include 'connectuser.php';
 								   	        ?></strong>
 								   	        <form method="post">
 								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
-
+/
 								       		<button type="submit" class="btn btn-link" name="reply_dislike_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
 								       		<label>Likes:  <?php echo $row2[4];?></label><br/>
@@ -104,6 +126,9 @@ include 'connectuser.php';
 							           }                     
 							       	}
 							       	?>
+									<!-- END REPLY SECTION -->
+
+
 
 
 
@@ -188,7 +213,7 @@ include 'connectuser.php';
 			
 		
 
-		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
 </html>
