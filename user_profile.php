@@ -35,7 +35,8 @@
 								echo ucfirst($user_array['first_name'])." ".ucfirst($user_array['last_name']);
 							?>
 						</h2>
-						<blockquote><p style="font-size: 17px;"><strong style="font-size: 1.2em;">This is User's description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolore dolorum, nihil molestias qui, in cum ipsum quis, doloremque delectus id eius dolorem libero magni! Aliquid quis consequuntur provident officia. </p></blockquote>
+						<blockquote><p style="font-size: 17px;"><strong style="font-size: 1.2em;">
+						<?php echo ucfirst(($user_array['description']));?> </p></blockquote>
 					</div>
 				</div> <!--end row-->
 				<hr style="height:1px;border:none;color:#333;background-color:#acadaf;">
