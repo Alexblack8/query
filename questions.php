@@ -2,6 +2,7 @@
 session_start();
 include 'function.php';
 include 'connectuser.php';
+$tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 ?>
 <html>
 	<head>
@@ -30,14 +31,20 @@ include 'connectuser.php';
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
 				    store_score_question();
-				    $query="SELECT * FROM question ORDER BY score DESC";
-				    $result=mysqli_query($conn,$query);
+				   for($i=1;$i<=6;$i++)
+				    {
+				    	$query="SELECT * FROM question 
+                         WHERE tags='$i'
+						 ORDER BY score DESC
+						 ";
+				         $result=mysqli_query($conn,$query);
+				    	
 				    while($row=mysqli_fetch_array($result))
 					{
-
-
-						?>									   
-					   			<hr id="hr_top">
+						?>
+                          <h1><?php echo "<a href='feedback_option.php?tag_id=". 
+						    $row[6]."'>".$tags[$i-1]."</a>";?></h1>
+						         <hr id="hr_top">
 					   			<div id="card">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
@@ -206,6 +213,7 @@ include 'connectuser.php';
 						}
 					
 					}
+				}
 						?>
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->

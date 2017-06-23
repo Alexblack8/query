@@ -61,9 +61,9 @@ include 'connectuser.php';
       {
         $question=$_POST['question'];
           $my_id=$_SESSION['user_id'];
-          $category=$_POST['category'];
-           $query="INSERT INTO question (user_id,question,upvotes,downvotes,score,category)
-           VALUES ('$my_id','$question','0','0','0','$category')";
+          $tags=$_POST['category'];
+           $query="INSERT INTO question (user_id,question,upvotes,downvotes,score,tags)
+           VALUES ('$my_id','$question','0','0','0','$tags')";
 
             if(mysqli_query($conn,$query))
           {   
