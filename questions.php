@@ -134,7 +134,7 @@ $category=array('reply','question','feedback');
 							                 {
 							                 	$my_id=$_SESSION['user_id'];
 							                 	$user_id=$row2[2];
-							                 	send_notification_like($my_id,$user_id,$category[1],$reply_id);
+							                 	send_notification_like($my_id,$user_id,$category[0],$reply_id);
 							                 }
 							             }
 						               	if(isset($_POST[$astring2])) 
@@ -217,7 +217,7 @@ $category=array('reply','question','feedback');
 			     				if(	mysqli_query($conn,$query))
 			     				{
 			     					echo "reply registered";
-			     					//send_notification_question($my_id,$user_id,$category[1],$quest_id);
+			     					send_notification_like($my_id,$user_id,$category[0],$quest_id);
 
 			     				}
 			     				else
