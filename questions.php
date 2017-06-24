@@ -2,7 +2,9 @@
 session_start();
 include 'function.php';
 include 'connectuser.php';
+include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
+$category=array('reply','question','feedback');
 ?>
 <html>
 	<head>
@@ -36,6 +38,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 				    	$query="SELECT * FROM question 
                          WHERE tags='$i'
 						 ORDER BY score DESC
+						 LIMIT 0,4
 						 ";
 				         $result=mysqli_query($conn,$query);
 				    	
@@ -43,7 +46,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 					{
 						?>
                           <h1><?php echo "<a href='feedback_option.php?tag_id=". 
-						    $row[6]."'>".$tags[$i-1]."</a>";?></h1>
+						    $row[8]."'>".$tags[$i-1]."</a>";?></h1>
 						         <hr id="hr_top">
 					   			<div id="card">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
@@ -63,6 +66,8 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 										$question_id = $row['question_id'];
 										$like_count = $row['upvotes'];
 										$dislike_count = $row['downvotes'];
+										$my_id=$_SESSION['user_id'];
+										$user_id=$row[1];
 									?>
 									
 									<!-- end counting likes and dislikes -->
@@ -89,7 +94,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 							       	$quest_id=$row[0];
 							       	store_score_replies();
 							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
-							       	ORDER BY score DESC";
+							       	ORDER BY score DESC LIMIT 0,4";
 							       	$result2=mysqli_query($conn,$query2);
 							       	echo "Replies";
 							       	while($row2=mysqli_fetch_array($result2))
@@ -106,7 +111,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 								   	        ?></strong>
 								   	        <form method="post">
 								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
-/
+
 								       		<button type="submit" class="btn btn-link" name="reply_dislike_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
 								       		<label>Likes:  <?php echo $row2[4];?></label><br/>
@@ -122,8 +127,16 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 								              $likess++;
 								              $query3 = "UPDATE replies SET upvotes='$likess' WHERE reply_id = '$reply_id' ";
 								            if(!mysqli_query($conn, $query3))
+								            {
 							 		         echo "failed to post";
 							                 }
+							                 else
+							                 {
+							                 	$my_id=$_SESSION['user_id'];
+							                 	$user_id=$row2[2];
+							                 	send_notification_like($my_id,$user_id,$category[1],$reply_id);
+							                 }
+							             }
 						               	if(isset($_POST[$astring2])) 
 						               	{
 						            		  $reply_id = $row2[0];
@@ -201,9 +214,11 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 								$my_id=$_SESSION['user_id'];
 								$query="INSERT INTO replies (quest_id,user_id,reply)
 			     				VALUES ('$quest_id','$my_id','$reply')";
-			     				if(mysqli_query($conn,$query))
+			     				if(	mysqli_query($conn,$query))
 			     				{
 			     					echo "reply registered";
+			     					//send_notification_question($my_id,$user_id,$category[1],$quest_id);
+
 			     				}
 			     				else
 			     				{
