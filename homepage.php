@@ -137,7 +137,25 @@
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
 }
-  </style>
+.cards li
+{
+      display: inline-block;
+      width: 33%;
+
+}
+.columns
+{
+  text-align:center; 
+}
+.cardholder
+{
+
+  
+}
+
+</style>
+
+
 <nav class="social">
           <ul>
               <li>
@@ -147,11 +165,11 @@
           </ul>
 </nav>				<div class="inner">
 					<div class="columns">
-						<ul class="grid cs-style-1">
+						<ul class="grid cs-style-1 cardholder">
 							
 
 							<li>
-								<figure>
+								<figure class="cards">
 									<div class="front-big"><br><br><br><br><br><br>
 										<center><img style="height:50px;width:50px;" src="images/question.png"></center>
 
@@ -170,9 +188,9 @@
 
 							
 							<li>
-								<figure>
+								<figure class="cards">
 									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:65px;width:50px;" src="images/deathnote.png">
+										<center><img style="height:65px;width:50px;" src="images/deathnote.png"></center>
 										<h3> Feedbacks</h3>
 									</div>
 										<a href="pages/office.php">
@@ -189,7 +207,7 @@
 								</figure>
 							</li>
 							<li>
-								<figure>
+								<figure class="cards">
 									<div class="front-small">
 										<br><br>
 										<center><img style="height:100px;width:75px;" src="/var/www/html/webproject/sign-up-login-form/images"></center>

@@ -21,6 +21,7 @@ $(document).ready(function() {
 			data: {question_id:question_id,type:type,user_id:user_id},
 			dataType: 'json',
 			success: function(data) {
+				alert("i am success");
 				var likes = data['likes'];
 				var dislikes = data['dislikes'];
 				$("#showL"+question_id).html(likes);
