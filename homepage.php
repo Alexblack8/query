@@ -162,7 +162,7 @@
 												<h3>Ask questions to the student community of iit indore</h3>
 												<span>IIT INDORE<br>
 													........<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
+												 	<span style="color : #ffffff;">Click for more details...</span>
 											</figcaption>
 										</a>
 								</figure>
@@ -172,7 +172,7 @@
 							<li>
 								<figure>
 									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:50px;width:50px;" src="images/deathnote.png">
+										<center><img style="height:65px;width:50px;" src="images/deathnote.png">
 										<h3> Feedbacks</h3>
 									</div>
 										<a href="pages/office.php">
@@ -183,7 +183,7 @@
 												Transort<br/>
 												Sports & Medical Facilities<br/></h3>
 												
-												 	<span style="color : #7cc576;">Click for more details...</span>
+												 	<span style="color : #ffffff;">Click for more details...</span>
 											</figcaption>
 										</a>
 								</figure>
@@ -192,7 +192,7 @@
 								<figure>
 									<div class="front-small">
 										<br><br>
-										<center><img style="height:50px;width:50px;" src="/var/www/html/webproject/sign-up-login-form/images"></center>
+										<center><img style="height:100px;width:75px;" src="/var/www/html/webproject/sign-up-login-form/images"></center>
 										<h3>Profile</h3>
 									</div>
 										<a href="pages/news.php">
@@ -200,7 +200,7 @@
 												<h3>Visit your Profile<br></h3>
 												<span>See the questions and feedbacks<br/>
 												posted by you</span>	
-												 	<span style="color : #7cc576;">Click for more details...</span>
+												 	<span style="color : #ffffff;">Click for more details...</span>
 											</figcaption>
 											</figcaption>
 										</a>
