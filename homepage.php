@@ -41,6 +41,7 @@
   <!-- <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   -->
   <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 <style>
+
   a {
   color: white;
   text-decoration: none;
@@ -166,10 +167,11 @@
 </nav>				<div class="inner">
 					<div class="columns">
 						<ul class="grid cs-style-1 cardholder">
-							
+						
+						<div>	
 
-							<li>
-								<figure class="cards">
+							<li style="margin-right: 60px; padding: 10px; float: left;">
+								<figure>
 									<div class="front-big"><br><br><br><br><br><br>
 										<center><img style="height:50px;width:50px;" src="images/question.png"></center>
 
@@ -206,7 +208,8 @@
 										</a>
 								</figure>
 							</li>
-							<li>
+							
+							<li style="float: left;">
 								<figure class="cards">
 									<div class="front-small">
 										<br><br>
@@ -226,7 +229,7 @@
 							</li>
 							
 							
-							
+							</div>
 							
 							
 
