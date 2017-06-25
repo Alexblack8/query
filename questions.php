@@ -89,11 +89,13 @@ include 'connectuser.php';
 							       	{
                                          $user_id=$row2[2];
                                          $username=get_user2($user_id);
+                                         $get_user_id2 = $row2['user_id'];
+                                         echo $get_user_id2;
                                          ?>
                                          
                                         	<h3><strong>
 								         	<?php
-							             		echo "<a href='#'>$username</a><br/>";
+							             		echo '<a href="user_profile.php?userId='.$get_user_id2.'">'.$username.'</a><br />';
 							             	$reply_print=get_reply($row2[0]);
 							             	echo $reply_print;
 								   	        ?></strong>
@@ -172,14 +174,14 @@ include 'connectuser.php';
 						$astring4 =  "text-".$row[0];
 						$reply    =	$_POST[$astring4];			
 						if($_SERVER["REQUEST_METHOD"] == "POST") {
-							if(isset($_POST[$astring1])) {
+							/*if(isset($_POST[$astring1])) {
 								$quest_id = $row[0];
 								$likess = $row[3];
 								$likess++;
 								$query3 = "UPDATE question SET upvotes='$likess' WHERE question_id = '$quest_id' ";
 								if(!mysqli_query($conn, $query3))
 									echo "failed to post";
-							}
+							}*/
 							if(isset($_POST[$astring2])) {
 								$quest_id = $row[0];
 								$dislikess = $row[4];
