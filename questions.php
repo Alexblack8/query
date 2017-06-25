@@ -29,7 +29,7 @@ $category=array('reply','question','feedback');
 			<div class="row">
 				<div class="col-md-2">
 					<br><br>
-						<h3 class="text-info">feeds...<hr></h3> 
+						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
 						<p class="helpblock">Categories:<hr></p>
 						<ul class="panel">
 							<li><a href="">Mess</a></li>
