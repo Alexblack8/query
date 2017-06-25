@@ -53,7 +53,7 @@
 					<h1 style="color: #8c1919;"><strong>QUESTIONS ASKED</strong></h1>
 
 					<?php
-						$question_dis_query = "SELECT question,question_heading AS q_heading FROM question WHERE user_id=".$get_user_id;
+						$question_dis_query = "SELECT question,question_heading AS q_heading,score FROM question WHERE user_id='$get_user_id' ORDER BY score";
 						$question_dis_result = mysqli_query($conn, $question_dis_query);
 							
 							while($question_dis_array = mysqli_fetch_array($question_dis_result)) {
@@ -75,7 +75,7 @@
 						<h1 style="color: #8c1919;"><strong>ANSWERS GIVEN</strong></h1>
 						<?php
 						//showing replies
-						$reply_query = "SELECT reply,quest_id AS qID FROM replies WHERE user_id=".$get_user_id;
+						$reply_query = "SELECT reply,quest_id AS qID,score FROM replies WHERE user_id='$get_user_id' ORDER BY score";
 						$reply_result = mysqli_query($conn,$reply_query);
 
 						while($reply_array = mysqli_fetch_array($reply_result)) {

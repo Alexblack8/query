@@ -1,4 +1,4 @@
-<!-- Designed By: Mohit Mohta & Suryaveer -->
+<!-- Designed By: Pranav & Vishal -->
 
 <!DOCTYPE HTML>
 <html>
@@ -148,34 +148,18 @@
 </nav>				<div class="inner">
 					<div class="columns">
 						<ul class="grid cs-style-1">
-							<li>
-								<figure>
-									<div class="front-small">
-										<br><br>
-										<center><img style="height:50px;width:50px;" src="images/whyiiti.png"></center>
-										<h3>About IIT-Indore</h3>
-									</div>
-										<a href="pages/about-iiti.php">
-											<figcaption>
-												<h3 style="margin-top: 50px;">About</h3>
-												<span>IIT INDORE<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-												
-											</figcaption>
-										</a>
-								</figure>
-							</li>
+							
 
 							<li>
 								<figure>
 									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:50px;width:50px;" src="images/tech.png"></center>
+										<center><img style="height:50px;width:50px;" src="images/question.png"></center>
 
-										<h3>Technical Clubs<br>IIT Indore</h3>
+										<h3>Questions</h3>
 									</div>
 										<a href="pages/tech-clubs.php">
 											<figcaption>
-												<h3>Technical Club</h3>
+												<h3>Ask questions to the student community of iit indore</h3>
 												<span>IIT INDORE<br>
 													........<br>
 												 	<span style="color : #7cc576;">Click for more details...</span>
@@ -184,37 +168,21 @@
 								</figure>
 							</li>
 
-							<li>
-								<figure>
-									<div class="front-small">
-										<br><br>
-										<center><img style="height:50px;width:200px;" src="images/sesc.png"></center>
-										<h3 style="font-size:1em;">Student Entrepreneurship Support Cell</h3>
-									</div>
-										<a href="http://www.sesc.in/cie/">
-											<figcaption>
-												<h3 style="margin-top: 50px;">Student Entrepreneurship Support Cell</h3>
-												<span>IIT INDORE<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-												
-											</figcaption>
-										</a>
-								</figure>
-							</li>
+							
 							<li>
 								<figure>
 									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:50px;width:50px;" src="images/office.png"></center>
-										<h3> Gymkhana<br> office</h3>
+										<center><img style="height:50px;width:50px;" src="images/deathnote.png">
+										<h3> Feedbacks</h3>
 									</div>
 										<a href="pages/office.php">
 											<figcaption>
-												<h3>Office</h3>
-												<span>Gymkhana<br>
-													IIT INDORE<br><br>
-													Details about structure<br>
-													different secretaries, Senators<br>
-													and their reponsibilities<br><br>
+												<h3>Post feedbacks regarding <br/>
+												Mess<br/>
+												Academics<br/>
+												Transort<br/>
+												Sports & Medical Facilities<br/></h3>
+												
 												 	<span style="color : #7cc576;">Click for more details...</span>
 											</figcaption>
 										</a>
@@ -224,145 +192,25 @@
 								<figure>
 									<div class="front-small">
 										<br><br>
-										<center><img style="height:50px;width:50px;" src="images/news.png"></center>
-										<h3>Campus News and Event calendar</h3>
+										<center><img style="height:50px;width:50px;" src="/var/www/html/webproject/sign-up-login-form/images"></center>
+										<h3>Profile</h3>
 									</div>
 										<a href="pages/news.php">
 											<figcaption>
-												<h3>Campus News and Event calendar<br></h3>
-												<span>IIT INDORE<br>
+												<h3>Visit your Profile<br></h3>
+												<span>See the questions and feedbacks<br/>
+												posted by you</span>	
 												 	<span style="color : #7cc576;">Click for more details...</span>
 											</figcaption>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<div class="front-small" style="background-color: #523F2C;">
-										<br><br>
-										<center><img style="height:50px;width:50px;" src="images/social-works.png"></center>
-										<h3>Social Works</h3>
-									</div>
-										<a href="pages/social-works.php">
-											<figcaption>
-												<h3 style="margin-top: 50px;">Social Woks</h3>
-												<span>IIT INDORE<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-												
 											</figcaption>
 										</a>
 								</figure>
 							</li>
 							
-							<li>
-								<figure>
-									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:50px;width:50px;" src="images/hostel.png"></center>
-
-										<h3>Hostel<br>IIT indore</h3>
-									</div>
-										<a href="pages/hostel.php">
-											<figcaption>
-												<h3>Hostel</h3>
-												<span>IIT INDORE<br><br>
-													About hostel facilities<br>
-													contact details and gallery<br><br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-											</figcaption>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<div class="front-small">
-										<br><br>
-										<center><img style="height:50px;width:50px;" src="images/placements.png"></center>
-										<h3>Placement updates</h3>
-									</div>
-										<a href="http://placement.iiti.ac.in/">
-											<figcaption>
-												<h3>Placement updates</h3>
-												<span>IIT INDORE<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-											</figcaption>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<div class="front-small" style="background-color: #523F2C;">
-										<br><br>
-										<center><img style="height:50px;width:50px;" src="images/alumni-cell.png"></center>
-										<h3>Alumni Cell</h3>
-									</div>
-										<a href="pages/alumni-cell.php">
-											<figcaption>
-												<h3 style="margin-top: 50px;">Alumni cell</h3>
-												<span>IIT INDORE<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-												
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-
-							<li>
-								<figure>
-									<div class="front-small">
-										<br><br>
-										<center><img style="height:50px;width:50px;" src="images/achievements.png"></center>
-
-										<h3>Achievements & <br> Photo gallery</h3>
-									</div>
-										<a href="pages/achievements.php">
-											<figcaption>
-												<h3 style="margin-top: 50px;">Achievements <br> Photo gallery</h3>
-												<span>IIT INDORE<br>
-
-												 	<span style="color : #7cc576;">Click for more details...</span>
-											</figcaption>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:50px;width:50px;" src="images/cultural.png"></center>
-										<h3>Cultural Clubs<br> IIT INDORE</h3>
-									</div>
-										<a href="pages/cult-clubs.php">
-											<figcaption>
-											<h3>Cultural Clubs</h3>
-												<span>IIT INDORE<br>
-													...........<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-											</figcaption>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							<li>
-								<figure>
-									<div class="front-small">
-										<br><br>
-										<center><img style="height:50px;width:50px;" src="images/reach-us.png"></center>
-										<h3>Reach Us<br>address@iit-indore</h3>
-
-									</div>
-										<a href="pages/reach-us.php">
-											<figcaption>
-												<h3>Reach Us</h3>
-												<span>address@iit-indore<br>
-												 	<span style="color : #7cc576;">Click for more details...</span>
-											</figcaption>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
+							
+							
+							
+							
 
 						</ul>	
 					

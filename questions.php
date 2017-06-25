@@ -64,8 +64,18 @@ $category=array('reply','question','feedback');
 									
 									<?php
 										$question_id = $row['question_id'];
-										$like_count = $row['upvotes'];
-										$dislike_count = $row['downvotes'];
+										//counting total number of likes
+										$like_query = "SELECT COUNT(*) AS cntLikes FROM like_unlike WHERE type=1 and question_id=".$question_id;
+					                    $like_result = mysqli_query($conn,$like_query);
+					                    $like_row = mysqli_fetch_array($like_result);
+					                    $total_likes = $like_row['cntLikes'];
+										
+										//counting total number of dislikes
+					                    $unlike_query = "SELECT COUNT(*) AS cntUnlikes FROM like_unlike WHERE type=0 and postid=".$postid;
+					                    $unlike_result = mysqli_query($conn,$unlike_query);
+					                    $unlike_row = mysqli_fetch_array($unlike_result);
+					                    $total_dislikes = $unlike_row['cntUnlikes'];
+
 										$my_id=$_SESSION['user_id'];
 										$user_id=$row[1];
 									?>
@@ -79,10 +89,10 @@ $category=array('reply','question','feedback');
 								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $question_id; ?>" name="reply"><strong>Reply</strong></button>
 
 
-								       		<button type="button" class="btn btn-link like" id="like-<?php echo $question_id;?>-l"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $like_count; ?></span>)&nbsp;
+								       		<button type="button" class="btn btn-link like" id="like-<?php echo $question_id."-".$my_id;?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $total_likes; ?></span>)&nbsp;
 
 
-								       		<button type="button" class="btn btn-link dislike" class="dislike23" id="dislike-<?php echo $question_id;?>-disl"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $dislike_count;?></span>)&nbsp;
+								       		<button type="button" class="btn btn-link dislike" id="dislike-<?php echo $question_id."-".$my_id ;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $total_dislike;?></span>)&nbsp;
 
 							   			</div>
 							       	</form>
@@ -101,11 +111,12 @@ $category=array('reply','question','feedback');
 							       	{
                                          $user_id=$row2[2];
                                          $username=get_user2($user_id);
+                                         $get_user_id2 = $row2['user_id'];
                                          ?>
                                          
                                         	<h3><strong>
 								         	<?php
-							             		echo "<a href='#'>$username</a><br/>";
+							             		echo '<a href="user_profile.php?userId='.$get_user_id2.'">'.$username.'</a><br />';
 							             	$reply_print=get_reply($row2[0]);
 							             	echo $reply_print;
 								   	        ?></strong>
@@ -192,7 +203,7 @@ $category=array('reply','question','feedback');
 						$astring4 =  "text-".$row[0];
 						$reply    =	$_POST[$astring4];			
 						if($_SERVER["REQUEST_METHOD"] == "POST") {
-							if(isset($_POST[$astring1])) {
+							/*if(isset($_POST[$astring1])) {
 								$quest_id = $row[0];
 								$likess = $row[3];
 								$likess++;
@@ -200,8 +211,7 @@ $category=array('reply','question','feedback');
 								if(!mysqli_query($conn, $query3))
 								{
 									echo "failed to post";
-								}
-							}
+							}*/
 							if(isset($_POST[$astring2])) {
 								$quest_id = $row[0];
 								$dislikess = $row[4];
