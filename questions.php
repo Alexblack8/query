@@ -15,6 +15,7 @@ $category=array('reply','question','feedback');
 	    <link href="question_display.css" rel="stylesheet">
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
+	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<!-- header and heading -->
@@ -121,20 +122,22 @@ $category=array('reply','question','feedback');
 							             	echo $reply_print;
 								   	        ?></strong>
 								   	        <form method="post">
-								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></buttonuser_id=$row2[2];
-                                         $username=get_user2($user_id);
-                                         $get_user_id2 = $row2['user_id']>
+								   	       
 
-								       		<button type="submit" class="btn btn-link" name="reply_dislike_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
+								   	        <button type="button" class="btn btn-link reply_like" id="replyLike-<?php echo $row2[0]."-".$my_id;?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></buttonuser_id=$row2[2];
+                                        	$username=get_user2($user_id);
+                                         	$get_user_id2 = $row2['user_id']>
+
+								       		<button type="button" class="btn btn-link reply_dislike" id="replyDislike-<?php echo $row2['reply_id']."-".$_SESSION['user_id'];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
-								       		<label>Likes:  <?php echo $row2[4];?></label><br/>
-								       		<label>DisLikes:  <?php echo $row2[5];?></label><br/>
+								       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $row2[4];?></label><br/>
+								       		<label id="label-dislike-<?php echo $row2['reply_id'];?>">DisLikes:  <?php echo $row2[5];?></label><br/>
 								       		
 								       		</form>
 								   	        <?php  
 								   	        $astring1 =  "reply_like_".$row2[0];	
 						                    $astring2 = "reply_dislike_".$row2[0];			
-								   	    if(isset($_POST[$astring1])) {
+								   	    	if(isset($_POST[$astring1])) {
 								              $reply_id = $row2[0];
 								              $likess = $row2[4];
 								              $likess++;
