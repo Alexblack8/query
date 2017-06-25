@@ -149,6 +149,10 @@ session_start();
   text-align:center; 
 }
 
+* {
+	border: 1px solid black;
+}
+
 </style>
 
 
