@@ -10,7 +10,7 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- cards -->
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="component.css" />
 		<script src="assets/js/modernizr.custom.js"></script>
 		<!-- login form -->
 		<link rel="stylesheet" type="text/css" href="login/css/normalize.css" />	
@@ -43,7 +43,6 @@ session_start();
   <!-- <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   -->
   <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 <style>
-
   a {
   color: white;
   text-decoration: none;
@@ -144,16 +143,10 @@ session_start();
 {
       display: inline-block;
       width: 33%;
-
 }
 .columns
 {
   text-align:center; 
-}
-.cardholder
-{
-
-  
 }
 
 </style>
@@ -258,21 +251,19 @@ session_start();
 		width: 260px;
 	}
 }
-
 </style>
 			<footer id="footer">
 				<a href="#" class="info fa fa-info-circle"><span>About</span></a>
 				<div class="inner">
 					<div class="content">
 						<center><div id="header_logo"><img  src="http://iiti.ac.in/images/logo.png" width="440px"></div>
-						<strong><h3>Student Gymkhana, IIT Indore</h3></strong></center>
+						</center>
 						<!-- <p>Ensuring the welfare of students in and outside the campus.</p> -->
 					
 
 					</div>
 					<!-- login form -->
-							<div class="content_login" id="login_form">
-									<a href="http://people.iiti.ac.in/~studentgym/login/session_var.php" class="open-modal" style="background-color:#fff;text-decoration:none; color:#2c3f52;">Login</a>								</div>
+							
 					<div class="copyright">
 						<h3>Follow Us</h3>
 						<ul class="icons">
@@ -280,8 +271,7 @@ session_start();
 							<li><a href="https://www.facebook.com/studentgym" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 					
 						</ul>
-						&copy;Designed By : <a href="https://www.linkedin.com/in/suryaveer/" target="_blank">Suryaveer Singh</a> and <a href="https://www.linkedin.com/in/mohtamohit/" target="_blank">Mohit Mohta</a>
-					</div>
+						&copy;Designed By : Pranav Khanna  and 	Vishal Maurya
 				</div>
 			</footer>
 		<!-- Scripts -->
