@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	// for reply like and dislike
 	$(".reply_like, .reply_dislike").click(function() {
-		alert("i am clicked");
+		//alert("i am clicked");
 		var id = this.id; // getting button id
 		var split_id = id.split("-");
 		var user_id = split_id[2];
@@ -13,7 +13,7 @@ $(document).ready(function() {
 		else
 			type = 0;
 
-		alert("the text is: "+text+"the user_id is: "+user_id+"the reply_id is: "+reply_id+"the type is: "+type); 
+		//alert("the text is: "+text+"the user_id is: "+user_id+"the reply_id is: "+reply_id+"the type is: "+type); 
 		// ajax request
 		$.ajax({
 			url: 'like_unlike_reply.php',
@@ -24,10 +24,10 @@ $(document).ready(function() {
 				var likes = data['likes'];
 				var dislikes = data['dislikes'];
 				//to check that data is being fetched or not	
-				alert("the likes are "+likes+" the dislikes are "+dislikes+" the reply_id is: "+reply_id);
+				//alert("the likes are "+likes+" the dislikes are "+dislikes+" the reply_id is: "+reply_id);
 				
-				$("#label-like-"+reply_id).html(likes);
-				$("#label-dislike-"+reply_id).html(dislikes);
+				$("#label-like-"+reply_id).html("Likes: "+likes);
+				$("#label-dislike-"+reply_id).html("DisLikes: "+dislikes);
 			}
 
 		});
