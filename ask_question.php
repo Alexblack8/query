@@ -26,15 +26,24 @@ include 'connectuser.php';
 
     <div class="container">
       <form action="ask_question.php" method="post">
-
+      
       <div class="form-group">
-        <label for="ask_question">Username: 
+        <p class="help-block">Username: 
         <?php 
         $username=get_username();
         echo $username;
-        ?></label>
-        <textarea name="question" id="ask_question" cols="50" rows="10" class="form-control"></textarea>
+        ?></p>
       </div>
+
+      <div class="form-group">
+        <label for="question_heading">Ask A Question...</label>
+        <input type="text" class="form-control" name="question_heading">
+      </div>
+
+      <div class="form-group">
+          <label for="ask_question">Enter full description here: </label>
+          <textarea name="question" id="ask_question" cols="50" rows="10" class="form-control"></textarea>
+       </div>
        
        <div class="form-group">
         <select class="selectpicker" data-style="btn-danger" name="category" multiple data-max-options="1" data-live-search="true">
@@ -59,11 +68,12 @@ include 'connectuser.php';
       <?php
       if(isset($_POST['question']) &&!empty($_POST['question']))
       {
-        $question=$_POST['question'];
+          $question_heading = $_POST['question_heading'];
+          $question=$_POST['question'];
           $my_id=$_SESSION['user_id'];
           $tags=$_POST['category'];
-           $query="INSERT INTO question (user_id,question,upvotes,downvotes,score,tags)
-           VALUES ('$my_id','$question','0','0','0','$tags')";
+           $query="INSERT INTO question (user_id,question,upvotes,downvotes,score,tags,question_heading)
+           VALUES ('$my_id','$question','0','0','0','$tags','$question_heading')";
 
             if(mysqli_query($conn,$query))
           {   
