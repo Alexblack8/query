@@ -71,7 +71,7 @@ $category=array('reply','question','feedback');
 					                    $total_likes = $like_row['cntLikes'];
 										
 										//counting total number of dislikes
-					                    $unlike_query = "SELECT COUNT(*) AS cntUnlikes FROM like_unlike WHERE type=0 and postid=".$postid;
+					                    $unlike_query = "SELECT COUNT(*) AS cntUnlikes FROM like_unlike WHERE type=0 and question_id=".$question_id;
 					                    $unlike_result = mysqli_query($conn,$unlike_query);
 					                    $unlike_row = mysqli_fetch_array($unlike_result);
 					                    $total_dislikes = $unlike_row['cntUnlikes'];
@@ -92,7 +92,7 @@ $category=array('reply','question','feedback');
 								       		<button type="button" class="btn btn-link like" id="like-<?php echo $question_id."-".$my_id;?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $total_likes; ?></span>)&nbsp;
 
 
-								       		<button type="button" class="btn btn-link dislike" id="dislike-<?php echo $question_id."-".$my_id ;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $total_dislike;?></span>)&nbsp;
+								       		<button type="button" class="btn btn-link dislike" id="dislike-<?php echo $question_id."-".$my_id ;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $total_dislikes;?></span>)&nbsp;
 
 							   			</div>
 							       	</form>
@@ -121,7 +121,9 @@ $category=array('reply','question','feedback');
 							             	echo $reply_print;
 								   	        ?></strong>
 								   	        <form method="post">
-								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
+								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></buttonuser_id=$row2[2];
+                                         $username=get_user2($user_id);
+                                         $get_user_id2 = $row2['user_id']>
 
 								       		<button type="submit" class="btn btn-link" name="reply_dislike_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
