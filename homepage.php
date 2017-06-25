@@ -139,7 +139,8 @@
 }
 .cards li
 {
-      display: inline;
+      display: inline-block;
+      width: 33%;
 
 }
 .columns
@@ -148,7 +149,7 @@
 }
 .cardholder
 {
-display:inline-block;
+
   
 }
 
@@ -174,7 +175,7 @@ display:inline-block;
 
 										<h3>Questions</h3>
 									</div>
-										<a href="pages/tech-clubs.php">
+										<a href="questions.php">
 											<figcaption>
 												<h3>Ask questions to the student community of iit indore</h3>
 												<span>IIT INDORE<br>
@@ -189,7 +190,7 @@ display:inline-block;
 							<li>
 								<figure class="cards">
 									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:65px;width:50px;" src="images/deathnote.png">
+										<center><img style="height:65px;width:50px;" src="images/deathnote.png"></center>
 										<h3> Feedbacks</h3>
 									</div>
 										<a href="pages/office.php">
