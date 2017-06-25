@@ -35,6 +35,17 @@ include 'connectuser.php';
         ?></label>
         <textarea name="question" id="ask_question" cols="50" rows="10" class="form-control"></textarea>
       </div>
+       
+       <div class="form-group">
+        <select class="selectpicker" data-style="btn-danger" name="category" multiple data-max-options="1" data-live-search="true">
+          <option value="mess">Mess</option>
+          <option value="transport">Transport</option>
+          <option value="academics">Academics</option>
+          <option value="sports">Sports</option>
+          <option value="medical">Medical</option>
+          <option value="other">Others</option>
+        </select>
+      </div>
 
       <div class="form-group">
         <input type="submit" class="btn btn-warning" name="post_question" value="Post">
@@ -50,11 +61,12 @@ include 'connectuser.php';
       {
         $question=$_POST['question'];
           $my_id=$_SESSION['user_id'];
-           $query="INSERT INTO question (user_id, question, upvotes, downvotes, score)
-           VALUES ('$my_id','$question','0','0','0')";
+          $tags=$_POST['category'];
+           $query="INSERT INTO question (user_id,question,upvotes,downvotes,score,tags)
+           VALUES ('$my_id','$question','0','0','0','$tags')";
 
             if(mysqli_query($conn,$query))
-          { 
+          {   
             ?>
             <h4 class="text-success">
               <?php echo "Added Successfully!!!!"; ?>

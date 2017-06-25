@@ -69,6 +69,11 @@ include 'connectuser.php';
             <input type="password" required autocomplete="off" name="password"/>
           </div>
           
+           <div class="field-wrap">
+             <textarea rows='4' cols='50' name="description" maxlength="150" 
+            required autocomplete="off" placeholder="Give your description in not more than 150 words"> </textarea> 
+          </div>
+
           <button type="submit" class="button button-block"/>Get Started</button>
           
           </form>

@@ -2,6 +2,9 @@
 session_start();
 include 'function.php';
 include 'connectuser.php';
+include 'notification.php';
+$tags=array("Mess","Transport","Academics","Sports","Medical","Others");
+$category=array('reply','question','feedback');
 ?>
 <html>
 	<head>
@@ -30,14 +33,21 @@ include 'connectuser.php';
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
 				    store_score_question();
-				    $query="SELECT * FROM question ORDER BY score DESC";
-				    $result=mysqli_query($conn,$query);
+				   for($i=1;$i<=6;$i++)
+				    {
+				    	$query="SELECT * FROM question 
+                         WHERE tags='$i'
+						 ORDER BY score DESC
+						 LIMIT 0,4
+						 ";
+				         $result=mysqli_query($conn,$query);
+				    	
 				    while($row=mysqli_fetch_array($result))
 					{
-
-
-						?>									   
-					   			<hr id="hr_top">
+						?>
+                          <h1><?php echo "<a href='feedback_option.php?tag_id=". 
+						    $row[8]."'>".$tags[$i-1]."</a>";?></h1>
+						         <hr id="hr_top">
 					   			<div id="card">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
@@ -56,6 +66,8 @@ include 'connectuser.php';
 										$question_id = $row['question_id'];
 										$like_count = $row['upvotes'];
 										$dislike_count = $row['downvotes'];
+										$my_id=$_SESSION['user_id'];
+										$user_id=$row[1];
 									?>
 									
 									<!-- end counting likes and dislikes -->
@@ -82,7 +94,7 @@ include 'connectuser.php';
 							       	$quest_id=$row[0];
 							       	store_score_replies();
 							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
-							       	ORDER BY score DESC";
+							       	ORDER BY score DESC LIMIT 0,4";
 							       	$result2=mysqli_query($conn,$query2);
 							       	echo "Replies";
 							       	while($row2=mysqli_fetch_array($result2))
@@ -101,7 +113,7 @@ include 'connectuser.php';
 								   	        ?></strong>
 								   	        <form method="post">
 								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
-/
+
 								       		<button type="submit" class="btn btn-link" name="reply_dislike_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
 								       		<label>Likes:  <?php echo $row2[4];?></label><br/>
@@ -117,8 +129,16 @@ include 'connectuser.php';
 								              $likess++;
 								              $query3 = "UPDATE replies SET upvotes='$likess' WHERE reply_id = '$reply_id' ";
 								            if(!mysqli_query($conn, $query3))
+								            {
 							 		         echo "failed to post";
 							                 }
+							                 else
+							                 {
+							                 	$my_id=$_SESSION['user_id'];
+							                 	$user_id=$row2[2];
+							                 	send_notification_like($my_id,$user_id,$category[0],$reply_id);
+							                 }
+							             }
 						               	if(isset($_POST[$astring2])) 
 						               	{
 						            		  $reply_id = $row2[0];
@@ -180,6 +200,7 @@ include 'connectuser.php';
 								$likess++;
 								$query3 = "UPDATE question SET upvotes='$likess' WHERE question_id = '$quest_id' ";
 								if(!mysqli_query($conn, $query3))
+								{
 									echo "failed to post";
 							}*/
 							if(isset($_POST[$astring2])) {
@@ -198,7 +219,9 @@ include 'connectuser.php';
 			     				VALUES ('$quest_id','$my_id','$reply')";
 			     				if(mysqli_query($conn,$query))
 			     				{
-			     					echo "reply registered";
+			     					echo "reply registered";	
+			     					send_notification_like($my_id,$user_id,$category[0],$quest_id);
+
 			     				}
 			     				else
 			     				{
@@ -208,6 +231,7 @@ include 'connectuser.php';
 						}
 					
 					}
+				}
 						?>
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->

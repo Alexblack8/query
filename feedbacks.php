@@ -2,7 +2,9 @@
 session_start();
 include 'function.php';
 include 'connectuser.php';
+include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
+$category=array('reply','question','feedback');
 ?>
 <html>
 	<head>
@@ -73,11 +75,19 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 						if($_SERVER["REQUEST_METHOD"] == "POST") {
 							if(isset($_POST[$astring1])) {
 								$feedback_id = $row[0];
+								$my_id=$_SESSION['user_id'];
+								$user_id=$row[1];
 								$likess = $row[3];
 								$likess++;
 								$query3 = "UPDATE feedback SET upvotes='$likess' WHERE feedback_id = '$feedback_id' ";
 								if(!mysqli_query($conn, $query3))
+								{
 									echo "failed to post";
+								}
+								else
+								{
+									send_notification_like($my_id,$user_id,$category[2],$feedback_id);
+								}
 							}
 							if(isset($_POST[$astring2])) {
 								$feedback_id = $row[0];
