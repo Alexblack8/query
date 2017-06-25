@@ -30,28 +30,155 @@
 						<h3 class="text-danger"> This is for the side content....Below is a sample content </h3>
 					</div>
 
-					<div class="col-md-8" bgcolor="#eee">
-					    <?php
-					    store_score_question();
-					   for($i=1;$i<=6;$i++)
-					    {
-					    	$query="SELECT * FROM question 
-	                         WHERE tags='$i'
-							 ORDER BY score DESC
-							 LIMIT 0,4
-							 ";
-					         $result=mysqli_query($conn,$query);
-					    	
-					    while($row=mysqli_fetch_array($result))
-						{
-							?>
-	                          <h1><?php echo "<a href='feedback_option.php?tag_id=". 
-							    $row[8]."'>".$tags[$i-1]."</a>";?></h1>
-							         <hr id="hr_top">
-						   			<div id="card">
-							   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
-									   	<h3 id="question_heading"><strong><?php
-								       	$name=get_user2($row[1]);
+
+=======
+				<div class="col-md-8" bgcolor="#eee">
+				    <?php
+				    store_score_question();
+				   for($i=1;$i<=6;$i++)
+				    {
+				    	$query="SELECT * FROM question 
+                         WHERE tags='$i'
+						 ORDER BY score DESC
+						 LIMIT 0,4
+						 ";
+				         $result=mysqli_query($conn,$query);
+				    	
+				    while($row=mysqli_fetch_array($result))
+					{
+						?>
+                          <h1><?php echo "<a href='feedback_option.php?tag_id=". 
+						    $row[8]."'>".$tags[$i-1]."</a>";?></h1>
+						         <hr id="hr_top">
+					   			<div id="card">
+						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
+								   	<h3 id="question_heading"><strong><?php
+							       	$name=get_user2($row[1]);
+
+							       	$get_user_id = $row['user_id'];
+								   	echo '<a href="user_profile.php?userId='.$get_user_id.'">'.ucfirst($name).'</a>';
+								   	?></strong></h3>
+									<p>
+						   			<blockquote><?php echo $row[2];?></blockquote>
+									</p>
+							       	
+									<!-- counting likes and dislikes -->
+									
+									<?php
+										$question_id = $row['question_id'];
+										//counting total number of likes
+										$like_query = "SELECT COUNT(*) AS cntLikes FROM like_unlike WHERE type=1 and question_id=".$question_id;
+					                    $like_result = mysqli_query($conn,$like_query);
+					                    $like_row = mysqli_fetch_array($like_result);
+					                    $total_likes = $like_row['cntLikes'];
+										
+										//counting total number of dislikes
+					                    $unlike_query = "SELECT COUNT(*) AS cntUnlikes FROM like_unlike WHERE type=0 and postid=".$postid;
+					                    $unlike_result = mysqli_query($conn,$unlike_query);
+					                    $unlike_row = mysqli_fetch_array($unlike_result);
+					                    $total_dislikes = $unlike_row['cntUnlikes'];
+
+										$my_id=$_SESSION['user_id'];
+										$user_id=$row[1];
+									?>
+									
+									<!-- end counting likes and dislikes -->
+
+									<!-- reply and like unlike button -->
+							       	<form method="post" >
+										<div class="form-group">						
+								       		
+								       		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-<?php echo $question_id; ?>" name="reply"><strong>Reply</strong></button>
+
+
+								       		<button type="button" class="btn btn-link like" id="like-<?php echo $question_id."-".$my_id;?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $total_likes; ?></span>)&nbsp;
+
+
+								       		<button type="button" class="btn btn-link dislike" id="dislike-<?php echo $question_id."-".$my_id ;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $total_dislike;?></span>)&nbsp;
+
+							   			</div>
+							       	</form>
+									<!-- end reply like unlike button -->
+									
+							       	
+									<!-- THE REPLY SECTION -->
+							       	<?php
+							       	$quest_id=$row[0];
+							       	store_score_replies();
+							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
+							       	ORDER BY score DESC LIMIT 0,4";
+							       	$result2=mysqli_query($conn,$query2);
+							       	echo "Replies";
+							       	while($row2=mysqli_fetch_array($result2))
+							       	{
+                                         $user_id=$row2[2];
+                                         $username=get_user2($user_id);
+                                         $get_user_id2 = $row2['user_id'];
+                                         ?>
+                                         
+                                        	<h3><strong>
+								         	<?php
+							             		echo '<a href="user_profile.php?userId='.$get_user_id2.'">'.$username.'</a><br />';
+							             	$reply_print=get_reply($row2[0]);
+							             	echo $reply_print;
+								   	        ?></strong>
+								   	        <form method="post">
+								   	        <button type="submit" class="btn btn-link" name="reply_like_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
+
+								       		<button type="submit" class="btn btn-link" name="reply_dislike_<?php echo $row2[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
+								       		</h3>
+								       		<label>Likes:  <?php echo $row2[4];?></label><br/>
+								       		<label>DisLikes:  <?php echo $row2[5];?></label><br/>
+								       		
+								       		</form>
+								   	        <?php  
+								   	        $astring1 =  "reply_like_".$row2[0];	
+						                    $astring2 = "reply_dislike_".$row2[0];			
+								   	    if(isset($_POST[$astring1])) {
+								              $reply_id = $row2[0];
+								              $likess = $row2[4];
+								              $likess++;
+								              $query3 = "UPDATE replies SET upvotes='$likess' WHERE reply_id = '$reply_id' ";
+								            if(!mysqli_query($conn, $query3))
+								            {
+							 		         echo "failed to post";
+							                 }
+							                 else
+							                 {
+							                 	$my_id=$_SESSION['user_id'];
+							                 	$user_id=$row2[2];
+							                 	send_notification_like($my_id,$user_id,$category[0],$reply_id);
+							                 }
+							             }
+						               	if(isset($_POST[$astring2])) 
+						               	{
+						            		  $reply_id = $row2[0];
+						            		$dislikess = $row2[5];
+						               		$dislikess++;
+							            	$query3 = "UPDATE replies SET downvotes='$dislikess' WHERE reply_id = '$reply_id' ";
+						            		if(!mysqli_query($conn, $query3))
+									        echo "failed to post";
+							           }                     
+							       	}
+							       	?>
+									<!-- END REPLY SECTION -->
+
+
+
+
+
+						       								     
+								</div>					
+					   		
+					   		<div class="container">
+								<div class="modal animation fade" id="modal-<?php echo $row[0]; ?>" tabindex="-1" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title"><strong style="font-size: 2em;"><?php echo $row[2];?></strong></h4>
+											</div>
+>>>>>>> fa64adbd283eb0f0d3ffc153d757b6cca4d75b51
 
 								       	$get_user_id = $row['user_id'];
 									   	echo '<a href="user_profile.php?userId='.$get_user_id.'">'.ucfirst($name).'</a>';
@@ -196,6 +323,7 @@
 										</div>
 									</div>
 								</div>
+<<<<<<< HEAD
 						<?php
 							$astring1 =  "like-".$row[0];	
 							$astring2 = "dislike-".$row[0];					
@@ -239,6 +367,50 @@
 								}
 							}
 						
+=======
+							</div>
+					<?php
+						$astring1 =  "like-".$row[0];	
+						$astring2 = "dislike-".$row[0];					
+						$astring3 = "reply-".$row[0];
+						$astring4 =  "text-".$row[0];
+						$reply    =	$_POST[$astring4];			
+						if($_SERVER["REQUEST_METHOD"] == "POST") {
+							/*if(isset($_POST[$astring1])) {
+								$quest_id = $row[0];
+								$likess = $row[3];
+								$likess++;
+								$query3 = "UPDATE question SET upvotes='$likess' WHERE question_id = '$quest_id' ";
+								if(!mysqli_query($conn, $query3))
+								{
+									echo "failed to post";
+							}*/
+							if(isset($_POST[$astring2])) {
+								$quest_id = $row[0];
+								$dislikess = $row[4];
+								$dislikess++;
+								$query3 = "UPDATE question SET downvotes='$dislikess' WHERE question_id = '$quest_id' ";
+								if(!mysqli_query($conn, $query3))
+									echo "failed to post";
+							}
+							if(isset($_POST[$astring3]))
+							{
+								$quest_id=$row[0];
+								$my_id=$_SESSION['user_id'];
+								$query="INSERT INTO replies (quest_id,user_id,reply)
+			     				VALUES ('$quest_id','$my_id','$reply')";
+			     				if(mysqli_query($conn,$query))
+			     				{
+			     					echo "reply registered";	
+			     					send_notification_like($my_id,$user_id,$category[0],$quest_id);
+
+			     				}
+			     				else
+			     				{
+			     					echo "error";
+			     				}
+							}
+>>>>>>> fa64adbd283eb0f0d3ffc153d757b6cca4d75b51
 						}
 					}
 							?>
