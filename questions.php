@@ -198,7 +198,9 @@ $category=array('reply','question','feedback');
 								$likess++;
 								$query3 = "UPDATE question SET upvotes='$likess' WHERE question_id = '$quest_id' ";
 								if(!mysqli_query($conn, $query3))
+								{
 									echo "failed to post";
+								}
 							}
 							if(isset($_POST[$astring2])) {
 								$quest_id = $row[0];
@@ -214,9 +216,9 @@ $category=array('reply','question','feedback');
 								$my_id=$_SESSION['user_id'];
 								$query="INSERT INTO replies (quest_id,user_id,reply)
 			     				VALUES ('$quest_id','$my_id','$reply')";
-			     				if(	mysqli_query($conn,$query))
+			     				if(mysqli_query($conn,$query))
 			     				{
-			     					echo "reply registered";
+			     					echo "reply registered";	
 			     					send_notification_like($my_id,$user_id,$category[0],$quest_id);
 
 			     				}
