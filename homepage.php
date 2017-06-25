@@ -1,5 +1,7 @@
 <!-- Designed By: Pranav & Vishal -->
-
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -195,7 +197,7 @@
 										<center><img style="height:65px;width:50px;" src="images/deathnote.png"></center>
 										<h3> Feedbacks</h3>
 									</div>
-										<a href="pages/office.php">
+										<a href="feedbacks.php">
 											<figcaption>
 												<h3>Post feedbacks regarding <br/>
 												Mess<br/>
@@ -216,7 +218,7 @@
 										<center><img style="height:100px;width:75px;" src="/var/www/html/webproject/sign-up-login-form/images"></center>
 										<h3>Profile</h3>
 									</div>
-										<a href="pages/news.php">
+										<a href="user_profile.php?userId=<?php echo $_SESSION['user_id'];?>">
 											<figcaption>
 												<h3>Visit your Profile<br></h3>
 												<span>See the questions and feedbacks<br/>
