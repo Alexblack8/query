@@ -6,7 +6,10 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	<style>
-		#navigation-bar {/*
+		#navigation-bar {
+			border-top: 3px solid #a33939;
+			box-shadow: 0 2px 1px #eee;
+		/*
 			height: 60px;
 			padding-top: 5px;
 		*/}

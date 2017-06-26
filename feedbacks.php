@@ -14,15 +14,13 @@ $category=array('reply','question','feedback');
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	    <title>Feedbacks!!</title>
 	    <link href="question_display.css" rel="stylesheet">
+	    <style>
+			html {
+				margin-top: 50px;
+			}
+	    </style>
 	</head>
 	<body>
-		<!-- header and heading -->
-		<div id="jumbotron">
-			<div class="container">
-				</span><h1 id="header_heading"><span class="glyphicon glyphicon-apple" id="logo"></span>Some Of The Valuables...</h1></span>
-			</div>
-		</div>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">

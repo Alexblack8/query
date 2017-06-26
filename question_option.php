@@ -20,12 +20,6 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 	    </style>
 	</head>
 	<body>
-		<!-- header and heading -->
-		<div id="jumbotron">
-			<div class="container">
-				</span><h1 id="header_heading"><span class="glyphicon glyphicon-apple" id="logo"></span>Some Of The Valuables...</h1></span>
-			</div>
-		</div>
 
 		<div class="container">
 			<div class="row">

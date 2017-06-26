@@ -18,15 +18,14 @@ $category=array('question','reply','question','feedback');
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
+	    <style>
+			html {
+				margin-top: 50px;
+			}
+	    </style>
 	</head>
 	<body>
 		<!-- header and heading -->
-		<div id="jumbotron">
-			<div class="container" style="margin-top: 50px;">
-				</span><h1 id="header_heading"><span class="glyphicon glyphicon-apple" id="logo"></span>Some Of The Valuables...</h1></span>
-			</div>
-		</div>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
