@@ -51,7 +51,7 @@ $category=array('reply','question','feedback');
 				    {
 				    	$query="SELECT * FROM feedback 
                          WHERE tags='$i'
-						 ORDER BY score DESC
+						 ORDER BY reg_time DESC
 						 ";
 				         $result=mysqli_query($conn,$query);
 				    	
@@ -71,13 +71,7 @@ $category=array('reply','question','feedback');
 									<p>
 						   			<blockquote><?php echo $row[2];?></blockquote>
 									</p>
-							       	<form 	method="post" >
-										<div class="form-group">						
-								       		<button type="submit" class="btn btn-link" name="like-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
-
-								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
-							   			</div>
-							       	</form>
+							       	
     							</div>					
 					   		</div>
                          </div>

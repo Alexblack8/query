@@ -2,6 +2,7 @@
 session_start();
 
 include 'connectuser.php';
+	include('nav_bar.php');
 
 include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
@@ -21,7 +22,7 @@ $category=array('question','reply','question','feedback');
 	<body>
 		<!-- header and heading -->
 		<div id="jumbotron">
-			<div class="container">
+			<div class="container" style="margin-top: 50px;">
 				</span><h1 id="header_heading"><span class="glyphicon glyphicon-apple" id="logo"></span>Some Of The Valuables...</h1></span>
 			</div>
 		</div>
@@ -268,7 +269,7 @@ $category=array('question','reply','question','feedback');
 			
 		
 
-		
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
 </html>
