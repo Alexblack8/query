@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: webproject
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.17.04.1
+-- Server version	5.7.18-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -113,7 +113,7 @@ CREATE TABLE `notificationlike` (
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `ref_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `notificationlike` (
 
 LOCK TABLES `notificationlike` WRITE;
 /*!40000 ALTER TABLE `notificationlike` DISABLE KEYS */;
-INSERT INTO `notificationlike` VALUES (1,1,3,1,'1','2017-06-24 08:48:11',0),(2,1,3,1,'1','2017-06-24 08:48:11',0),(3,1,3,1,'question','2017-06-24 08:48:11',0),(4,1,1,1,'question','2017-06-24 08:48:11',0),(33,1,1,1,'like','2017-06-24 08:48:11',0),(34,1,1,1,'question','2017-06-24 09:43:08',2),(35,1,1,1,'question','2017-06-24 09:43:30',2),(36,1,1,1,'question','2017-06-24 09:43:56',2),(37,1,1,1,'','2017-06-24 09:48:07',1),(38,1,1,1,'reply','2017-06-24 09:48:30',1),(39,1,1,1,'feedback','2017-06-24 09:48:48',1),(40,1,1,1,'reply','2017-06-25 09:31:08',5),(41,1,1,1,'reply','2017-06-25 09:31:28',5),(42,1,1,1,'reply','2017-06-25 09:31:41',5),(43,1,1,1,'reply','2017-06-25 09:32:22',5),(44,1,1,1,'reply','2017-06-25 09:34:00',5),(45,1,1,1,'reply','2017-06-25 09:34:07',5),(46,1,1,1,'reply','2017-06-25 09:34:50',1),(47,1,1,1,'reply','2017-06-25 11:16:31',3),(48,1,3,1,'reply','2017-06-25 15:31:28',5),(49,1,1,1,'reply','2017-06-25 15:31:41',1),(50,1,1,1,'reply','2017-06-25 15:32:03',1),(51,1,3,1,'reply','2017-06-25 15:35:05',5),(52,1,1,1,'reply','2017-06-25 15:35:24',1),(53,1,1,1,'reply','2017-06-25 15:35:37',1),(54,1,1,1,'reply','2017-06-25 15:35:49',5);
+INSERT INTO `notificationlike` VALUES (1,1,3,1,'1','2017-06-24 08:48:11',0),(2,1,3,1,'1','2017-06-24 08:48:11',0),(3,1,3,1,'question','2017-06-24 08:48:11',0),(4,1,1,1,'question','2017-06-24 08:48:11',0),(33,1,1,1,'like','2017-06-24 08:48:11',0),(34,1,1,1,'question','2017-06-24 09:43:08',2),(35,1,1,1,'question','2017-06-24 09:43:30',2),(36,1,1,1,'question','2017-06-24 09:43:56',2),(37,1,1,1,'','2017-06-24 09:48:07',1),(38,1,1,1,'reply','2017-06-24 09:48:30',1),(39,1,1,1,'feedback','2017-06-24 09:48:48',1),(40,1,1,1,'reply','2017-06-25 09:31:08',5),(41,1,1,1,'reply','2017-06-25 09:31:28',5),(42,1,1,1,'reply','2017-06-25 09:31:41',5),(43,1,1,1,'reply','2017-06-25 09:32:22',5),(44,1,1,1,'reply','2017-06-25 09:34:00',5),(45,1,1,1,'reply','2017-06-25 09:34:07',5),(46,1,1,1,'reply','2017-06-25 09:34:50',1),(47,1,1,1,'reply','2017-06-25 11:16:31',3),(48,1,3,1,'reply','2017-06-25 15:31:28',5),(49,1,1,1,'reply','2017-06-25 15:31:41',1),(50,1,1,1,'reply','2017-06-25 15:32:03',1),(51,1,3,1,'reply','2017-06-25 15:35:05',5),(52,1,1,1,'reply','2017-06-25 15:35:24',1),(53,1,1,1,'reply','2017-06-25 15:35:37',1),(54,1,1,1,'reply','2017-06-25 15:35:49',5),(55,1,1,1,'reply','2017-06-26 07:35:19',6),(56,1,1,1,'reply','2017-06-26 07:35:23',6);
 /*!40000 ALTER TABLE `notificationlike` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,9 +142,9 @@ CREATE TABLE `question` (
   `score` double NOT NULL,
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `question_heading` text,
-  `tags` int(2) NOT NULL,
+  `tags` varchar(128) NOT NULL,
   PRIMARY KEY (`question_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +153,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (1,1,'this is question no 1',10,29,-8.5329797323805,'2017-06-20 15:09:52','Question 1',4),(2,1,'this is question no 2',7,4,10.288854588053,'2017-06-20 15:09:52','Question 2',0),(3,1,'this is question no 3',53,26,11.243097097492,'2017-06-20 15:09:52','Question 3',0),(4,3,'this is 4',13,8,10.510703337669,'2017-06-20 15:09:52','Question 4',0),(5,3,'this is questiion no 5',36,46,-8.8117333333333,'2017-06-20 15:09:52','Question 5',2);
+INSERT INTO `question` VALUES (6,1,'weewewq',0,0,0,'2017-06-26 07:26:38',NULL,'transport'),(7,1,'sdasdada',0,0,0,'2017-06-26 07:26:43',NULL,'transport');
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +174,7 @@ CREATE TABLE `replies` (
   `score` double DEFAULT NULL,
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`reply_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,7 +183,7 @@ CREATE TABLE `replies` (
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
-INSERT INTO `replies` VALUES (1,5,1,'This is my first reply',NULL,NULL,0,'2017-06-25 15:35:05'),(2,1,1,'thsi is reply for sports section',NULL,NULL,0,'2017-06-25 15:35:24'),(3,1,1,'this is for quest. 1',NULL,NULL,0,'2017-06-25 15:35:37'),(4,5,1,'this is for quest 5',NULL,NULL,0,'2017-06-25 15:35:49');
+INSERT INTO `replies` VALUES (1,5,1,'This is my first reply',NULL,NULL,0,'2017-06-25 15:35:05'),(2,1,1,'thsi is reply for sports section',NULL,NULL,0,'2017-06-25 15:35:24'),(3,1,1,'this is for quest. 1',NULL,NULL,0,'2017-06-25 15:35:37'),(4,5,1,'this is for quest 5',NULL,NULL,0,'2017-06-25 15:35:49'),(5,6,1,'dsasadsadsda',NULL,NULL,0,'2017-06-26 07:35:19'),(6,6,1,'dsasadsadsda',NULL,NULL,0,'2017-06-26 07:35:23');
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,4 +225,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-25 23:22:50
+-- Dump completed on 2017-06-26 13:06:17
