@@ -25,12 +25,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="#" class="navbar-brand" >QUERY!!</a>
+					<a  class="navbar-brand" >QUERY!!</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="nav-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#" ><span class="glyphicon glyphicon-home"></span></a></li>
+						<li class="active"><a href="http://localhost/webproject/sign-up-login-form/homepage.php" ><span class="glyphicon glyphicon-home"></span></a></li>
 						<li><a href="notification.php" style="font-size: 20px;">Notifications</a></li>
 						<li><a href="questions.php" style="font-size: 20px;" >Questions</a></li>
 						<li><a href="feedbacks.php" style="font-size: 20px;"  >Feedback</a></li>

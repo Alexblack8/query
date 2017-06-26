@@ -1,9 +1,10 @@
 <?php
 session_start();
-include 'function.php';
+include 'notification.php';
 include 'connectuser.php';
 $tag_id=$_GET['tag_id'];
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
+$category=array('question','reply','question','feedback');
 ?>
 <html>
 	<head>
@@ -57,20 +58,13 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 				    	 <h1><?php echo $tags[$counter];?></h1>
 				    	 <?php
 
-				    	while($row=mysqli_fetch_array($result))
-					
-				          
-				          ?>
-				    	
-						   
-						    <?php
-				    while($row=mysqli_fetch_array($result))
+				    	 while($row=mysqli_fetch_array($result))
 					{
 						?>
                           
 						         <hr id="hr_top">
 					   			<div id="card">
-						   			
+						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
 
@@ -185,7 +179,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 
 
 						       								     
-											
+								</div>					
 					   		
 					   		<div class="container">
 								<div class="modal animation fade" id="modal-<?php echo $row[0]; ?>" tabindex="-1" role="dialog">
@@ -216,8 +210,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 								</div>
 							</div>
 					<?php
-						$astring1 =  "like-".$row[0];	
-						$astring2 = "dislike-".$row[0];					
+									
 						$astring3 = "reply-".$row[0];
 						$astring4 =  "text-".$row[0];
 						$reply    =	$_POST[$astring4];			
@@ -243,14 +236,13 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 						}
 					
 					}
-				
+					
 						?>
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->
 		</div> <!-- end container --> 
 
 		<!-- Modal Window -->
-			
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
