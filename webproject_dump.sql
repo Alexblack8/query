@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: webproject
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.7.18-0ubuntu0.17.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -58,7 +58,7 @@ CREATE TABLE `like_unlike` (
   `question_id` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `like_unlike` (
 
 LOCK TABLES `like_unlike` WRITE;
 /*!40000 ALTER TABLE `like_unlike` DISABLE KEYS */;
-INSERT INTO `like_unlike` VALUES (1,3,5,0),(2,6,5,1),(3,3,1,1),(4,7,5,1),(5,1,5,1),(6,1,1,1),(7,8,5,0),(8,8,1,1);
+INSERT INTO `like_unlike` VALUES (1,3,5,0),(2,6,5,1),(3,3,1,1),(4,7,5,1),(5,1,5,1),(6,1,1,1),(7,8,5,0),(8,8,1,1),(9,9,6,1),(10,9,7,0);
 /*!40000 ALTER TABLE `like_unlike` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +84,7 @@ CREATE TABLE `like_unlike_reply` (
   `reply_id` int(11) DEFAULT NULL,
   `type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `like_unlike_reply` (
 
 LOCK TABLES `like_unlike_reply` WRITE;
 /*!40000 ALTER TABLE `like_unlike_reply` DISABLE KEYS */;
-INSERT INTO `like_unlike_reply` VALUES (1,8,1,1),(2,8,4,1),(3,8,2,1),(4,8,3,1);
+INSERT INTO `like_unlike_reply` VALUES (1,8,1,1),(2,8,4,1),(3,8,2,1),(4,8,3,1),(5,9,7,0),(6,9,5,0),(7,9,6,1);
 /*!40000 ALTER TABLE `like_unlike_reply` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +153,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (6,1,'weewewq',11,0,1.3528371296027,'2017-06-26 07:26:38',NULL,'transport'),(7,1,'sdasdada',0,0,0,'2017-06-26 07:26:43',NULL,'transport');
+INSERT INTO `question` VALUES (6,1,'weewewq',11,0,1.3815037962693,'2017-06-26 07:26:38',NULL,'transport'),(7,1,'sdasdada',0,0,0,'2017-06-26 07:26:43',NULL,'transport');
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,7 +203,7 @@ CREATE TABLE `user` (
   `email_id` varchar(128) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,7 +212,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com','Hello my name is pranav.It is my dream to create the greatest company in the world which benifits my country and the human race in total.\r\n\r\nMY second dream is to join the bjp and the rss.'),(2,'pkoqwwkdl','lwldwkl','hey','1234','ranav@GMAIL,COM',''),(3,'someone','ghhgjhj','wtf','1234','hjhjhj',''),(6,'Vishal','Maurya','vishal','1234','vishalmry@gmail.com',''),(7,'dass','sadsdaads','hello','1234','dasdsads',' dsadsasdasdsda'),(8,'frustated','admi','admi','1234','hello@gmail.comm',' i am fucked up');
+INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com','Hello my name is pranav.It is my dream to create the greatest company in the world which benifits my country and the human race in total.\r\n\r\nMY second dream is to join the bjp and the rss.'),(2,'pkoqwwkdl','lwldwkl','hey','1234','ranav@GMAIL,COM',''),(3,'someone','ghhgjhj','wtf','1234','hjhjhj',''),(6,'Vishal','Maurya','vishal','1234','vishalmry@gmail.com',''),(7,'dass','sadsdaads','hello','1234','dasdsads',' dsadsasdasdsda'),(8,'frustated','admi','admi','1234','hello@gmail.comm',' i am fucked up'),(9,'sahaj','k','sahaj','1234','sahaj@g.com',' ');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -225,4 +225,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-26 16:51:48
+-- Dump completed on 2017-06-26 17:16:41
