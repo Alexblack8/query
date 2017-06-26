@@ -15,7 +15,7 @@ include 'connectuser.php';
              {
                   $row=mysqli_fetch_array($result);
                   $_SESSION['user_id']=$row[0];//initialising the session's variable
-                  header("http://localhost/webproject/sign-up-login-form/homepage.php");
+                  header("Location:http://localhost/webproject/sign-up-login-form/homepage.php");
                   //####this is a temporary redirect.This is will be changed to the homepage.
 
              }

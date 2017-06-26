@@ -6,11 +6,13 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	<style>
-		#navigation-bar {/*
+		#navigation-bar {
+			border-top: 3px solid #a33939;
+			box-shadow: 0 2px 1px #eee;
+		/*
 			height: 60px;
 			padding-top: 5px;
 		*/}
-
 		.btn {
 			border-radius: 0 !important;
 		}
@@ -25,36 +27,32 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a  class="navbar-brand" >QUERY!!</a>
+					<a href="#" class="navbar-brand" >QUERY!!</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="nav-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="http://localhost/webproject/sign-up-login-form/homepage.php" ><span class="glyphicon glyphicon-home"></span></a></li>
+						<li class="active"><a href="homepage.php" ><span class="glyphicon glyphicon-home"></span></a></li>
 						<li><a href="notification.php" style="font-size: 20px;">Notifications</a></li>
 						<li><a href="questions.php" style="font-size: 20px;" >Questions</a></li>
 						<li><a href="feedbacks.php" style="font-size: 20px;"  >Feedback</a></li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<?php session_start(); echo "user_profile.php?userId=".$_SESSION['user_id']; ?>">View Profile</a></li>
-                  <li><a href="ask_question.php">Ask A Question</a></li>              
-                </ul>
-              </li>						
-					</ul>	
+						
+                <a href="<?php session_start(); echo "user_profile.php?userId=".$_SESSION['user_id']; ?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
+                	</ul>	
 
-					<form action="" class="navbar-form navbar-right" role="search">
+					<form action="logout.php" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-						<button type="button" class="btn btn-info btn-md"><strong>Log Out</strong></button>
+						<button type="submit" id='logout' class="btn btn-info btn-md"><strong>Log Out</strong></button>
 					</form>
 				</div>
 			</div>	
 		</nav>
-
+       
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'nav_bar.php';
 include 'function.php';
 include 'connectuser.php';
 ?>  
@@ -18,6 +18,11 @@ include 'connectuser.php';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
 
     <script type="text/javascript" src="ask_question.js"></script>
+    <style>
+      html {
+        margin-top: 50px;
+      }
+    </style>
   </head>
   <body>
 

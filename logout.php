@@ -1,4 +1,4 @@
 <?php
 session_destroy();
-header("http://localhost/webproject/sign-up-login-form/register.php");
+header("Location:http://localhost/webproject/sign-up-login-form/register.php");
 ?>

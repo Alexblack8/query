@@ -1,6 +1,10 @@
 <?php
 session_start();
+
 include 'notification.php';
+include 'nav_bar.php';
+	
+
 include 'connectuser.php';
 $tag_id=$_GET['tag_id'];
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
@@ -11,9 +15,18 @@ $category=array('question','reply','question','feedback');
 		<!-- required bootstrap framework -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-	    <title>< Questions!!</title>
+	    <title>Questions!!</title>
 	    <link href="question_display.css" rel="stylesheet">
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="like_unlike.js" type="text/javascript"></script>
+	    <script src="like_unlike_reply.js" type="text/javascript"></script>
+	    <style>
+			html {
+				margin-top: 50px;
+			}
+	    </style>
 	</head>
+
 	<body>
 		<!-- header and heading -->
 		<div id="jumbotron">

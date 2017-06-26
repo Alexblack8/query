@@ -3,6 +3,7 @@ session_start();
 
 include 'connectuser.php';
 include 'notification.php';
+include 'nav_bar.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 $category=array('reply','question','feedback');
 ?>

@@ -1,6 +1,6 @@
 <?php
 	include 'connectuser.php';
-
+	include 'nav_bar.php';
 	$get_user_id = $_GET['userId'];
 	// getting user's data
 	$user_query = 'SELECT * FROM user WHERE user_id='.$get_user_id;
@@ -15,6 +15,9 @@
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<link rel="stylesheet" href="question_display.css">
 		<style>
+			html {
+				margin-top: 50px;
+			}
 			h1 {
 				border-bottom: 5px solid #8c1919;
 			}
