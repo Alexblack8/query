@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'function.php';
+
 include 'connectuser.php';
 include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
