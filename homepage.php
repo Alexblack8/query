@@ -196,7 +196,7 @@ session_start();
 
 										<h3>Notifications</h3>
 									</div>
-										<a href="notification.php">
+										<a href="notification_homepage.php">
 											<figcaption>
 												<h3>Latest Notifications</h3>
 												<span>IIT INDORE<br>

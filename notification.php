@@ -18,7 +18,7 @@ function send_notification_like($sender_id,$receiver_id,$category,$ref_id)
 /*$query="INSERT INTO notifications (sender_id,receiver_id,category)
                       VALUES ('$my_id','$row[1]','$category[1]')";
                       mysqli_query($conn,$query);*/
-function print_notification_like()
+function print_notification()
 {
     include 'connectuser.php';
   $my_id=$_SESSION['user_id'];
@@ -74,5 +74,5 @@ function print_notification_like()
 }
 }
 }
-print_notification_like();
+
 ?>
