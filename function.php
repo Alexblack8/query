@@ -139,6 +139,7 @@ function store_score_replies()
   while($row=mysqli_fetch_array($result))
   {
       $score=get_score($row[6],$row[3],$row[4]);
+      
       $query2 = "UPDATE question SET score='$score' WHERE question_id = '$row[0]' ";
       if(!mysqli_query($conn,$query2))
       {

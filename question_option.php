@@ -28,17 +28,28 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
 						<p class="helpblock">Categories:<hr></p>
 						<ul class="panel">
+<<<<<<< HEAD
+						    	
+							<li><a href="question_option.php?tag_id=1">Mess</a></li>
+							<li><a href="question_option.php?tag_id=2">Transport</a></li>
+							<li><a href="question_option.php?tag_id=3">Medical</a></li>
+							<li><a href="question_option.php?tag_id=4">Academics</a></li>
+							<li><a href="question_option.php?tag_id=5">Sports</a></li>
+							<li><a href="question_option.php?tag_id=6">Others</a></li>
+=======
 							<li><a href="">Mess</a></li>
 							<li><a href="">Transport</a></li>
 							<li><a href="">Medical</a></li>
 							<li><a>Academics</a></li>
 							<li><a>Sports</a></li>
 							<li><a>Others</a></li>
+>>>>>>> fc0e0c2043cce101e5a4d0c1993d61642c6a1015
 						</ul>
 						<br>
 						 <br>
 						<br>
 				</div>
+
 
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
