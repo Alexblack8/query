@@ -1,4 +1,4 @@
 <?php
 include 'notification.php';
-print_notification()
+print_notification();
 ?>
