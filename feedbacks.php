@@ -14,19 +14,18 @@ $category=array('reply','question','feedback');
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	    <title>Feedbacks!!</title>
 	    <link href="question_display.css" rel="stylesheet">
+	    <style>
+			html {
+				margin-top: 50px;
+			}
+	    </style>
 	</head>
 	<body>
-		<!-- header and heading -->
-		<div id="jumbotron">
-			<div class="container">
-				</span><h1 id="header_heading"><span class="glyphicon glyphicon-apple" id="logo"></span>Some Of The Valuables...</h1></span>
-			</div>
-		</div>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
 					<br><br>
+
 						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
 						<p class="helpblock">Categories:<hr></p>
 						<ul class="panel">
@@ -37,6 +36,7 @@ $category=array('reply','question','feedback');
 							<li><a href="feedback_option.php?tag_id=4">Academics</a></li>
 							<li><a href="feedback_option.php?tag_id=5">Sports</a></li>
 							<li><a href="feedback_option.php?tag_id=6">Others</a></li>
+
 						</ul>
 						<br>
 						 <br>

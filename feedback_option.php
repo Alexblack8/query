@@ -28,12 +28,14 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 						<h3 class="text-info">feeds...<hr></h3> 
 						<p class="helpblock">Categories:<hr></p>
 						<ul class="panel">
+
 							<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
-							<li><a href="feedback_option.php?tag_id=2">Transport</a></li>
-							<li><a href="feedback_option.php?tag_id=3">Medical</a></li>
-							<li><a href="feedback_option.php?tag_id=4">Academics</a></li>
-							<li><a href="feedback_option.php?tag_id=5">Sports</a></li>
-							<li><a href="feedback_option.php?tag_id=6">Others</a></li>
+							<li><a href="question_option.php?tag_id=1">Transport</a></li>
+							<li><a href="question_option.php?tag_id=1">Medical</a></li>
+							<li><a href="question_option.php?tag_id=1">Academics</a></li>
+							<li><a href="question_option.php?tag_id=1">Sports</a></li>
+							<li><a href="question_option.php?tag_id=1">Others</a></li>
+
 						</ul>
 						<br>
 						 <br>
@@ -42,6 +44,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
+
 				      $counter=$tag_id-1;
 				      ?>
 				      <h1><?php echo $tags[$counter];?></h1>
@@ -49,6 +52,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 				       	$query="SELECT * FROM feedback 
                          WHERE tags='$tags[$counter]'
 						 ORDER BY reg_time DESC
+
 						 ";
 				         $result=mysqli_query($conn,$query);
 				    	

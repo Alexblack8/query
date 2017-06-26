@@ -28,12 +28,6 @@ $category=array('question','reply','question','feedback');
 	</head>
 
 	<body>
-		<!-- header and heading -->
-		<div id="jumbotron">
-			<div class="container">
-				</span><h1 id="header_heading"><span class="glyphicon glyphicon-apple" id="logo"></span>Some Of The Valuables...</h1></span>
-			</div>
-		</div>
 
 		<div class="container">
 			<div class="row">
@@ -42,13 +36,16 @@ $category=array('question','reply','question','feedback');
 						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
 						<p class="helpblock">Categories:<hr></p>
 						<ul class="panel">
+
+
 						    	
 							<li><a href="question_option.php?tag_id=1">Mess</a></li>
 							<li><a href="question_option.php?tag_id=2">Transport</a></li>
-							<li><a href="question_option.php?tag_id=3">Academics</a></li>
-							<li><a href="question_option.php?tag_id=4">Sports</a></li>
-							<li><a href="question_option.php?tag_id=5">Medical</a></li>
+							<li><a href="question_option.php?tag_id=3">Medical</a></li>
+							<li><a href="question_option.php?tag_id=4">Academics</a></li>
+							<li><a href="question_option.php?tag_id=5">Sports</a></li>
 							<li><a href="question_option.php?tag_id=6">Others</a></li>
+
 						</ul>
 						<br>
 						 <br>

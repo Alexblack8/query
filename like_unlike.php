@@ -18,7 +18,9 @@
 	if($count_like == 0) {
 		$insertQuery = "INSERT INTO like_unlike(user_id,question_id,type) VALUES('$user_id','$question_id','$type')";
 		mysqli_query($conn,$insertQuery);
+
 		send_notification_like($my_id,$user_id,"question",$question_id);
+
 
 	}
 	else{

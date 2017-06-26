@@ -25,8 +25,13 @@
 	$result = mysqli_query($conn,$query);
 	$fetchlikes = mysqli_fetch_array($result);
 	$total_likes = $fetchlikes['cntLike'];
+
+
+
+
     $query2 = "UPDATE replies SET upvotes='$total_likes' WHERE reply_id = '$reply_id' ";
     mysqli_query($conn,$query2);
+
 
 	$query = "SELECT COUNT(*) AS cntUnlike FROM like_unlike_reply WHERE type=0 and reply_id=".$reply_id;
 	$result = mysqli_query($conn,$query);
@@ -36,6 +41,6 @@
     mysqli_query($conn,$query2);
 	//returning the data
 	$return_data = array("likes"=>$total_likes,"dislikes"=>$total_dislikes,"reply_id"=>$reply_id);
-	
+
 	echo json_encode($return_data);
 ?>
