@@ -1,10 +1,10 @@
 <?php
 session_start();
-include 'function.php';
+
 include 'connectuser.php';
 include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
-$category=array('reply','question','feedback');
+$category=array('question','reply','question','feedback');
 ?>
 <html>
 	<head>
@@ -36,18 +36,22 @@ $category=array('reply','question','feedback');
 				    store_score_question();
 				   for($i=1;$i<=6;$i++)
 				    {
+				    	$counter=$tags[$i-1];
 				    	$query="SELECT * FROM question 
-                         WHERE tags='$i'
+                         WHERE tags='$counter'
 						 ORDER BY score DESC
 						 LIMIT 0,4
 						 ";
 				         $result=mysqli_query($conn,$query);
-				    	
+				          ?>
+				    	<h1><?php echo "<a href='question_option.php?tag_id=". 
+						    $i."'>".$tags[$i-1]."</a>";?></h1>
+						   
+						    <?php
 				    while($row=mysqli_fetch_array($result))
 					{
 						?>
-                          <h1><?php echo "<a href='feedback_option.php?tag_id=". 
-						    $row[8]."'>".$tags[$i-1]."</a>";?></h1>
+                          
 						         <hr id="hr_top">
 					   			<div id="card">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
@@ -108,11 +112,30 @@ $category=array('reply','question','feedback');
 							       	ORDER BY score DESC LIMIT 0,4";
 							       	$result2=mysqli_query($conn,$query2);
 							       	echo "Replies";
+
 							       	while($row2=mysqli_fetch_array($result2))
 							       	{
                                          $user_id=$row2[2];
                                          $username=get_user2($user_id);
                                          $get_user_id2 = $row2['user_id'];
+
+
+                                         //counting total number of likes
+										$like_query = "SELECT COUNT(*) AS cntLikes FROM like_unlike_reply WHERE type=1 and reply_id=".$row2[0];
+					                    $like_result = mysqli_query($conn,$like_query);
+					                    $like_row = mysqli_fetch_array($like_result);
+					                    $total_likes1 = $like_row['cntLikes'];
+										
+										//counting total number of dislikes
+					                    $unlike_query = "SELECT COUNT(*) AS cntUnlikes FROM like_unlike_reply WHERE type=0 and reply_id=".$row2[0];
+					                    $unlike_result = mysqli_query($conn,$unlike_query);
+					                    $unlike_row = mysqli_fetch_array($unlike_result);
+					                    $total_dislikes1 = $unlike_row['cntUnlikes'];
+
+
+
+
+
                                          ?>
                                          
                                         	<h3><strong>
@@ -130,8 +153,13 @@ $category=array('reply','question','feedback');
 
 								       		<button type="button" class="btn btn-link reply_dislike" id="replyDislike-<?php echo $row2['reply_id']."-".$_SESSION['user_id'];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
+<<<<<<< HEAD
 								       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $row2[4];?></label><br/>
 								       		<label id="label-dislike-<?php echo $row2['reply_id'];?>">DisLikes:  <?php echo $row2[5];?></label><br/>
+=======
+								       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $total_likes1;?></label><br/>
+								       		<label id="label-dislike-<?php echo $row2['reply_id'];?>">DisLikes:  <?php echo $total_dislikes1;?></label><br/>
+>>>>>>> 2c7acaacdfa605cf689696dde30878bc9f00f38f
 								       		
 								       		</form>
 								   	        <?php  

@@ -1,5 +1,7 @@
 <!-- Designed By: Pranav & Vishal -->
-
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -8,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- cards -->
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		
 		<script src="assets/js/modernizr.custom.js"></script>
 		<!-- login form -->
 		<link rel="stylesheet" type="text/css" href="login/css/normalize.css" />	
@@ -38,9 +40,10 @@
 		<!-- Main -->
 			<div id="main">
 				
-  <!-- <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   -->
-  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+   <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
 <style>
+
   a {
   color: white;
   text-decoration: none;
@@ -140,16 +143,13 @@
 .cards li
 {
       display: inline-block;
-      width: 33%;
+
+      
 
 }
 .columns
 {
-  text-align:center; 
-}
-.cardholder
-{
-
+  text-align:center;
   
 }
 
@@ -166,16 +166,18 @@
 </nav>				<div class="inner">
 					<div class="columns">
 						<ul class="grid cs-style-1 cardholder">
-							
+						
+						<div>	
 
-							<li>
-								<figure class="cards">
+							<li style="margin-right: 60px; padding: 10px;
+							display: inline-block background:blue;">
+								<figure>
 									<div class="front-big"><br><br><br><br><br><br>
 										<center><img style="height:50px;width:50px;" src="images/question.png"></center>
 
 										<h3>Questions</h3>
 									</div>
-										<a href="pages/tech-clubs.php">
+										<a href="questions.php">
 											<figcaption>
 												<h3>Ask questions to the student community of iit indore</h3>
 												<span>IIT INDORE<br>
@@ -186,6 +188,24 @@
 								</figure>
 							</li>
 
+                          <li style="margin-right: 60px; padding: 10px;
+							display: inline-block;">
+								<figure>
+									<div class="front-big"><br><br><br><br><br><br>
+										<center><img style="height:50px;width:50px;" src="images/notification.png"></center>
+
+										<h3>Notifications</h3>
+									</div>
+										<a href="notification.php">
+											<figcaption>
+												<h3>Latest Notifications</h3>
+												<span>IIT INDORE<br>
+													........<br>
+												 	<span style="color : #ffffff;">Click to check notifications</span>
+											</figcaption>
+										</a>
+								</figure>
+							</li>
 							
 							<li>
 								<figure class="cards">
@@ -193,7 +213,7 @@
 										<center><img style="height:65px;width:50px;" src="images/deathnote.png"></center>
 										<h3> Feedbacks</h3>
 									</div>
-										<a href="pages/office.php">
+										<a href="feedbacks.php">
 											<figcaption>
 												<h3>Post feedbacks regarding <br/>
 												Mess<br/>
@@ -206,14 +226,15 @@
 										</a>
 								</figure>
 							</li>
-							<li>
+							
+							<li style="float: left;">
 								<figure class="cards">
 									<div class="front-small">
 										<br><br>
 										<center><img style="height:100px;width:75px;" src="/var/www/html/webproject/sign-up-login-form/images"></center>
 										<h3>Profile</h3>
 									</div>
-										<a href="pages/news.php">
+										<a href="user_profile.php?userId=<?php echo $_SESSION['user_id'];?>">
 											<figcaption>
 												<h3>Visit your Profile<br></h3>
 												<span>See the questions and feedbacks<br/>
@@ -226,7 +247,7 @@
 							</li>
 							
 							
-							
+							</div>
 							
 							
 
@@ -253,21 +274,19 @@
 		width: 260px;
 	}
 }
-
 </style>
 			<footer id="footer">
 				<a href="#" class="info fa fa-info-circle"><span>About</span></a>
 				<div class="inner">
 					<div class="content">
 						<center><div id="header_logo"><img  src="http://iiti.ac.in/images/logo.png" width="440px"></div>
-						<strong><h3>Student Gymkhana, IIT Indore</h3></strong></center>
+						</center>
 						<!-- <p>Ensuring the welfare of students in and outside the campus.</p> -->
 					
 
 					</div>
 					<!-- login form -->
-							<div class="content_login" id="login_form">
-									<a href="http://people.iiti.ac.in/~studentgym/login/session_var.php" class="open-modal" style="background-color:#fff;text-decoration:none; color:#2c3f52;">Login</a>								</div>
+							
 					<div class="copyright">
 						<h3>Follow Us</h3>
 						<ul class="icons">
@@ -275,8 +294,7 @@
 							<li><a href="https://www.facebook.com/studentgym" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 					
 						</ul>
-						&copy;Designed By : <a href="https://www.linkedin.com/in/suryaveer/" target="_blank">Suryaveer Singh</a> and <a href="https://www.linkedin.com/in/mohtamohit/" target="_blank">Mohit Mohta</a>
-					</div>
+						&copy;Designed By : Pranav Khanna  and 	Vishal Maurya
 				</div>
 			</footer>
 		<!-- Scripts -->

@@ -13,7 +13,7 @@ $(document).ready(function() {
 		else
 			type = 0;
 
-		alert("the text is: "+text+"the user_id is: "+user_id+"the question_id is: "+question_id+"the type is: "+type); 
+		//alert("the text is: "+text+"the user_id is: "+user_id+"the question_id is: "+question_id+"the type is: "+type); 
 		// ajax request
 		$.ajax({
 			url: 'like_unlike.php',
@@ -21,7 +21,11 @@ $(document).ready(function() {
 			data: {question_id:question_id,type:type,user_id:user_id},
 			dataType: 'json',
 			success: function(data) {
+<<<<<<< HEAD
 				alert("i am success");
+=======
+				//alert("i am success");
+>>>>>>> 2c7acaacdfa605cf689696dde30878bc9f00f38f
 				var likes = data['likes'];
 				var dislikes = data['dislikes'];
 				$("#showL"+question_id).html(likes);
