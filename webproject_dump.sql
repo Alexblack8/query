@@ -41,7 +41,7 @@ CREATE TABLE `feedback` (
 
 LOCK TABLES `feedback` WRITE;
 /*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
-INSERT INTO `feedback` VALUES (1,1,'hellos',4,NULL,NULL,2,'2017-06-20 15:10:23');
+INSERT INTO `feedback` VALUES (1,1,'hellos',7,3,NULL,2,'2017-06-20 15:10:23');
 /*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,11 +55,10 @@ DROP TABLE IF EXISTS `like_unlike`;
 CREATE TABLE `like_unlike` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
-  `reply_id` int(11) DEFAULT NULL,
   `question_id` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,8 +67,34 @@ CREATE TABLE `like_unlike` (
 
 LOCK TABLES `like_unlike` WRITE;
 /*!40000 ALTER TABLE `like_unlike` DISABLE KEYS */;
-INSERT INTO `like_unlike` VALUES (1,3,NULL,5,1),(2,6,NULL,5,1),(3,3,NULL,1,1),(4,7,NULL,5,1),(5,1,NULL,5,1);
+INSERT INTO `like_unlike` VALUES (1,3,5,0),(2,6,5,1),(3,3,1,1),(4,7,5,1),(5,1,5,1),(6,1,1,1),(7,8,5,0),(8,8,1,1),(9,9,6,1),(10,9,7,0);
 /*!40000 ALTER TABLE `like_unlike` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `like_unlike_reply`
+--
+
+DROP TABLE IF EXISTS `like_unlike_reply`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `like_unlike_reply` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `reply_id` int(11) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `like_unlike_reply`
+--
+
+LOCK TABLES `like_unlike_reply` WRITE;
+/*!40000 ALTER TABLE `like_unlike_reply` DISABLE KEYS */;
+INSERT INTO `like_unlike_reply` VALUES (1,8,1,1),(2,8,4,1),(3,8,2,1),(4,8,3,1),(5,9,7,0),(6,9,5,0),(7,9,6,1);
+/*!40000 ALTER TABLE `like_unlike_reply` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -88,7 +113,7 @@ CREATE TABLE `notificationlike` (
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `ref_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +122,7 @@ CREATE TABLE `notificationlike` (
 
 LOCK TABLES `notificationlike` WRITE;
 /*!40000 ALTER TABLE `notificationlike` DISABLE KEYS */;
-INSERT INTO `notificationlike` VALUES (1,1,3,1,'1','2017-06-24 08:48:11',0),(2,1,3,1,'1','2017-06-24 08:48:11',0),(3,1,3,1,'question','2017-06-24 08:48:11',0),(4,1,1,1,'question','2017-06-24 08:48:11',0),(33,1,1,1,'like','2017-06-24 08:48:11',0),(34,1,1,1,'question','2017-06-24 09:43:08',2),(35,1,1,1,'question','2017-06-24 09:43:30',2),(36,1,1,1,'question','2017-06-24 09:43:56',2),(37,1,1,1,'','2017-06-24 09:48:07',1),(38,1,1,1,'reply','2017-06-24 09:48:30',1),(39,1,1,1,'feedback','2017-06-24 09:48:48',1),(40,1,1,1,'reply','2017-06-25 09:31:08',5),(41,1,1,1,'reply','2017-06-25 09:31:28',5),(42,1,1,1,'reply','2017-06-25 09:31:41',5),(43,1,1,1,'reply','2017-06-25 09:32:22',5),(44,1,1,1,'reply','2017-06-25 09:34:00',5),(45,1,1,1,'reply','2017-06-25 09:34:07',5),(46,1,1,1,'reply','2017-06-25 09:34:50',1),(47,1,1,1,'reply','2017-06-25 11:16:31',3);
+INSERT INTO `notificationlike` VALUES (3,1,1,0,'reply','2017-06-26 10:05:07',0),(4,1,1,0,'reply','2017-06-26 10:05:10',0),(33,1,1,1,'like','2017-06-26 10:39:56',0),(34,1,1,0,'question','2017-06-26 10:23:10',2),(35,1,1,0,'question','2017-06-26 10:23:35',2),(36,1,1,0,'question','2017-06-26 10:24:17',6),(37,1,1,0,'','2017-06-26 09:56:33',1),(38,1,1,0,'reply','2017-06-26 09:56:33',1),(39,1,1,0,'feedback','2017-06-26 09:56:33',1),(40,1,1,0,'reply','2017-06-26 09:56:33',5),(41,1,1,0,'reply','2017-06-26 09:56:33',5),(42,1,1,0,'reply','2017-06-26 09:56:33',5),(43,1,1,0,'reply','2017-06-26 09:56:33',5),(44,1,1,0,'reply','2017-06-26 09:56:33',5),(45,1,1,0,'reply','2017-06-26 09:56:33',5),(46,1,1,0,'reply','2017-06-26 09:56:33',1),(47,1,1,0,'reply','2017-06-26 09:56:33',3),(48,1,3,1,'reply','2017-06-25 15:31:28',5),(49,1,1,0,'reply','2017-06-26 09:56:33',1),(50,1,1,0,'reply','2017-06-26 09:56:33',1),(51,1,3,1,'reply','2017-06-25 15:35:05',5),(52,1,1,0,'reply','2017-06-26 09:56:33',1),(53,1,1,0,'reply','2017-06-26 09:56:33',1),(54,1,1,0,'reply','2017-06-26 09:56:33',5),(55,1,1,0,'reply','2017-06-26 09:56:33',6),(56,1,1,0,'reply','2017-06-26 09:56:33',6),(57,2,1,0,'reply','2017-06-26 09:56:33',6);
 /*!40000 ALTER TABLE `notificationlike` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,9 +142,9 @@ CREATE TABLE `question` (
   `score` double NOT NULL,
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `question_heading` text,
-  `tags` int(2) NOT NULL,
+  `tags` varchar(128) NOT NULL,
   PRIMARY KEY (`question_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +153,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT INTO `question` VALUES (1,1,'this is question no 1',10,29,-8.0725130657138,'2017-06-20 15:09:52','Question 1',4),(2,1,'this is question no 2',7,4,9.8283879213863,'2017-06-20 15:09:52','Question 2',0),(3,1,'this is question no 3',53,26,10.782630430826,'2017-06-20 15:09:52','Question 3',0),(4,3,'this is 4',13,8,10.050236671003,'2017-06-20 15:09:52','Question 4',0),(5,3,'this is questiion no 5',36,46,-8.3512666666667,'2017-06-20 15:09:52','Question 5',2);
+INSERT INTO `question` VALUES (6,1,'weewewq',11,0,1.3815037962693,'2017-06-26 07:26:38',NULL,'transport'),(7,1,'sdasdada',0,0,0,'2017-06-26 07:26:43',NULL,'transport');
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +174,7 @@ CREATE TABLE `replies` (
   `score` double DEFAULT NULL,
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`reply_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +183,7 @@ CREATE TABLE `replies` (
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
-INSERT INTO `replies` VALUES (1,5,1,'dsaadssddsasdadsadsa',16,6,10.4334,'2017-06-20 14:08:18'),(2,5,1,'saddsadsdsa',39,NULL,10.968664607026,'2017-06-20 14:50:09'),(3,5,1,'saddsadsdsa',3,NULL,9.8542990324974,'2017-06-20 14:50:28'),(4,5,1,'ddasdasasads',9,NULL,10.119731398328,'2017-06-20 17:29:14'),(5,5,1,'ddasdasasads',3,NULL,9.6408101436086,'2017-06-20 17:30:36'),(6,5,1,'ddasdasasads',3,NULL,9.6407434769419,'2017-06-20 17:30:39'),(7,5,1,'sdsaddddddddddddd',NULL,NULL,0,'2017-06-23 14:36:36'),(8,4,1,'pranav',11,NULL,4.6766815740471,'2017-06-23 14:36:54'),(9,4,1,'pranav',NULL,NULL,0,'2017-06-23 14:37:08'),(10,5,1,'sasdssdasaddsa',NULL,NULL,0,'2017-06-24 06:37:03'),(11,5,1,'sasdssdasaddsa',NULL,NULL,0,'2017-06-24 06:37:20'),(12,1,1,'sasdasdadds',11,NULL,3.3799260184916,'2017-06-24 06:49:28'),(13,1,1,'sasdasdadds',NULL,NULL,0,'2017-06-24 06:52:31'),(14,1,1,'sasdasdadds',1,NULL,2.3324222222222,'2017-06-24 06:54:03'),(15,1,1,'sasdasdadds',NULL,NULL,0,'2017-06-24 06:54:24'),(16,1,1,'sasdasdadds',NULL,NULL,0,'2017-06-24 06:57:45'),(17,1,1,'sasdasdadds',NULL,NULL,0,'2017-06-24 06:57:50'),(18,1,1,'sasdasdadds',NULL,NULL,0,'2017-06-24 06:58:03'),(19,1,1,'sasdasdadds',NULL,NULL,0,'2017-06-24 07:01:23'),(20,1,1,'sasdasdadds',NULL,NULL,0,'2017-06-24 07:02:26'),(21,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:03:13'),(22,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:07:28'),(23,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:09:15'),(24,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:09:31'),(26,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:18:41'),(27,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:28:10'),(28,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:28:21'),(29,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:28:53'),(30,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:29:36'),(31,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:30:05'),(32,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:32:22'),(33,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:33:01'),(34,5,1,'sadsdasads',NULL,NULL,0,'2017-06-24 07:33:08'),(35,5,1,'accddaadsdassa',NULL,NULL,0,'2017-06-24 07:35:01'),(36,5,1,'accddaadsdassa',NULL,NULL,0,'2017-06-24 07:57:41'),(37,5,1,'accddaadsdassa',NULL,NULL,0,'2017-06-24 07:57:54'),(38,5,1,'accddaadsdassa',NULL,NULL,0,'2017-06-24 08:01:18'),(39,5,1,'accddaadsdassa',NULL,NULL,0,'2017-06-24 08:01:50'),(40,5,1,'accddaadsdassa',NULL,NULL,0,'2017-06-24 08:02:31'),(41,5,1,'dsadsadds',NULL,NULL,0,'2017-06-24 08:02:41'),(42,5,1,'dsadsadds',NULL,NULL,0,'2017-06-24 08:03:41'),(43,5,1,'dsadsadds',NULL,NULL,0,'2017-06-24 08:04:49'),(44,5,1,'asddadsadsdss',NULL,NULL,0,'2017-06-25 09:31:08'),(45,5,1,'dsdssdsadsa',NULL,NULL,0,'2017-06-25 09:31:28'),(46,5,1,'dsdssdsadsa',NULL,NULL,0,'2017-06-25 09:31:41'),(47,5,1,'ssdaaadsasa',NULL,NULL,0,'2017-06-25 09:32:22'),(48,5,1,'ssdaaadsasa',NULL,NULL,0,'2017-06-25 09:34:00'),(49,5,1,'saddssddssad',NULL,NULL,0,'2017-06-25 09:34:07'),(50,1,1,'dsadsasdaasdsa',NULL,NULL,0,'2017-06-25 09:34:50');
+INSERT INTO `replies` VALUES (1,5,1,'This is my first reply',NULL,NULL,0,'2017-06-25 15:35:05'),(2,1,1,'thsi is reply for sports section',NULL,NULL,0,'2017-06-25 15:35:24'),(3,1,1,'this is for quest. 1',NULL,NULL,0,'2017-06-25 15:35:37'),(4,5,1,'this is for quest 5',NULL,NULL,0,'2017-06-25 15:35:49'),(5,6,1,'dsasadsadsda',NULL,NULL,0,'2017-06-26 07:35:19'),(6,6,1,'dsasadsadsda',NULL,NULL,0,'2017-06-26 07:35:23'),(7,6,2,'eqwewqeewweeq',NULL,NULL,0,'2017-06-26 09:42:10');
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,7 +203,7 @@ CREATE TABLE `user` (
   `email_id` varchar(128) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -187,7 +212,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com','Hello my name is pranav.It is my dream to create the greatest company in the world which benifits my country and the human race in total.\r\n\r\nMY second dream is to join the bjp and the rss.'),(2,'pkoqwwkdl`','lwldwkl`','hey','1234','ranav@GMAIL,COM',''),(3,'someone','ghhgjhj','wtf','1234','hjhjhj',''),(6,'Vishal','Maurya','vishal','1234','vishalmry@gmail.com',''),(7,'dass','sadsdaads','hello','1234','dasdsads',' dsadsasdasdsda');
+INSERT INTO `user` VALUES (1,'pranav','khanna','pranavk28','1234','1234@gmail.com','Hello my name is pranav.It is my dream to create the greatest company in the world which benifits my country and the human race in total.\r\n\r\nMY second dream is to join the bjp and the rss.'),(2,'pkoqwwkdl','lwldwkl','hey','1234','ranav@GMAIL,COM',''),(3,'someone','ghhgjhj','wtf','1234','hjhjhj',''),(6,'Vishal','Maurya','vishal','1234','vishalmry@gmail.com',''),(7,'dass','sadsdaads','hello','1234','dasdsads',' dsadsasdasdsda'),(8,'frustated','admi','admi','1234','hello@gmail.comm',' i am fucked up'),(9,'sahaj','k','sahaj','1234','sahaj@g.com',' ');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -200,4 +225,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-25 17:45:37
+-- Dump completed on 2017-06-26 17:16:41

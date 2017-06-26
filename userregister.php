@@ -19,7 +19,10 @@ $result=mysqli_query($conn,$query1);
 	//insert data in database
 	$query2="INSERT INTO user (first_name,last_name,user_name,password,email_id,description)
    	 	VALUES ('$first','$last','$username','$password','$email','$description')";
-	$result=mysqli_query($conn,$query2);
+	if(mysqli_query($conn,$query2))
+	{
+		header("http://localhost/webproject/sign-up-login-form/register.php");
+	}
 }
 
 

@@ -24,15 +24,28 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-					<h3 class="text-danger"> This is for the side content....Below is a sample content </h3>
+					<br><br>
+						<h3 class="text-info">feeds...<hr></h3> 
+						<p class="helpblock">Categories:<hr></p>
+						<ul class="panel">
+							<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
+							<li><a href="question_option.php?tag_id=1">Transport</a></li>
+							<li><a href="question_option.php?tag_id=1">Medical</a></li>
+							<li><a href="question_option.php?tag_id=1">Academics</a></li>
+							<li><a href="question_option.php?tag_id=1">Sports</a></li>
+							<li><a href="question_option.php?tag_id=1">Others</a></li>
+						</ul>
+						<br>
+						 <br>
+						<br>
 				</div>
 
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
 				    store_score_question();
-				    
+				    $counter=$tag_id-1;
 				       	$query="SELECT * FROM feedback 
-                         WHERE tags='$tag_id'
+                         WHERE tags='$tags[$counter]
 						 ORDER BY score DESC
 						 ";
 				         $result=mysqli_query($conn,$query);

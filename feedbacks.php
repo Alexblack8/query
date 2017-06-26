@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'function.php';
+
 include 'connectuser.php';
 include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
@@ -25,8 +25,23 @@ $category=array('reply','question','feedback');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-					<h3 class="text-danger"> This is for the side content....Below is a sample content </h3>
+					<br><br>
+						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
+						<p class="helpblock">Categories:<hr></p>
+						<ul class="panel">
+						    <li><a href="questions.php">All feedbacks</a></li>
+							<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
+							<li><a href="feedback_option.php?tag_id=2">Transport</a></li>
+							<li><a href="feedback_option.php?tag_id=3">Medical</a></li>
+							<li><a href="feedback_option.php?tag_id=4">Academics</a></li>
+							<li><a href="feedback_option.php?tag_id=5">Sports</a></li>
+							<li><a href="feedback_option.php?tag_id=6">Others</a></li>
+						</ul>
+						<br>
+						 <br>
+						<br>
 				</div>
+
 
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
@@ -36,7 +51,7 @@ $category=array('reply','question','feedback');
 				    {
 				    	$query="SELECT * FROM feedback 
                          WHERE tags='$i'
-						 ORDER BY score DESC
+						 ORDER BY reg_time DESC
 						 ";
 				         $result=mysqli_query($conn,$query);
 				    	
@@ -56,13 +71,7 @@ $category=array('reply','question','feedback');
 									<p>
 						   			<blockquote><?php echo $row[2];?></blockquote>
 									</p>
-							       	<form 	method="post" >
-										<div class="form-group">						
-								       		<button type="submit" class="btn btn-link" name="like-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>	
-
-								       		<button type="submit" class="btn btn-link" name="dislike-<?php echo $row[0];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>
-							   			</div>
-							       	</form>
+							       	
     							</div>					
 					   		</div>
                          </div>

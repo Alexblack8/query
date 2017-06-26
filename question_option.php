@@ -24,24 +24,44 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-					<h3 class="text-danger"> This is for the side content....Below is a sample content </h3>
+					<br><br>
+						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
+						<p class="helpblock">Categories:<hr></p>
+						<ul class="panel">
+						    	
+							<li><a href="question_option.php?tag_id=1">Mess</a></li>
+							<li><a href="question_option.php?tag_id=2">Transport</a></li>
+							<li><a href="question_option.php?tag_id=3">Medical</a></li>
+							<li><a href="question_option.php?tag_id=4">Academics</a></li>
+							<li><a href="question_option.php?tag_id=5">Sports</a></li>
+							<li><a href="question_option.php?tag_id=6">Others</a></li>
+						</ul>
+						<br>
+						 <br>
+						<br>
 				</div>
+
 
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
 				    store_score_question();
 				    
+				    $counter=$tag_id-1;
 				       	$query="SELECT * FROM question 
-                         WHERE tags='$tag_id'
+                         WHERE tags='$tags[$counter]'
 						 ORDER BY score DESC
 						 ";
-				         $result=mysqli_query($conn,$query);
-				    	
+						$result=mysqli_query($conn,$query); 
+						?>
+
+				    	 <h1><?php echo $tags[$tag_id-1];?></h1>
+				    	 <?php
+
 				    	while($row=mysqli_fetch_array($result))
 					{
-						 
+				 
 						?>	
-						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo $tags[$tag_id-1];?></h1>
+						<div class="container-fluid"><hr id="hr_top">								  
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
 						   			
