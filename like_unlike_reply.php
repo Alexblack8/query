@@ -17,7 +17,7 @@
 		mysqli_query($conn,$insertQuery);
 	}
 	else{
-		$updateQuery = "UPDATE like_unlike_reply SET type='$type' WHERE user_id='$user_id' OR reply_id='$reply_id' ";
+		$updateQuery = "UPDATE like_unlike_reply SET type='$type' WHERE user_id='$user_id' AND reply_id='$reply_id' ";
 		mysqli_query($conn,$updateQuery);
 	}
 	//count likes and dislikes
