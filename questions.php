@@ -124,7 +124,7 @@ $category=array('question','reply','question','feedback');
 							       	$quest_id=$row[0];
 							       	store_score_replies();
 							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
-							       	ORDER BY score DESC LIMIT 0,4";
+							       	ORDER BY score DESC ";
 							       	$result2=mysqli_query($conn,$query2);
 							       	echo "Replies";
 

@@ -43,9 +43,9 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
 				    store_score_question();
-				    
+				    $counter=$tag_id-1;
 				       	$query="SELECT * FROM feedback 
-                         WHERE tags='$tag_id'
+                         WHERE tags='$tags[$counter]
 						 ORDER BY score DESC
 						 ";
 				         $result=mysqli_query($conn,$query);

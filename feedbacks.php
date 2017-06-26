@@ -26,20 +26,22 @@ $category=array('reply','question','feedback');
 			<div class="row">
 				<div class="col-md-2">
 					<br><br>
-						<h3 class="text-info">feeds...<hr></h3> 
+						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
 						<p class="helpblock">Categories:<hr></p>
 						<ul class="panel">
-							<li><a href="">Mess</a></li>
-							<li><a href="">Transport</a></li>
-							<li><a href="">Medical</a></li>
-							<li><a>Academics</a></li>
-							<li><a>Sports</a></li>
-							<li><a>Others</a></li>
+						    <li><a href="questions.php">All feedbacks</a></li>
+							<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
+							<li><a href="feedback_option.php?tag_id=2">Transport</a></li>
+							<li><a href="feedback_option.php?tag_id=3">Medical</a></li>
+							<li><a href="feedback_option.php?tag_id=4">Academics</a></li>
+							<li><a href="feedback_option.php?tag_id=5">Sports</a></li>
+							<li><a href="feedback_option.php?tag_id=6">Others</a></li>
 						</ul>
 						<br>
 						 <br>
 						<br>
 				</div>
+
 
 				<div class="col-md-8" bgcolor="#eee">
 				    <?php
