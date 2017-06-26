@@ -153,13 +153,10 @@ $category=array('question','reply','question','feedback');
 
 								       		<button type="button" class="btn btn-link reply_dislike" id="replyDislike-<?php echo $row2['reply_id']."-".$_SESSION['user_id'];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
-<<<<<<< HEAD
-								       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $row2[4];?></label><br/>
-								       		<label id="label-dislike-<?php echo $row2['reply_id'];?>">DisLikes:  <?php echo $row2[5];?></label><br/>
-=======
+
 								       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $total_likes1;?></label><br/>
 								       		<label id="label-dislike-<?php echo $row2['reply_id'];?>">DisLikes:  <?php echo $total_dislikes1;?></label><br/>
->>>>>>> 2c7acaacdfa605cf689696dde30878bc9f00f38f
+
 								       		
 								       		</form>
 								   	        <?php  
