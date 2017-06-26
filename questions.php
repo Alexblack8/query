@@ -174,33 +174,6 @@ $category=array('question','reply','question','feedback');
 								       		
 								       		</form>
 								   	        <?php  
-								   	        $astring1 =  "reply_like_".$row2[0];	
-						                    $astring2 = "reply_dislike_".$row2[0];			
-								   	    	if(isset($_POST[$astring1])) {
-								              $reply_id = $row2[0];
-								              $likess = $row2[4];
-								              $likess++;
-								              $query3 = "UPDATE replies SET upvotes='$likess' WHERE reply_id = '$reply_id' ";
-								            if(!mysqli_query($conn, $query3))
-								            {
-							 		         echo "failed to post";
-							                 }
-							                 else
-							                 {
-							                 	$my_id=$_SESSION['user_id'];
-							                 	$user_id=$row2[2];
-							                 	send_notification_like($my_id,$user_id,$category[0],$reply_id);
-							                 }
-							             }
-						               	if(isset($_POST[$astring2])) 
-						               	{
-						            		  $reply_id = $row2[0];
-						            		$dislikess = $row2[5];
-						               		$dislikess++;
-							            	$query3 = "UPDATE replies SET downvotes='$dislikess' WHERE reply_id = '$reply_id' ";
-						            		if(!mysqli_query($conn, $query3))
-									        echo "failed to post";
-							           }                     
 							       	}
 							       	?>
 									<!-- END REPLY SECTION -->
