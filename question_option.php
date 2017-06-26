@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'nav_bar.php';
 include 'function.php';
 include 'connectuser.php';
 $tag_id=$_GET['tag_id'];
@@ -12,6 +13,11 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	    <title>< Questions!!</title>
 	    <link href="question_display.css" rel="stylesheet">
+	    <style>
+			html {
+				margin-top: 50px;
+			}
+	    </style>
 	</head>
 	<body>
 		<!-- header and heading -->

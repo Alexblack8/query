@@ -30,21 +30,16 @@
 
 				<div class="collapse navbar-collapse" id="nav-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#" ><span class="glyphicon glyphicon-home"></span></a></li>
+						<li class="active"><a href="homepage.php" ><span class="glyphicon glyphicon-home"></span></a></li>
 						<li><a href="notification.php" style="font-size: 20px;">Notifications</a></li>
 						<li><a href="questions.php" style="font-size: 20px;" >Questions</a></li>
 						<li><a href="feedbacks.php" style="font-size: 20px;"  >Feedback</a></li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><span class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<?php session_start(); echo "user_profile.php?userId=".$_SESSION['user_id']; ?>">View Profile</a></li>
-                  <li><a href="ask_question.php">Ask A Question</a></li>              
-                </ul>
-              </li>						
-					</ul>	
+						
+                <a href="<?php session_start(); echo "user_profile.php?userId=".$_SESSION['user_id']; ?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
+                	</ul>	
 
 					<form action="" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
