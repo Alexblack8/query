@@ -29,7 +29,20 @@ $category=array('question','reply','question','feedback');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-					<h3 class="text-danger"> This is for the side content....Below is a sample content </h3>
+					<br><br>
+						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
+						<p class="helpblock">Categories:<hr></p>
+						<ul class="panel">
+							<li><a href="">Mess</a></li>
+							<li><a href="">Transport</a></li>
+							<li><a href="">Medical</a></li>
+							<li><a>Academics</a></li>
+							<li><a>Sports</a></li>
+							<li><a>Others</a></li>
+						</ul>
+						<br>
+						 <br>
+						<br>
 				</div>
 
 				<div class="col-md-8" bgcolor="#eee">
