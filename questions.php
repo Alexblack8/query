@@ -1,10 +1,11 @@
 <?php
 session_start();
-include 'function.php';
+
 include 'connectuser.php';
+
 include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
-$category=array('reply','question','feedback');
+$category=array('question','reply','question','feedback');
 ?>
 <html>
 	<head>
@@ -28,20 +29,7 @@ $category=array('reply','question','feedback');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-					<br><br>
-						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
-						<p class="helpblock">Categories:<hr></p>
-						<ul class="panel">
-							<li><a href="">Mess</a></li>
-							<li><a href="">Transport</a></li>
-							<li><a href="">Medical</a></li>
-							<li><a>Academics</a></li>
-							<li><a>Sports</a></li>
-							<li><a>Others</a></li>
-						</ul>
-						<br>
-						 <br>
-						<br>
+					<h3 class="text-danger"> This is for the side content....Below is a sample content </h3>
 				</div>
 
 				<div class="col-md-8" bgcolor="#eee">
@@ -49,18 +37,22 @@ $category=array('reply','question','feedback');
 				    store_score_question();
 				   for($i=1;$i<=6;$i++)
 				    {
+				    	$counter=$tags[$i-1];
 				    	$query="SELECT * FROM question 
-                         WHERE tags='$i'
+                         WHERE tags='$counter'
 						 ORDER BY score DESC
 						 LIMIT 0,4
 						 ";
 				         $result=mysqli_query($conn,$query);
-				    	
+				          ?>
+				    	<h1><?php echo "<a href='question_option.php?tag_id=". 
+						    $i."'>".$tags[$i-1]."</a>";?></h1>
+						   
+						    <?php
 				    while($row=mysqli_fetch_array($result))
 					{
 						?>
-                          <h1><?php echo "<a href='feedback_option.php?tag_id=". 
-						    $row[8]."'>".$tags[$i-1]."</a>";?></h1>
+                          
 						         <hr id="hr_top">
 					   			<div id="card">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
@@ -162,8 +154,10 @@ $category=array('reply','question','feedback');
 
 								       		<button type="button" class="btn btn-link reply_dislike" id="replyDislike-<?php echo $row2['reply_id']."-".$_SESSION['user_id'];?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
+
 								       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $total_likes1;?></label><br/>
 								       		<label id="label-dislike-<?php echo $row2['reply_id'];?>">DisLikes:  <?php echo $total_dislikes1;?></label><br/>
+
 								       		
 								       		</form>
 								   	        <?php  

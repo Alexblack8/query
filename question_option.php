@@ -31,17 +31,22 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 				    <?php
 				    store_score_question();
 				    
+				    $counter=$tag_id-1;
 				       	$query="SELECT * FROM question 
-                         WHERE tags='$tag_id'
+                         WHERE tags='$tags[$counter]'
 						 ORDER BY score DESC
 						 ";
-				         $result=mysqli_query($conn,$query);
-				    	
+						$result=mysqli_query($conn,$query); 
+						?>
+
+				    	 <h1><?php echo $tags[$tag_id-1];?></h1>
+				    	 <?php
+
 				    	while($row=mysqli_fetch_array($result))
 					{
-						 
+				 
 						?>	
-						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo $tags[$tag_id-1];?></h1>
+						<div class="container-fluid"><hr id="hr_top">								  
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
 						   			

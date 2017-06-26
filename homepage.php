@@ -10,7 +10,7 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- cards -->
-		<link rel="stylesheet" type="text/css" href="component.css" />
+		
 		<script src="assets/js/modernizr.custom.js"></script>
 		<!-- login form -->
 		<link rel="stylesheet" type="text/css" href="login/css/normalize.css" />	
@@ -40,9 +40,10 @@ session_start();
 		<!-- Main -->
 			<div id="main">
 				
-  <!-- <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   -->
-  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+   <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
 <style>
+
   a {
   color: white;
   text-decoration: none;
@@ -142,15 +143,14 @@ session_start();
 .cards li
 {
       display: inline-block;
-      width: 33%;
+
+      
+
 }
 .columns
 {
-  text-align:center; 
-}
-
-* {
-	border: 1px solid black;
+  text-align:center;
+  
 }
 
 </style>
@@ -169,7 +169,8 @@ session_start();
 						
 						<div>	
 
-							<li style="margin-right: 60px; padding: 10px; float: left;">
+							<li style="margin-right: 60px; padding: 10px;
+							display: inline-block background:blue;">
 								<figure>
 									<div class="front-big"><br><br><br><br><br><br>
 										<center><img style="height:50px;width:50px;" src="images/question.png"></center>
@@ -187,6 +188,24 @@ session_start();
 								</figure>
 							</li>
 
+                          <li style="margin-right: 60px; padding: 10px;
+							display: inline-block;">
+								<figure>
+									<div class="front-big"><br><br><br><br><br><br>
+										<center><img style="height:50px;width:50px;" src="images/notification.png"></center>
+
+										<h3>Notifications</h3>
+									</div>
+										<a href="notification_homepage.php">
+											<figcaption>
+												<h3>Latest Notifications</h3>
+												<span>IIT INDORE<br>
+													........<br>
+												 	<span style="color : #ffffff;">Click to check notifications</span>
+											</figcaption>
+										</a>
+								</figure>
+							</li>
 							
 							<li>
 								<figure class="cards">

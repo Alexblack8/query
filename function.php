@@ -1,7 +1,7 @@
 
 
 <?php
-
+session_start();
 function isloggedin()//to check whether the user is logged in or not
 {
 
