@@ -1,308 +1,91 @@
-<!-- Designed By: Pranav & Vishal -->
 <?php
 session_start();
+include 'nav_bar.php';
 ?>
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Student Gymkhana, IIT Indore</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- cards -->
-		
-		<script src="assets/js/modernizr.custom.js"></script>
-		<!-- login form -->
-		<link rel="stylesheet" type="text/css" href="login/css/normalize.css" />	
-		<link rel="stylesheet" type="text/css" href="login/css/modal.css" />
-		<script src="login/js/TweenMax.min.js"></script>
-		<script src="login/js/jquery.min.js"></script>
-		<!-- /// -->
-
-	</head>
-	<body>
-
-
-		<!-- Header -->
-			<header id="header" class="preview">
-				<div class="inner">
-					<div class="content" >
-						<h1>Student Gymkhana</h1>
-						<h2>We welcome you to the official<br />
-						page of Student Gymkhana, IIT Indore</h2>
-						<a href="#" class="button big alt" id="visit"><span style="line-height: 2.95em;">Visit</span></a>
-							
-					</div>
-					<a href="#" class="button hidden"><span>Check In</span></a>
-				</div>
-			</header>
-
-		<!-- Main -->
-			<div id="main">
-				
-   <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>   
-   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
-<style>
-
-  a {
-  color: white;
-  text-decoration: none;
-}
-.me {
-  width: 400px;
-  margin: 0px auto;
-}
-.me p,
-.me h1 {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-align: center;
-}
-.me p {
-  font-weight: 200;
-}
-.me span {
-  font-weight: bold;
-}
-.social {
-  position: fixed;
-  top: 20px;
-  color: #fff;
-  font-family: 'Raleway', sans-serif;
-  z-index: 1;
-}
-.social ul {
-  padding: 0px;
-  -webkit-transform: translate(-260px, 0);
-  -moz-transform: translate(-260px, 0);
-  -ms-transform: translate(-260px, 0);
-  -o-transform: translate(-260px, 0);
-  transform: translate(-260px, 0);
-}
-.social ul li {
-  display: block;
-  margin: 5px;
-  background: rgba(0, 0, 0, .8);
-  color: white;
-  width: 300px;
-  text-align: right;
-  padding: 10px;
-  -webkit-border-radius: 0 30px 30px 0;
-  -moz-border-radius: 0 30px 30px 0;
-  border-radius: 0 30px 30px 0;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
-}
-.social ul li:hover {
-  -webkit-transform: translate(240px, 0);
-  -moz-transform: translate(240px, 0);
-  -ms-transform: translate(240px, 0);
-  -o-transform: translate(240px, 0);
-  transform: translate(240px, 0);
-  /*background: rgba(255, 255, 255, 0.4);*/
-   background: rgba(0, 0, 0, .8);
-}
-.social ul li:hover a {
-  color: white;
-}
-.social ul li:hover i {
-  color: white;
-  background: rgba(0, 0, 0, 0.9);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
-}
-.social ul li i {
-  margin-left: 10px;
-  color: #000;
-  background: #fff;
-  padding: 10px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  background: #ffffff;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-.cards li
-{
-      display: inline-block;
-
-      
-
-}
-.columns
-{
-  text-align:center;
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to query</title>
   
-}
+  
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+	    <title>Questions!!</title>
+	    <link href="question_display.css" rel="stylesheet">
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="like_unlike.js" type="text/javascript"></script>
+	    <script src="like_unlike_reply.js" type="text/javascript"></script>
+	    <style>
+			html {
+				margin-top: 50px;
+			}
+	    </style>
+      <link rel="stylesheet" href="modern-responsive-cards-design/css/style1.css">
 
-</style>
+  
+</head>
 
+<body>
+  <div class="viewport">
+   <div class="title">
+   
+   </div>
+ <div class="cards">
+  
+   <div class="card">
+     <div class="card_img card1">
+          <div class="plus"><p>+</p></div>
+     </div>
+     <a href="questions.php">
+     <h3>Questions</h3>
+     <div class="line">
+     </div>
+     <p> Ask questions to the student community of iit indore  </p>
+     </a>
+    
+   </div>
+   <div class="card">
+     <div class="card_img card2">
+       <div class="plus"><p>+</p></div>
+     </div>
+     <a href="notification_homepage.php">
+     <h3>Notifications</h3>
+     <div class="line">
+     </div>
+    <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </a>
+   </div>
+   <div class="card">
+     <div class="card_img card3">
+       <div class="plus"><p>+</p></div>
+     </div>
+     <a href="feedbacks.php">
+     <h3> Feedbacks</h3>
+     <div class="line">
+     </div>
+     <p>Post feedbacks regarding <br/>
+                        Mess<br/>
+                        Academics<br/>
+                        Transort<br/>
+                        Sports & Medical Facilities<br/></p>
+    </a>
+   </div>
+   <div class="card">
+     <div class="card_img card4">
+       <div class="plus"><p>+</p></div>
+     </div>
+     <a href="user_profile.php?userId=<?php echo $_SESSION['user_id'];?>">
+     <h3>Profile</h3>
+     <div class="line">
+     </div>
+     <p>Visit your Profile<br>
+                        <span>See the questions and feedbacks<br/>
+                        posted by you</span></p></div>
+   </a>
+   
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
 
-<nav class="social">
-          <ul>
-              <li>
-                <a href="http://www.fluxus.in" target="_blank" style="float:left;" ><h1 style="margin:0;">And, the best of the days are<br> the days of<br>Fluxus!</a>
-                <img src="images/fluxus_logo.png" height="55px">
-              </li> 
-          </ul>
-</nav>				<div class="inner">
-					<div class="columns">
-						<ul class="grid cs-style-1 cardholder">
-						
-						<div>	
-
-							<li style="margin-right: 60px; padding: 10px;
-							display: inline-block background:blue;">
-								<figure>
-									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:50px;width:50px;" src="images/question.png"></center>
-
-										<h3>Questions</h3>
-									</div>
-										<a href="questions.php">
-											<figcaption>
-												<h3>Ask questions to the student community of iit indore</h3>
-												<span>IIT INDORE<br>
-													........<br>
-												 	<span style="color : #ffffff;">Click for more details...</span>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-
-                          <li style="margin-right: 60px; padding: 10px;
-							display: inline-block;">
-								<figure>
-									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:50px;width:50px;" src="images/notification.png"></center>
-
-										<h3>Notifications</h3>
-									</div>
-										<a href="notification_homepage.php">
-											<figcaption>
-												<h3>Latest Notifications</h3>
-												<span>IIT INDORE<br>
-													........<br>
-												 	<span style="color : #ffffff;">Click to check notifications</span>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							
-							<li>
-								<figure class="cards">
-									<div class="front-big"><br><br><br><br><br><br>
-										<center><img style="height:65px;width:50px;" src="images/deathnote.png"></center>
-										<h3> Feedbacks</h3>
-									</div>
-										<a href="feedbacks.php">
-											<figcaption>
-												<h3>Post feedbacks regarding <br/>
-												Mess<br/>
-												Academics<br/>
-												Transort<br/>
-												Sports & Medical Facilities<br/></h3>
-												
-												 	<span style="color : #ffffff;">Click for more details...</span>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							
-							<li style="float: left;">
-								<figure class="cards">
-									<div class="front-small">
-										<br><br>
-										<center><img style="height:100px;width:75px;" src="/var/www/html/webproject/sign-up-login-form/images"></center>
-										<h3>Profile</h3>
-									</div>
-										<a href="user_profile.php?userId=<?php echo $_SESSION['user_id'];?>">
-											<figcaption>
-												<h3>Visit your Profile<br></h3>
-												<span>See the questions and feedbacks<br/>
-												posted by you</span>	
-												 	<span style="color : #ffffff;">Click for more details...</span>
-											</figcaption>
-											</figcaption>
-										</a>
-								</figure>
-							</li>
-							
-							
-							</div>
-							
-							
-
-						</ul>	
-					
-					</div>
-				</div>
-	
-			</div>
-
-			<!--  cards end ///////////////// -->
-
-
-		<!-- Footer -->
-		<style>
-	
-/*	@media screen and (max-width: 1250px) {
-	 #header_logo  img{
-		width: 400px;
-	}
-}*/
-@media screen and (max-width: 480px) {
-	 #header_logo img{
-		width: 260px;
-	}
-}
-</style>
-			<footer id="footer">
-				<a href="#" class="info fa fa-info-circle"><span>About</span></a>
-				<div class="inner">
-					<div class="content">
-						<center><div id="header_logo"><img  src="http://iiti.ac.in/images/logo.png" width="440px"></div>
-						</center>
-						<!-- <p>Ensuring the welfare of students in and outside the campus.</p> -->
-					
-
-					</div>
-					<!-- login form -->
-							
-					<div class="copyright">
-						<h3>Follow Us</h3>
-						<ul class="icons">
-							<li><a href="https://www.facebook.com/studentgym" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.facebook.com/studentgym" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					
-						</ul>
-						&copy;Designed By : Pranav Khanna  and 	Vishal Maurya
-				</div>
-			</footer>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-			
-	</body>
+  
+</body>
 </html>
