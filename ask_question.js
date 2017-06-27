@@ -6,7 +6,6 @@ $(document).ready(function() {
       var question_heading = document.getElementById("question_heading").value;
       var ask_question = document.getElementById("ask_question").value;
       var category = document.getElementById("category").value;
-      alert(user_id+question_heading+ask_question+category);
       
       $.ajax({
         url: 'post_question.php',
@@ -14,8 +13,7 @@ $(document).ready(function() {
         data: {question_heading:question_heading,ask_question:ask_question,category:category,user_id:user_id},
         dataType: 'json',
         success: function(data) {
-          alert("hey haither");
-          alert(data['question_heading']);
+          window.location="homepage.php";
         }
      
       });

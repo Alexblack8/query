@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+	
 	<style>
 		#navigation-bar {
 			border-top: 3px solid #a33939;
@@ -13,6 +12,7 @@
 			height: 60px;
 			padding-top: 5px;
 		*/}
+
 		.btn {
 			border-radius: 0 !important;
 		}
@@ -43,16 +43,14 @@
                 <a href="<?php  echo "user_profile.php?userId=".$my_id ;?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
                 	</ul>	
 
-					<form action="logout.php" class="navbar-form navbar-right" role="search">
+					<form action="" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-						<button type="submit" id='logout' class="btn btn-info btn-md"><strong>Log Out</strong></button>
+						<button type="button" class="btn btn-info btn-md"><strong>Log Out</strong></button>
 					</form>
 				</div>
 			</div>	
 		</nav>
-       
-		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 		
 </body>
 </html>

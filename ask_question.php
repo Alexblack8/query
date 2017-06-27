@@ -16,37 +16,6 @@ include 'connectuser.php';
       <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src = "js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
-
-
-    <!--script type="text/javascript"></script-->
-    <script>
-        $(document).ready(function() {
-          $(".post_but").click(function() {
-            var id = this.id;
-            var split_id = id.split("-");
-            var user_id = split_id[1];
-            var question_heading = document.getElementById("question_heading").value;
-            var ask_question = document.getElementById("ask_question").value;
-            var category = document.getElementById("category").value;
-            alert(user_id);
-            
-            $.ajax({
-              url: 'post_question.php',
-              type: 'POST',
-              data: {question_heading:question_heading,ask_question:ask_question,category:category,user_id:user_id},
-              dataType: 'json',
-              success: function(data) {
-                alert("hey haither");
-                alert(data['question_heading']);
-              }
-           
-            });
-        
-          });
-       
-        });
-      </script>
-
     <script type="text/javascript" src="ask_question.js"></script>
     <style>
       html {
