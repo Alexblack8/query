@@ -17,9 +17,7 @@ include 'nav_bar.php';
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <style>
-			html {
-				margin-top: 50px;
-			}
+			
 	    </style>
       <link rel="stylesheet" href="modern-responsive-cards-design/css/style1.css">
 
@@ -34,10 +32,11 @@ include 'nav_bar.php';
  <div class="cards">
   
    <div class="card">
+    <a href="questions.php">
      <div class="card_img card1">
-          <div class="plus"><p>+</p></div>
+          
      </div>
-     <a href="questions.php">
+     
      <h3>Questions</h3>
      <div class="line">
      </div>
@@ -46,10 +45,11 @@ include 'nav_bar.php';
     
    </div>
    <div class="card">
+   <a href="notification_homepage.php">
      <div class="card_img card2">
-       <div class="plus"><p>+</p></div>
+      
      </div>
-     <a href="notification_homepage.php">
+
      <h3>Notifications</h3>
      <div class="line">
      </div>
@@ -57,10 +57,11 @@ include 'nav_bar.php';
     </a>
    </div>
    <div class="card">
+    <a href="feedbacks.php">
      <div class="card_img card3">
-       <div class="plus"><p>+</p></div>
+ 
      </div>
-     <a href="feedbacks.php">
+     
      <h3> Feedbacks</h3>
      <div class="line">
      </div>
@@ -72,10 +73,11 @@ include 'nav_bar.php';
     </a>
    </div>
    <div class="card">
+    <a href="user_profile.php?userId=<?php echo $_SESSION['user_id'];?>">
      <div class="card_img card4">
-       <div class="plus"><p>+</p></div>
+       
      </div>
-     <a href="user_profile.php?userId=<?php echo $_SESSION['user_id'];?>">
+     
      <h3>Profile</h3>
      <div class="line">
      </div>
