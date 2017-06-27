@@ -39,8 +39,8 @@
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						
-                <a href="<?php session_start(); echo "user_profile.php?userId=".$_SESSION['user_id']; ?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
+						$my_id=$_SESSION['user_id'];
+                <a href="<?php  echo "user_profile.php?userId=".$my_id ;?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
                 	</ul>	
 
 					<form action="logout.php" class="navbar-form navbar-right" role="search">
