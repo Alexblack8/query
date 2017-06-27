@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include 'connectuser.php';
 	include 'nav_bar.php';
 
@@ -72,7 +71,6 @@ $category=array('question','reply','question','feedback');
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
-
 							       	$get_user_id = $row['user_id'];
 								   	echo '<a href="user_profile.php?userId='.$get_user_id.'">'.ucfirst($name).'</a>';
 								   	?></strong></h3>
@@ -95,7 +93,6 @@ $category=array('question','reply','question','feedback');
 					                    $unlike_result = mysqli_query($conn,$unlike_query);
 					                    $unlike_row = mysqli_fetch_array($unlike_result);
 					                    $total_dislikes = $unlike_row['cntUnlikes'];
-
 										$my_id=$_SESSION['user_id'];
 										$user_id=$row[1];
 									?>
@@ -127,14 +124,11 @@ $category=array('question','reply','question','feedback');
 							       	ORDER BY score DESC ";
 							       	$result2=mysqli_query($conn,$query2);
 							       	echo "Replies";
-
 							       	while($row2=mysqli_fetch_array($result2))
 							       	{
                                          $user_id=$row2[2];
                                          $username=get_user2($user_id);
                                          $get_user_id2 = $row2['user_id'];
-
-
                                          //counting total number of likes
 										$like_query = "SELECT COUNT(*) AS cntLikes FROM like_unlike_reply WHERE type=1 and reply_id=".$row2[0];
 					                    $like_result = mysqli_query($conn,$like_query);
@@ -146,11 +140,6 @@ $category=array('question','reply','question','feedback');
 					                    $unlike_result = mysqli_query($conn,$unlike_query);
 					                    $unlike_row = mysqli_fetch_array($unlike_result);
 					                    $total_dislikes1 = $unlike_row['cntUnlikes'];
-
-
-
-
-
                                          ?>
                                          
                                         	<h3><strong>
@@ -215,29 +204,12 @@ $category=array('question','reply','question','feedback');
 								</div>
 							</div>
 					<?php
-						$astring1 =  "like-".$row[0];	
-						$astring2 = "dislike-".$row[0];					
+											
 						$astring3 = "reply-".$row[0];
 						$astring4 =  "text-".$row[0];
 						$reply    =	$_POST[$astring4];			
 						if($_SERVER["REQUEST_METHOD"] == "POST") {
-							/*if(isset($_POST[$astring1])) {
-								$quest_id = $row[0];
-								$likess = $row[3];
-								$likess++;
-								$query3 = "UPDATE question SET upvotes='$likess' WHERE question_id = '$quest_id' ";
-								if(!mysqli_query($conn, $query3))
-								{
-									echo "failed to post";
-							}*/
-							if(isset($_POST[$astring2])) {
-								$quest_id = $row[0];
-								$dislikess = $row[4];
-								$dislikess++;
-								$query3 = "UPDATE question SET downvotes='$dislikess' WHERE question_id = '$quest_id' ";
-								if(!mysqli_query($conn, $query3))
-									echo "failed to post";
-							}
+							
 							if(isset($_POST[$astring3]))
 							{
 								$quest_id=$row[0];
@@ -248,7 +220,6 @@ $category=array('question','reply','question','feedback');
 			     				{
 			     					echo "reply registered";	
 			     					send_notification_like($my_id,$user_id,$category[0],$quest_id);
-
 			     				}
 			     				else
 			     				{

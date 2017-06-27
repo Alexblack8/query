@@ -14,10 +14,13 @@
 	$like_result = mysqli_query($conn, $like_query);
 	$fetch_like = mysqli_fetch_array($like_result);
 	$count_like = $fetch_like['cntpost'];
-	
+	$my_id=$_SESSION['user_id'];
 	if($count_like == 0) {
 		$insertQuery = "INSERT INTO like_unlike(user_id,question_id,type) VALUES('$user_id','$question_id','$type')";
 		mysqli_query($conn,$insertQuery);
+
+		send_notification_like($my_id,$user_id,"question",$question_id);
+
 
 	}
 	else{
