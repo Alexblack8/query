@@ -56,17 +56,19 @@
 					<h1 style="color: #8c1919;"><strong>QUESTIONS ASKED</strong></h1>
 
 					<?php
-						$question_dis_query = "SELECT question,question_heading AS q_heading,score FROM question WHERE user_id='$get_user_id' ORDER BY score";
+						$question_dis_query = "SELECT * FROM question WHERE user_id='$get_user_id' ORDER BY reg_time";
 						$question_dis_result = mysqli_query($conn, $question_dis_query);
 							
 							while($question_dis_array = mysqli_fetch_array($question_dis_result)) {
 						?>
 						<div id="card">
 							<!-- question heading -->
-							<h2 style="color: #f4b042;"><strong><?php echo $question_dis_array['q_heading'];?></strong></h2>
+							<h2 style="color: #f4b042;"><strong><?php echo $question_dis_array[7];?></strong></h2>
 							<!-- question content -->
 							<blockquote>
-								<p><?php echo $question_dis_array['question']; ?></p>
+								<p><?php echo $question_dis_array[2]; ?></p>
+								<label >Likes:  <?php echo $question_dis_array[3];?></label><br/>
+								 <label >DisLikes:  <?php echo $question_dis_array[4];?></label><br/>
 							</blockquote>
 						</div>
 						<hr style="height:2px;border:none;color:#333;background-color:#eee;">
@@ -78,7 +80,7 @@
 						<h1 style="color: #8c1919;"><strong>ANSWERS GIVEN</strong></h1>
 						<?php
 						//showing replies
-						$reply_query = "SELECT reply,quest_id AS qID,score FROM replies WHERE user_id='$get_user_id' ORDER BY score";
+						$reply_query = "SELECT reply,quest_id AS qID,score FROM replies WHERE user_id='$get_user_id' ORDER BY reg_time";
 						$reply_result = mysqli_query($conn,$reply_query);
 
 						while($reply_array = mysqli_fetch_array($reply_result)) {

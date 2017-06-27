@@ -30,11 +30,11 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 						<ul class="panel">
 
 							<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
-							<li><a href="question_option.php?tag_id=1">Transport</a></li>
-							<li><a href="question_option.php?tag_id=1">Medical</a></li>
-							<li><a href="question_option.php?tag_id=1">Academics</a></li>
-							<li><a href="question_option.php?tag_id=1">Sports</a></li>
-							<li><a href="question_option.php?tag_id=1">Others</a></li>
+							<li><a href="question_option.php?tag_id=2">Transport</a></li>
+							<li><a href="question_option.php?tag_id=3">Medical</a></li>
+							<li><a href="question_option.php?tag_id=4">Academics</a></li>
+							<li><a href="question_option.php?tag_id=5">Sports</a></li>
+							<li><a href="question_option.php?tag_id=6">Others</a></li>
 
 						</ul>
 						<br>

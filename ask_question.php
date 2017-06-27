@@ -17,7 +17,7 @@ include 'connectuser.php';
         <script src = "js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
 
-<<<<<<< HEAD
+
     <!--script type="text/javascript"></script-->
     <script>
         $(document).ready(function() {
@@ -46,14 +46,13 @@ include 'connectuser.php';
        
         });
       </script>
-=======
+
     <script type="text/javascript" src="ask_question.js"></script>
     <style>
       html {
         margin-top: 50px;
       }
     </style>
->>>>>>> fc0e0c2043cce101e5a4d0c1993d61642c6a1015
   </head>
   <body>
 
