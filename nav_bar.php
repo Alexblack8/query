@@ -39,12 +39,11 @@
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-					<?php
-					session_start();
+						<?php
+						session_start();
 						$my_id=$_SESSION['user_id'];
-						
 						?>
-                <a href="user_profile.php?userId=<?php echo $_SESSION['user_id'];?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
+                <a href="user_profile.php?userId=<?php echo $my_id;?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
                 	</ul>	
 
 					<form action="" class="navbar-form navbar-right" role="search">
