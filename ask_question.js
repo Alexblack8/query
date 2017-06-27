@@ -13,7 +13,7 @@ $(document).ready(function() {
         data: {question_heading:question_heading,ask_question:ask_question,category:category,user_id:user_id},
         dataType: 'json',
         success: function(data) {
-          window.location="homepage.php";
+          window.location="user_profile.php?userId="+user_id;
         }
      
       });
