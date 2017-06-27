@@ -15,19 +15,13 @@
 <?php
 include 'nav_bar.php';
 include 'function.php';
-function send_notification_like($sender_id,$receiver_id,$category,$ref_id)
+function send_notification($sender_id,$receiver_id,$category,$ref_id)
 {
   include 'connectuser.php';
   $query="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
-  VALUES ('$sender_id','$receiver_id','$category','$ref_id')";
-  if(mysqli_query($conn,$query))
-  {
-    echo "<br/>success";
-  }
-  else
-  {
-    echo "<br/>error in sending notifications";
-  }
+  VALUES ('$sender_id','$rec;eiver_id','$category','$ref_id')";
+  mysqli_query($conn,$query);
+  
 
 }
 /*$query="INSERT INTO notifications (sender_id,receiver_id,category)
