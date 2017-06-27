@@ -46,9 +46,9 @@
                 <a href="user_profile.php?userId=<?php echo $my_id;?>" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span></a>          
                 	</ul>	
 
-					<form action="" class="navbar-form navbar-right" role="search">
+					<form action="logout.php" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-						<button type="button" class="btn btn-info btn-md"><strong>Log Out</strong></button>
+						<button type="submit" class="btn btn-info btn-md"><strong>Log Out</strong></button>
 					</form>
 				</div>
 			</div>	
