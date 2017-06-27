@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+	
 	<style>
 		#navigation-bar {
 			border-top: 3px solid #a33939;
@@ -52,7 +51,6 @@
 			</div>	
 		</nav>
 
-		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
 </body>
 </html>
