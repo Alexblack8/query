@@ -31,14 +31,51 @@ body {
 	color: #fff;
 }
 
-#card:hover {
+
+/*the hover part*/
+#card-1:hover {
 	background-color: #f2f5f9
 	;
 }
 
-#card {
-	padding: 2%;
+#card-2:hover {
+	background-color: #f2f5f9
+	;
+}
+
+#card-3:hover {
+	background-color: #f2f5f9
+	;
+}
+
+#card-4:hover {
+	background-color: #f2f5f9
+	;
+}
+/*end hover part*/
+
+#card-1 {
+	padding: 3%;
 	border-top: 1px solid #e6eaef;
+	border-left: 4px solid #48911e;
+}
+
+#card-2 {
+	padding: 3%;
+	border-top: 1px solid #e6eaef;
+	border-left: 4px solid #203687;
+}
+
+#card-3 {
+	padding: 3%;
+	border-top: 1px solid #e6eaef;
+	border-left: 4px solid #e58f0d;
+}
+
+#card-4 {
+	padding: 3%;
+	border-top: 1px solid #e6eaef;
+	border-left: 4px solid #872220;
 }
 
 #hr_top {
