@@ -17,8 +17,18 @@ $category=array('question','reply','question','feedback');
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
+	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 	    <style>
 			
+			.row.content {
+				height: 1000%;
+			}
+
+			.sidenav li {
+				font-family: tangerine;
+				font-size: 20px;
+			}
+
 			html {
 				margin-top: 50px;
 			}
@@ -34,16 +44,18 @@ $category=array('question','reply','question','feedback');
 		<?php include 'nav_bar.php'; ?>
 		<!-- header and heading -->
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-2 text-center sidenav">
-						<p class="helpblock">Categories:</p>
-						    <p><a href="questions.php">All questions</a></p>
-							<p><a href="question_option.php?tag_id=1">Mess</a></p>
-							<p><a href="question_option.php?tag_id=2">Transport</a></p>
-							<p><a href="question_option.php?tag_id=3">Medical</a></p>
-							<p><a href="question_option.php?tag_id=4">Academics</a></p>
-							<p><a href="question_option.php?tag_id=5">Sports</a></p>
-							<p><a href="question_option.php?tag_id=6">Others</a></p>
+			<div class="row content">
+				<div class="col-md-3 sidenav">
+					<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
+					<ul class="nav nav-pills nav-stacked">						
+						    <li class="active"><a href="questions.php">All questions</a></li>
+							<li><a href="question_option.php?tag_id=1">Mess</a></li>
+							<li><a href="question_option.php?tag_id=2">Transport</a></li>
+							<li><a href="question_option.php?tag_id=3">Medical</a></li>
+							<li><a href="question_option.php?tag_id=4">Academics</a></li>
+							<li><a href="question_option.php?tag_id=5">Sports</a></li>
+							<li><a href="question_option.php?tag_id=6">Others</a></li>
+					</ul>
 				</div>
 
 				<div class="col-md-8 text-left" bgcolor="#eee">
