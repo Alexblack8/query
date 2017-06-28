@@ -14,33 +14,42 @@ $category=array('reply','question','feedback');
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	    <title>Feedbacks!!</title>
 	    <link href="question_display.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 	    <style>
 			html {
 				margin-top: 50px;
 			}
+
+			.row.content {
+				height: 1000%;
+			}
+
+			.sidenav li {
+				font-family: tangerine;
+				font-size: 20px;
+			}
+
+			.sidenav {
+		      padding-top: 20px;
+		      background-color: #f1f1f1;		 
+		      height: 100%;
+		    }
 	    </style>
 	</head>
 	<body>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-2">
-					<br><br>
-
-						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
-						<p class="helpblock">Categories:<hr></p>
-						<ul class="panel">
-						    <li><a href="questions.php">All feedbacks</a></li>
-							<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
-							<li><a href="feedback_option.php?tag_id=2">Transport</a></li>
-							<li><a href="feedback_option.php?tag_id=3">Medical</a></li>
-							<li><a href="feedback_option.php?tag_id=4">Academics</a></li>
-							<li><a href="feedback_option.php?tag_id=5">Sports</a></li>
-							<li><a href="feedback_option.php?tag_id=6">Others</a></li>
-
-						</ul>
-						<br>
-						 <br>
-						<br>
+			<div class="row content">
+				<div class="col-md-3 sidenav">
+					<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
+					<ul class="nav nav-pills nav-stacked">						
+						    <li class="active"><a href="questions.php">All questions</a></li>
+							<li><a href="question_option.php?tag_id=1">Mess</a></li>
+							<li><a href="question_option.php?tag_id=2">Transport</a></li>
+							<li><a href="question_option.php?tag_id=3">Medical</a></li>
+							<li><a href="question_option.php?tag_id=4">Academics</a></li>
+							<li><a href="question_option.php?tag_id=5">Sports</a></li>
+							<li><a href="question_option.php?tag_id=6">Others</a></li>
+					</ul>
 				</div>
 
 

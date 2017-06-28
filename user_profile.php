@@ -14,13 +14,31 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<link rel="stylesheet" href="question_display.css">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 		<style>
 			html {
 				margin-top: 50px;
 			}
+
 			h1 {
 				border-bottom: 5px solid #8c1919;
 			}
+			
+			.row.content {
+				height: 1000%;
+			}
+
+			.sidenav li {
+				font-family: tangerine;
+				font-size: 20px;
+			}
+
+			.sidenav {
+		      padding-top: 20px;
+		      background-color: #f1f1f1;		 
+		      height: 100%;
+		    }
+
 		</style>
 	</head>
 
@@ -47,9 +65,20 @@
 		</header>
 		
 		<!-- questions asked by the user -->
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2"></div>
+		<div class="container-fluid">
+			<div class="row content">
+				<div class="col-md-3 sidenav">
+					<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
+					<ul class="nav nav-pills nav-stacked">						
+						    <li class="active"><a href="questions.php">All questions</a></li>
+							<li><a href="question_option.php?tag_id=1">Mess</a></li>
+							<li><a href="question_option.php?tag_id=2">Transport</a></li>
+							<li><a href="question_option.php?tag_id=3">Medical</a></li>
+							<li><a href="question_option.php?tag_id=4">Academics</a></li>
+							<li><a href="question_option.php?tag_id=5">Sports</a></li>
+							<li><a href="question_option.php?tag_id=6">Others</a></li>
+					</ul>
+				</div>
 				
 				<!-- displaying the question asked by the user -->
 				<div class="col-md-7">
