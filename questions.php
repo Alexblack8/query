@@ -79,6 +79,8 @@ $category=array('question','reply','question','feedback');
 						 LIMIT 0,4
 						 ";
 				         $result=mysqli_query($conn,$query);
+
+				         $color_var = 1;
 				          ?>
 
 				    	<h1 style="margin-left: 10px; text-align: center; text-decoration: none; color: #fff"><?php echo "<a href='question_option.php?tag_id=". 
@@ -88,10 +90,12 @@ $category=array('question','reply','question','feedback');
 						    <?php
 				    while($row=mysqli_fetch_array($result))
 					{
+							if($color_var != 4) $color_var++;
+							else $color_var = 1;
 						?>
                           
 						    
-					   			<div id="card">
+					   			<div id="card-<?php echo $color_var ;?>">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
