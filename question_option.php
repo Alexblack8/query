@@ -22,20 +22,19 @@ $category=array('question','reply','question','feedback');
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 	    <style>
-			html {
-				margin-top: 50px;
-			}
-
-			.row.content {
-				height: 1000%;
-			}
-
+			
 			.sidenav li {
 				font-family: tangerine;
 				font-size: 20px;
 			}
 
+			html {
+				margin-left: 0;
+				margin-top: 50px;
+			}
+
 			.sidenav {
+			  margin-right: 2px;
 		      padding-top: 20px;
 		      background-color: #f1f1f1;		 
 		      height: 100%;
@@ -47,21 +46,24 @@ $category=array('question','reply','question','feedback');
 
 		<div class="container-fluid">
 			<div class="row content">
-				<div class="col-md-3 sidenav">
-					<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
-					<ul class="nav nav-pills nav-stacked">						
-						    <li class="active"><a href="questions.php">All questions</a></li>
-							<li><a href="question_option.php?tag_id=1">Mess</a></li>
-							<li><a href="question_option.php?tag_id=2">Transport</a></li>
-							<li><a href="question_option.php?tag_id=3">Medical</a></li>
-							<li><a href="question_option.php?tag_id=4">Academics</a></li>
-							<li><a href="question_option.php?tag_id=5">Sports</a></li>
-							<li><a href="question_option.php?tag_id=6">Others</a></li>
-					</ul>
+				<div class="col-md-3">
+					<div class="col-md-3 affix sidenav">
+						<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
+						<ul class="nav nav-pills nav-stacked">						
+							    <li class="active"><a href="questions.php">All questions</a></li>
+								<li><a href="question_option.php?tag_id=1">Mess</a></li>
+								<li><a href="question_option.php?tag_id=2">Transport</a></li>
+								<li><a href="question_option.php?tag_id=3">Medical</a></li>
+								<li><a href="question_option.php?tag_id=4">Academics</a></li>
+								<li><a href="question_option.php?tag_id=5">Sports</a></li>
+								<li><a href="question_option.php?tag_id=6">Others</a></li>
+						</ul>
+					</div>
 				</div>
 
 
-				<div class="col-md-8" bgcolor="#eee">
+
+				<div class="col-md-8" bgcolor="#eee" style="margin-left:10px;">
 				    <?php
 				    store_score_question();
 				    
@@ -256,7 +258,7 @@ $category=array('question','reply','question','feedback');
 					}
 					
 						?>
-						
+
 				</div> <!-- end col-md-7 -->
 			</div> <!-- end row -->
 		</div> <!-- end container -->

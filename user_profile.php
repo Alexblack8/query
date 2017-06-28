@@ -16,24 +16,23 @@
 		<link rel="stylesheet" href="question_display.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 		<style>
-			html {
-				margin-top: 50px;
-			}
-
+			
 			h1 {
 				border-bottom: 5px solid #8c1919;
 			}
 			
-			.row.content {
-				height: 1000%;
-			}
-
 			.sidenav li {
 				font-family: tangerine;
 				font-size: 20px;
 			}
 
+			html {
+				margin-left: 0;
+				margin-top: 50px;
+			}
+
 			.sidenav {
+			  margin-right: 2px;
 		      padding-top: 20px;
 		      background-color: #f1f1f1;		 
 		      height: 100%;
@@ -44,13 +43,24 @@
 
 	<body>
 		<header>
-			<div class="container">
+			<div class="container-fluid">
 				<!-- user's description -->
-				<div class="row">
-					<div class="col-md-2">
-						<img src="welcome.jpg" title="welcome" class="img-responsive" style="margin-top: 2em;">
+				<div class="row content">
+					<div class="col-md-3">
+						<div class="col-md-3 affix sidenav">
+						<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
+						<ul class="nav nav-pills nav-stacked">						
+							    <li class="active"><a href="questions.php">All questions</a></li>
+								<li><a href="question_option.php?tag_id=1">Mess</a></li>
+								<li><a href="question_option.php?tag_id=2">Transport</a></li>
+								<li><a href="question_option.php?tag_id=3">Medical</a></li>
+								<li><a href="question_option.php?tag_id=4">Academics</a></li>
+								<li><a href="question_option.php?tag_id=5">Sports</a></li>
+								<li><a href="question_option.php?tag_id=6">Others</a></li>
+						</ul>
 					</div>
-					<div class="col-md-7">
+					</div>
+					<div class="col-md-7" style="margin-left:10px;">
 						<h2 style="color:#8c1919; font-weight:900; ">
 							<?php 
 								echo ucfirst($user_array['first_name'])." ".ucfirst($user_array['last_name']);
@@ -67,21 +77,12 @@
 		<!-- questions asked by the user -->
 		<div class="container-fluid">
 			<div class="row content">
-				<div class="col-md-3 sidenav">
-					<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
-					<ul class="nav nav-pills nav-stacked">						
-						    <li class="active"><a href="questions.php">All questions</a></li>
-							<li><a href="question_option.php?tag_id=1">Mess</a></li>
-							<li><a href="question_option.php?tag_id=2">Transport</a></li>
-							<li><a href="question_option.php?tag_id=3">Medical</a></li>
-							<li><a href="question_option.php?tag_id=4">Academics</a></li>
-							<li><a href="question_option.php?tag_id=5">Sports</a></li>
-							<li><a href="question_option.php?tag_id=6">Others</a></li>
-					</ul>
+				<div class="col-md-3">
+					
 				</div>
-				
+
 				<!-- displaying the question asked by the user -->
-				<div class="col-md-7">
+				<div class="col-md-7" style="margin-left: 10px;">
 					<h1 style="color: #8c1919;"><strong>QUESTIONS ASKED</strong></h1>
 
 					<?php
