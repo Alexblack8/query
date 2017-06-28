@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Questions and Answers</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="vue-wrapper">
+  <div id="vue">
+    <div class="search-area">
+      <h1>Questions and Answers</h1>
+      <div class="input-wrapper">
+        <i class="fa fa-search"></i>
+        <input v-model="searchString" type="text" placeholder="Have a question? Search for answers with keywords"/>
+      </div>
+      <button @click="resetSearch()">Reset</button>
+    </div>
+
+    <div class="question" v-for="question in questions | filterBy searchString" track-by="$index" data-color="{{ question.votes | voteColor }}">
+      <div class="votes">
+        <div class="upvote" @click="vote('up', question)"></div>
+        <div class="number-of-votes">{{ question.votes }}</div>
+        <div class="downvote" @click="vote('down', question)"></div>
+      </div>
+
+      <div class="question-and-answer">
+        <h2>{{ question.question }}</h2>
+        <p>{{ question.answer }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
