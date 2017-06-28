@@ -156,7 +156,7 @@ $category=array('question','reply','question','feedback');
                                         	$username=get_user2($user_id);
                                          	$get_user_id2 = $row2['user_id']>
 
-								       		<button type="button" class="btn btn-link reply_dislike" id="replyDislike-<?php echo $row2['reply_id'].$my_id;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
+								       		<button type="button" class="btn btn-link reply_dislike" id="replyDislike-<?php echo $row2['reply_id']."-".$my_id;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 								       		</h3>
 
 								       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $total_likes1;?></label><br/>
