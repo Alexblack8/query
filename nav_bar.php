@@ -1,9 +1,3 @@
-	<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-
-	
 	<style>
 		#navigation-bar {
 			border-top: 3px solid #a33939;
@@ -17,8 +11,6 @@
 			border-radius: 0 !important;
 		}
 	</style>
-</head>
-<body>
 <nav class="navbar navbar-default navbar-fixed-top" id="navigation-bar" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
@@ -50,12 +42,8 @@
 
 					<form action="logout.php" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-						<button type="submit" class="btn btn-info btn-md"><strong>Log Out</strong></button>
+						<button type="submit" class="btn btn-info btn-md"><strong><span class="glyphicon glyphicon-log-out"></span> Log Out</strong></button>
 					</form>
 				</div>
 			</div>	
 		</nav>
-
-		
-</body>
-</html>

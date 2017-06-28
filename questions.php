@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'connectuser.php';
-	include 'nav_bar.php';
+//	include 'nav_bar.php';
 
 include 'notification.php';
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
@@ -18,34 +18,35 @@ $category=array('question','reply','question','feedback');
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <style>
+			
 			html {
 				margin-top: 50px;
 			}
+
+			.sidenav {
+		      padding-top: 20px;
+		      background-color: #f1f1f1;		 
+		      height: 100%;
+		    }
 	    </style>
 	</head>
 	<body>
+		<?php include 'nav_bar.php'; ?>
 		<!-- header and heading -->
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-2">
-					<br><br>
-						<h3 class="text-info" style="color:#543e21">feeds...<hr></h3> 
-						<p class="helpblock">Categories:<hr></p>
-						<ul class="panel">
-						    <li><a href="questions.php">All questions</a></li>
-							<li><a href="question_option.php?tag_id=1">Mess</a></li>
-							<li><a href="question_option.php?tag_id=2">Transport</a></li>
-							<li><a href="question_option.php?tag_id=3">Medical</a></li>
-							<li><a href="question_option.php?tag_id=4">Academics</a></li>
-							<li><a href="question_option.php?tag_id=5">Sports</a></li>
-							<li><a href="question_option.php?tag_id=6">Others</a></li>
-						</ul>
-						<br>
-						 <br>
-						<br>
+				<div class="col-md-2 text-center sidenav">
+						<p class="helpblock">Categories:</p>
+						    <p><a href="questions.php">All questions</a></p>
+							<p><a href="question_option.php?tag_id=1">Mess</a></p>
+							<p><a href="question_option.php?tag_id=2">Transport</a></p>
+							<p><a href="question_option.php?tag_id=3">Medical</a></p>
+							<p><a href="question_option.php?tag_id=4">Academics</a></p>
+							<p><a href="question_option.php?tag_id=5">Sports</a></p>
+							<p><a href="question_option.php?tag_id=6">Others</a></p>
 				</div>
 
-				<div class="col-md-8" bgcolor="#eee">
+				<div class="col-md-8 text-left" bgcolor="#eee">
 				    <?php
 				    store_score_question();
 				   for($i=1;$i<=6;$i++)
