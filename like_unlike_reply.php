@@ -1,7 +1,9 @@
 <?php
 	include 'connectuser.php';
+	include 'notification.php';
 	//user_id
 	$user_id = $_POST['user_id'];
+	$my_id=$_POST['my_id'];
 	// select type of the variable i.e. is it like or dislike
 	$type = $_POST['type'];
 	
@@ -15,10 +17,12 @@
 	if($count_like == 0) {
 		$insertQuery = "INSERT INTO like_unlike_reply(user_id,reply_id,type) VALUES('$user_id','$reply_id','$type')";
 		mysqli_query($conn,$insertQuery);
+		send_notification($my_id,$user_id,"reply",$reply_id);
 	}
 	else{
 		$updateQuery = "UPDATE like_unlike_reply SET type='$type' WHERE user_id='$user_id' AND reply_id='$reply_id' ";
 		mysqli_query($conn,$updateQuery);
+		//send_notification($my_id,$user_id,"reply",$reply_id);
 	}
 	//count likes and dislikes
 	$query = "SELECT COUNT(*) AS cntLike FROM like_unlike_reply WHERE type=1 and reply_id=".$reply_id;

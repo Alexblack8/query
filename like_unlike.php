@@ -27,7 +27,7 @@ session_start();
 	else{
 		$updateQuery = "UPDATE like_unlike SET type='$type' WHERE user_id='$user_id' AND question_id='$question_id' ";
 		mysqli_query($conn,$updateQuery);
-		send_notification($my_id,$user_id,"question",$question_id);
+		//send_notification($my_id,$user_id,"question",$question_id);
 	}
 
 	//count likes and dislikes
