@@ -1,5 +1,5 @@
 * {
-	font-family: q_serif;
+	font-family: 'Josefin Sans', sans-serif;
 	/*border: 1px solid blue;*/
 }
 
@@ -38,6 +38,7 @@ body {
 
 #card {
 	padding: 2%;
+	border-top: 1px solid #e6eaef;
 }
 
 #hr_top {

@@ -1,11 +1,25 @@
 	<style>
 		#navigation-bar {
 			border-top: 3px solid #a33939;
-			box-shadow: 0 2px 1px #eee;
+			box-shadow: 0 1px 1px #eee;
 		/*
 			height: 60px;
 			padding-top: 5px;
 		*/}
+
+		.navbar {
+		    padding-top: 15px;
+		    padding-bottom: 15px;
+		    border: 0;
+		    border-radius: 0;
+		    margin-bottom: 0;
+		    font-size: 12px;
+		    letter-spacing: 3px;
+		}
+
+		.navbar-nav li a:hover {
+		    color: #1abc9c !important;
+		}
 
 		.btn {
 			border-radius: 0 !important;
@@ -25,6 +39,7 @@
 				<div class="collapse navbar-collapse" id="nav-collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="homepage.php" ><span class="glyphicon glyphicon-home"></span></a></li>
+						<li class="navbar-divider"></li>
 						<li><a href="notification_homepage.php" style="font-size: 20px;">Notifications</a></li>
 						<li><a href="questions.php" style="font-size: 20px;" >Questions</a></li>
 						<li><a href="feedbacks.php" style="font-size: 20px;"  >Feedback</a></li>

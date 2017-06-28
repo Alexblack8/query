@@ -18,20 +18,21 @@ $category=array('question','reply','question','feedback');
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 	    <style>
 
 	    	body {
 	    		margin: 0;
 	    	}
 			
-			.sidenav li {
+			.sidenav {
 				font-family: tangerine;
 				font-size: 20px;
 			}
 
 			html {
 				margin-left: 0;
-				margin-top: 50px;
+				margin-top: 70px;
 			}
 
 			.sidenav {
@@ -39,6 +40,10 @@ $category=array('question','reply','question','feedback');
 		      padding-top: 20px;
 		      background-color: #f1f1f1;		 
 		      height: 100%;
+		    }
+
+		    .main-content1 {
+		    	padding-right: 2em;
 		    }
 	    </style>
 	</head>
@@ -49,7 +54,7 @@ $category=array('question','reply','question','feedback');
 			<div class="row content">
 				<div class="col-md-3">
 					<div class="col-md-3 affix sidenav">
-						<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
+						<h4 class="helpblock" style="font-size: 30px; font-family: tangerine;">Categories:</h4>
 						<ul class="nav nav-pills nav-stacked">						
 							    <li class="active"><a href="questions.php">All questions</a></li>
 								<li><a href="question_option.php?tag_id=1">Mess</a></li>
@@ -62,7 +67,7 @@ $category=array('question','reply','question','feedback');
 					</div>
 				</div>
 
-				<div class="col-md-8 text-left" bgcolor="#eee">
+				<div class="col-md-7 main-content1" bgcolor="#eee">
 				    <?php
 				    store_score_question();
 				   for($i=1;$i<=6;$i++)
@@ -75,15 +80,17 @@ $category=array('question','reply','question','feedback');
 						 ";
 				         $result=mysqli_query($conn,$query);
 				          ?>
-				    	<h1 style="margin-left: 10px;"><?php echo "<a href='question_option.php?tag_id=". 
+
+				    	<h1 style="margin-left: 10px; text-align: center; text-decoration: none; color: #fff"><?php echo "<a href='question_option.php?tag_id=". 
 						    $i."'>".$tags[$i-1]."</a>";?></h1>
 						   
+
 						    <?php
 				    while($row=mysqli_fetch_array($result))
 					{
 						?>
                           
-						         <hr id="hr_top">
+						    
 					   			<div id="card">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
@@ -135,7 +142,7 @@ $category=array('question','reply','question','feedback');
 							       	
 									<!-- THE REPLY SECTION -->
 							       	<?php
-							       	$quest_id=$row[0];
+							       /*	$quest_id=$row[0];
 							       	store_score_replies();
 							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
 							       	ORDER BY score DESC ";
@@ -182,7 +189,7 @@ $category=array('question','reply','question','feedback');
 								       		
 								       		</form>
 								   	        <?php  
-							       	}
+							       	}*/
 							       	?>
 									<!-- END REPLY SECTION -->
 
