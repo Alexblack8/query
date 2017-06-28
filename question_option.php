@@ -21,6 +21,7 @@ $category=array('question','reply','question','feedback');
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 	    <style>
 			
 			.sidenav li {
@@ -30,7 +31,7 @@ $category=array('question','reply','question','feedback');
 
 			html {
 				margin-left: 0;
-				margin-top: 50px;
+				margin-top: 70px;
 			}
 
 			.sidenav {
@@ -84,13 +85,15 @@ $category=array('question','reply','question','feedback');
 
 				    	 <h1><?php echo $tags[$counter];?></h1>
 				    	 <?php
-
+				    	 			$color_var = 1;
 				    	 while($row=mysqli_fetch_array($result))
 					{
+
+							if($color_var != 4) $color_var++;
+								else $color_var = 1;
 						?>
                           
-						         <hr id="hr_top">
-					   			<div id="card">
+					   			<div id="card-<?php echo $color_var ;?>">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
@@ -143,6 +146,7 @@ $category=array('question','reply','question','feedback');
 							       	
 									<!-- THE REPLY SECTION -->
 							       	<?php
+							       	/*
 							       	$quest_id=$row[0];
 							       	store_score_replies();
 							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
@@ -197,7 +201,7 @@ $category=array('question','reply','question','feedback');
 								       		
 								       		</form>
 								   	        <?php  
-							       	}
+							       	}  */
 							       	?>
 									<!-- END REPLY SECTION -->
 

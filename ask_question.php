@@ -17,6 +17,7 @@ include 'connectuser.php';
         <script src = "js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="ask_question.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <style>
       html {
         margin-top: 50px;
