@@ -50,13 +50,20 @@ $category=array('question','reply','question','feedback');
 					<div class="col-md-3 affix sidenav">
 						<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
 						<ul class="nav nav-pills nav-stacked">						
-							    <li class="active"><a href="questions.php">All questions</a></li>
-								<li><a href="question_option.php?tag_id=1">Mess</a></li>
-								<li><a href="question_option.php?tag_id=2">Transport</a></li>
-								<li><a href="question_option.php?tag_id=3">Medical</a></li>
-								<li><a href="question_option.php?tag_id=4">Academics</a></li>
-								<li><a href="question_option.php?tag_id=5">Sports</a></li>
-								<li><a href="question_option.php?tag_id=6">Others</a></li>
+							    
+							    <li class=""><a href="questions.php">All questions</a></li>
+								
+								<li class="<?php if($tag_id == 1) echo "active" ?>"><a href="question_option.php?tag_id=1">Mess</a></li>
+								
+								<li class="<?php if($tag_id == 2) echo "active" ?>"><a href="question_option.php?tag_id=2">Transport</a></li>
+								
+								<li class="<?php if($tag_id == 3) echo "active" ?>"><a href="question_option.php?tag_id=3">Academics</a></li>
+								
+								<li class="<?php if($tag_id == 4) echo "active" ?>"><a href="question_option.php?tag_id=4">Sports</a></li>
+								
+								<li class="<?php if($tag_id == 5) echo "active" ?>"><a href="question_option.php?tag_id=5">Medical</a></li>
+								
+								<li class="<?php if($tag_id == 6) echo "active" ?>"><a href="question_option.php?tag_id=6">Others</a></li>
 						</ul>
 					</div>
 				</div>
