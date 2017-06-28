@@ -15,6 +15,7 @@
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<link rel="stylesheet" href="question_display.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 		<style>
 			
 			h1 {
@@ -28,7 +29,7 @@
 
 			html {
 				margin-left: 0;
-				margin-top: 50px;
+				margin-top: 70px;
 			}
 
 			.sidenav {
@@ -48,7 +49,7 @@
 				<div class="row content">
 					<div class="col-md-3">
 						<div class="col-md-3 affix sidenav">
-						<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
+						<h4 class="helpblock" style="font-size: 30px; font-family: tangerine;">Categories:</h4>
 						<ul class="nav nav-pills nav-stacked">						
 							    <li class="active"><a href="questions.php">All questions</a></li>
 								<li><a href="question_option.php?tag_id=1">Mess</a></li>
@@ -88,20 +89,25 @@
 					<?php
 						$question_dis_query = "SELECT * FROM question WHERE user_id='$get_user_id' ORDER BY reg_time DESC";
 						$question_dis_result = mysqli_query($conn, $question_dis_query);
+						$color_var = 1;
 							
 							while($question_dis_array = mysqli_fetch_array($question_dis_result)) {
+								if($color_var != 4) $color_var++;
+								else $color_var = 1;
 						?>
-						<div id="card">
+						<div id="card-<?php echo $color_var ;?>">
 							<!-- question heading -->
 							<h2 style="color: #f4b042;"><strong><?php echo $question_dis_array[7];?></strong></h2>
 							<!-- question content -->
 							<blockquote>
 								<p><?php echo $question_dis_array[2]; ?></p>
-								<label >Likes:  <?php echo $question_dis_array[3];?></label><br/>
-								 <label >DisLikes:  <?php echo $question_dis_array[4];?></label><br/>
 							</blockquote>
+
+							<span><label class="text-info">Likes:  <?php echo $question_dis_array[3];?></label>
+								 </span>     
+								 <span><label class="text-danger">      DisLikes:  <?php echo $question_dis_array[4];?></label></span>
 						</div>
-						<hr style="height:2px;border:none;color:#333;background-color:#eee;">
+
 
 						<?php
 						}
@@ -112,14 +118,18 @@
 						//showing replies
 						$reply_query = "SELECT reply,quest_id AS qID,score FROM replies WHERE user_id='$get_user_id' ORDER BY reg_time";
 						$reply_result = mysqli_query($conn,$reply_query);
+						$color_var = 1;
 
 						while($reply_array = mysqli_fetch_array($reply_result)) {
+
+							if($color_var != 4) $color_var++;
+							else $color_var = 1;
 
 							$retrieve_q_heading = "SELECT question_heading AS q_heading FROM question WHERE question_id=".$reply_array['qID'];
 							$retrieve_q_heading_result = mysqli_query($conn,$retrieve_q_heading);
 							$retrieve_q_heading_array = mysqli_fetch_array($retrieve_q_heading_result);
 						?>
-							<div id="card">
+							<div id="card-<?php echo $color_var ;?>">
 								<!-- reply heading -->
 								<h2 style="color: #d3970c;"><strong><?php echo $retrieve_q_heading_array['q_heading']; ?></strong></h2>
 								<!-- reply content -->
@@ -127,7 +137,6 @@
 									<p><?php echo $reply_array['reply']; ?></p>
 								</blockquote>
 							</div>
-							<hr>
 						<?php 
 							}
 						?>
