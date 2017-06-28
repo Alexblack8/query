@@ -15,6 +15,7 @@ $category=array('reply','question','feedback');
 	    <title>Feedbacks!!</title>
 	    <link href="question_display.css" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 	    <style>
 			.sidenav li {
 				font-family: tangerine;
@@ -23,7 +24,7 @@ $category=array('reply','question','feedback');
 
 			html {
 				margin-left: 0;
-				margin-top: 50px;
+				margin-top: 70px;
 			}
 
 			.sidenav {
@@ -64,15 +65,17 @@ $category=array('reply','question','feedback');
 						 ORDER BY reg_time DESC
 						 ";
 				         $result=mysqli_query($conn,$query);
-				    	
+				    	$color_var = 1;
 				    	while($row=mysqli_fetch_array($result))
 					{
-						 
+						 if($color_var != 4) $color_var++;
+								else $color_var = 1;
 						?>	
-						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo "<a href='feedback_option.php?tag_id=". 
+						<div class="container-fluid">				
+								   <h1><?php echo "<a href='feedback_option.php?tag_id=". 
 						    $row[6]."'>".$tags[$i-1]."</a>";?></h1>
-					   		<div class="container-fluid"><hr id="hr_top">
-					   			<div id="card">
+					   		<div class="container-fluid">
+					   			<div id="card-<?php echo $color_var ;?>">
 						   			
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
