@@ -56,7 +56,7 @@
 					<h1 style="color: #8c1919;"><strong>QUESTIONS ASKED</strong></h1>
 
 					<?php
-						$question_dis_query = "SELECT * FROM question WHERE user_id='$get_user_id' ORDER BY reg_time";
+						$question_dis_query = "SELECT * FROM question WHERE user_id='$get_user_id' ORDER BY reg_time DESC";
 						$question_dis_result = mysqli_query($conn, $question_dis_query);
 							
 							while($question_dis_array = mysqli_fetch_array($question_dis_result)) {

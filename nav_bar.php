@@ -33,7 +33,7 @@
 				<div class="collapse navbar-collapse" id="nav-collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="homepage.php" ><span class="glyphicon glyphicon-home"></span></a></li>
-						<li><a href="notification.php" style="font-size: 20px;">Notifications</a></li>
+						<li><a href="notification_homepage.php" style="font-size: 20px;">Notifications</a></li>
 						<li><a href="questions.php" style="font-size: 20px;" >Questions</a></li>
 						<li><a href="feedbacks.php" style="font-size: 20px;"  >Feedback</a></li>
 					</ul>

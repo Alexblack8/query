@@ -20,6 +20,7 @@ function send_notification($sender_id,$receiver_id,$category,$ref_id)
   include 'connectuser.php';
   $query="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
   VALUES ('$sender_id','$receiver_id','$category','$ref_id')";
+  
   mysqli_query($conn,$query);
   
 

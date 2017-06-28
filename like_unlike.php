@@ -6,7 +6,7 @@
 
 	// select type of the variable i.e. is it like or dislike
 	$type = $_POST['type'];
-	
+	$my_id=$_POST['my_id'];
 
 	//count likes and dislikes
 	$question_id = $_POST['question_id'];
@@ -14,7 +14,7 @@
 	$like_result = mysqli_query($conn, $like_query);
 	$fetch_like = mysqli_fetch_array($like_result);
 	$count_like = $fetch_like['cntpost'];
-	$my_id=$_SESSION['user_id'];
+	
 	if($count_like == 0) {
 		$insertQuery = "INSERT INTO like_unlike(user_id,question_id,type) VALUES('$user_id','$question_id','$type')";
 		mysqli_query($conn,$insertQuery);
@@ -26,6 +26,7 @@
 	else{
 		$updateQuery = "UPDATE like_unlike SET type='$type' WHERE user_id='$user_id' AND question_id='$question_id' ";
 		mysqli_query($conn,$updateQuery);
+		send_notification($my_id,$user_id,"question",$question_id);
 	}
 
 	//count likes and dislikes
