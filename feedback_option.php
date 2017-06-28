@@ -35,11 +35,6 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 	</head>
 	<body>
 		<!-- header and heading -->
-		<div id="jumbotron">
-			<div class="container">
-				</span><h1 id="header_heading"><span class="glyphicon glyphicon-apple" id="logo"></span>Some Of The Valuables...</h1></span>
-			</div>
-		</div>
 
 		<div class="container">
 			<div class="row content">
@@ -47,13 +42,13 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 					<div class="col-md-3 affix sidenav">
 						<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
 						<ul class="nav nav-pills nav-stacked">						
-							    <li class="active"><a href="questions.php">All questions</a></li>
-								<li><a href="question_option.php?tag_id=1">Mess</a></li>
-								<li><a href="question_option.php?tag_id=2">Transport</a></li>
-								<li><a href="question_option.php?tag_id=3">Medical</a></li>
-								<li><a href="question_option.php?tag_id=4">Academics</a></li>
-								<li><a href="question_option.php?tag_id=5">Sports</a></li>
-								<li><a href="question_option.php?tag_id=6">Others</a></li>
+							     <li class="active"><a href="feedbacks.php">All feedbacks</a></li>
+								<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
+								<li><a href="feedback_option.php?tag_id=2">Transport</a></li>
+								<li><a href="feedback_option.php?tag_id=3">Academics</a></li>
+								<li><a href="feedback_option.php?tag_id=4">Sports</a></li>
+								<li><a href="feedback_option.php?tag_id=5">Medical</a></li>
+								<li><a href="feedback_option.php?tag_id=6">Others</a></li>
 						</ul>
 					</div>
 				</div>
@@ -61,7 +56,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 
 				<div class="col-md-8" bgcolor="#eee" style="margin-left: 10px;">
 				    <?php
-				    store_score_question();
+				    //store_score_question();
 				    $counter=$tag_id-1;
 				       	$query="SELECT * FROM feedback 
                          WHERE tags='$tags[$counter]'
@@ -73,7 +68,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 					{
 						 
 						?>	
-						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo $tags[$tag_id-1];?></h1>
+						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo $tags[$counter];?></h1>
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
 						   			

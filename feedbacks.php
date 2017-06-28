@@ -42,13 +42,13 @@ $category=array('reply','question','feedback');
 					<div class="col-md-3 affix sidenav">
 						<h4 class="helpblock" style="font-size: 22px; font-family: tangerine;">Categories:</h4>
 						<ul class="nav nav-pills nav-stacked">						
-							    <li class="active"><a href="questions.php">All questions</a></li>
-								<li><a href="question_option.php?tag_id=1">Mess</a></li>
-								<li><a href="question_option.php?tag_id=2">Transport</a></li>
-								<li><a href="question_option.php?tag_id=3">Medical</a></li>
-								<li><a href="question_option.php?tag_id=4">Academics</a></li>
-								<li><a href="question_option.php?tag_id=5">Sports</a></li>
-								<li><a href="question_option.php?tag_id=6">Others</a></li>
+							    <li class="active"><a href="feedbacks.php">All feedback</a></li>
+								<li><a href="feedback_option.php?tag_id=1">Mess</a></li>
+								<li><a href="feedback_option.php?tag_id=2">Transport</a></li>
+								<li><a href="feedback_option.php?tag_id=3">Medical</a></li>
+								<li><a href="feedback_option.php?tag_id=4">Academics</a></li>
+								<li><a href="feedback_option.php?tag_id=5">Sports</a></li>
+								<li><a href="feedback_option.php?tag_id=6">Others</a></li>
 						</ul>
 					</div>
 				</div>
@@ -60,8 +60,9 @@ $category=array('reply','question','feedback');
 				    
 				    for($i=1;$i<=6;$i++)
 				    {
+				    	$counter=$tags[$i-1];
 				    	$query="SELECT * FROM feedback 
-                         WHERE tags='$i'
+                         WHERE tags='$counter'
 						 ORDER BY reg_time DESC
 						 ";
 				         $result=mysqli_query($conn,$query);
