@@ -1,4 +1,5 @@
 <?php
+session_start();
 	include 'connectuser.php';
       include 'notification.php';
 	//user_id

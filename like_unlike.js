@@ -14,7 +14,7 @@ $(document).ready(function() {
 		else
 			type = 0;
 
-		//alert("the text is: "+text+"the user_id is: "+user_id+"the question_id is: "+question_id+"the type is: "+type); 
+		alert(my_id +"  " +user_id); 
 		// ajax request
 		$.ajax({
 			url: 'like_unlike.php',
