@@ -38,6 +38,8 @@
 						<li><a href="feedbacks.php" style="font-size: 20px;"  >Feedback</a></li>
 					</ul>
 					
+					<a href="ask_question.php" class="btn btn-warning btn-md navbar-btn">Ask A Question</a>
+
 					<ul class="nav navbar-nav navbar-right">
 						<?php
 						session_start();
