@@ -140,7 +140,7 @@ $category=array('question','reply','question','feedback');
 								       		<button type="button" class="btn btn-link like" id="like-<?php echo $question_id."-".$my_id."-".$user_id;?>"><span class="glyphicon glyphicon-thumbs-up" id="logo1"></span></button>&nbsp;(<span id="showL<?php echo $question_id;?>"><?php echo $total_likes; ?></span>)&nbsp;
 
 
-								       		<button type="button" class="btn btn-link dislike" id="dislike-<?php echo $question_id."-".$my_id ;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $total_dislikes;?></span>)&nbsp;
+								       		<button type="button" class="btn btn-link dislike" id="dislike-<?php echo $question_id."-".$my_id."-".$user_id;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button>&nbsp;(<span id="showD<?php echo $question_id;?>"><?php echo $total_dislikes;?></span>)&nbsp;
 
 							   			</div>
 							       	</form>

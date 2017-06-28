@@ -14,7 +14,7 @@ $(document).ready(function() {
 		else
 			type = 0;
 
-		//alert("the text is: "+text+"the user_id is: "+user_id+"the question_id is: "+question_id+"the type is: "+type+" my id is: "+my_id); 
+		alert(my_id+'   '+user_id); 
 		// ajax request
 		$.ajax({
 			url: 'like_unlike.php',
@@ -25,6 +25,7 @@ $(document).ready(function() {
 				//alert("i am success");
 				var likes = data['likes'];
 				var dislikes = data['dislikes'];
+				alert(likes);
 				$("#showL"+question_id).html(likes);
 				$("#showD"+question_id).html(dislikes);
 			}
