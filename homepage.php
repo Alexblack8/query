@@ -53,7 +53,7 @@ include 'nav_bar.php';
      <h3>Notifications</h3>
      <div class="line">
      </div>
-    <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    <p> Here you can all the notifications regarding your posts</p>
     </a>
    </div>
    <div class="card">

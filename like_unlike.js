@@ -4,8 +4,8 @@ $(document).ready(function() {
 	$(".like, .dislike").click(function() {
 		var id = this.id; // getting button id
 		var split_id = id.split("-");
-		var user_id = split_id[2];
-		var my_id = split_id[3];
+		var user_id = split_id[3];
+		var my_id = split_id[2];
 		var text = split_id[0];
 		var question_id = split_id[1];
 		var type = 0;
