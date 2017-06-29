@@ -67,6 +67,7 @@ function print_notification()
         $query2="UPDATE notificationlike SET unread='0' WHERE id='$row[0]'";
         mysqli_query($conn,$query2);
         $temp=1;
+        
   	}
   	 else if($category=='like')
   	 {

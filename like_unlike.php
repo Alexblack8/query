@@ -20,14 +20,15 @@
 		$insertQuery = "INSERT INTO like_unlike(user_id,question_id,type) VALUES('$user_id','$question_id','$type')";
 		mysqli_query($conn,$insertQuery);
 
-		$Notiquery="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
+		/*$Notiquery="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
 		  VALUES ('$user_id','$my_id','question','$question_id')";
 		  
-		  mysqli_query($conn,$Notiquery);
+		  mysqli_query($conn,$Notiquery);*/
 	}
 	else{
 		$updateQuery = "UPDATE like_unlike SET type='$type' WHERE user_id='$user_id' AND question_id='$question_id' ";
 		mysqli_query($conn,$updateQuery);
+
 	}
 
 	//count likes and dislikes

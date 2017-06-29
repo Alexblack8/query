@@ -4,6 +4,9 @@
 <head>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="like_unlike.js" type="text/javascript"></script>
+	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -12,8 +15,8 @@
 session_start();
 include 'connectuser.php';
 include 'notification.php';
-$quest_id=$_GET['quest_id'];
-$query="SELECT * FROM question WHERE question_id='$quest_id'";
+$question_id=$_GET['quest_id'];
+$query="SELECT * FROM question WHERE question_id='$question_id'";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_array($result);
 
@@ -43,17 +46,39 @@ $row=mysqli_fetch_array($result);
 
 							   			</div>
 							       	</form>
+							       	<!-- counting likes and dislikes -->
+									
+									<?php
+										
+										//counting total number of likes
+										$like_query = "SELECT COUNT(*) AS cntLikes FROM like_unlike WHERE type=1 and question_id='$question_id'";
+					                    $like_result = mysqli_query($conn,$like_query);
+					                    $like_row = mysqli_fetch_array($like_result);
+					                    $total_likes = $like_row['cntLikes'];
+										$user_id=$row[1];
+										//counting total number of dislikes
+					                    $unlike_query = "SELECT COUNT(*) AS cntUnlikes FROM like_unlike WHERE type=0 and 
+					                    question_id='$question_id'";
+					                    $unlike_result = mysqli_query($conn,$unlike_query);
+					                    $unlike_row = mysqli_fetch_array($unlike_result);
+					                    $total_dislikes = $unlike_row['cntUnlikes'];
+										$my_id=$_SESSION['user_id'];
+										
+									?>
+									
+									<!-- end counting likes and dislikes -->
+W
 									<!-- THE REPLY SECTION -->
 							       	<?php
-							       	
+							       	$question_id=$row[0];
 							       	store_score_replies();
-							       	$query2="SELECT * FROM replies WHERE quest_id='$quest_id' 
+							       	$query2="SELECT * FROM replies WHERE quest_id='$question_id' 
 							       	ORDER BY score DESC ";
 							       	$result2=mysqli_query($conn,$query2);
 							       	echo "Replies";
 							       	while($row2=mysqli_fetch_array($result2))
 							       	{
-                                         $user_id=$row2['user_id'];
+                                         $user_id=$row2[2];
                                          $username=get_user2($user_id);
                                          $get_user_id2 = $row2['user_id'];
                                          //counting total number of likes
@@ -75,7 +100,7 @@ $row=mysqli_fetch_array($result);
 							             		echo '<a href="user_profile.php?userId='.$get_user_id2.'">'.$username.'</a><br />';
 							             	$reply_print=get_reply($row2[0]);
 							             	echo $reply_print;
-								   	        ?></strong></h3>
+								   	        ?></strong>
 								   	        <form method="post">
 								   	       
 
@@ -92,17 +117,78 @@ $row=mysqli_fetch_array($result);
 								       		
 								       		</form>
 								   	        <?php  
-								   	        //<!-- END REPLY SECTION -->
-
 							       	}
-							       
-									
+							       	?>
+									<!-- END REPLY SECTION -->
 
 
 
 
 
-?>
+						       								     
+								</div>					
+					   		
+					   		<div class="container">
+								<div class="modal animation fade" id="modal-<?php echo $row[0]; ?>" tabindex="-1" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title"><strong style="font-size: 2em;"><?php echo $row[2];?></strong></h4>
+											</div>
+
+											<div class="modal-body">
+												<form method="post">
+													<div class="form-group">
+														<label for="reply">Enter Your Answer:</label>
+														<textarea class="form-control" name="text-<?php echo $row[0];?>" placeholder="Enter your answer..." rows="10"></textarea>
+													</div>
+													<div class="form-group">
+														<button type="submit" name="reply-<?php echo $row[0];?>" class="btn btn-success btn-block" style="font-size: 1.25em;">Submit</button>
+													</div>
+												</form>
+											</div>
+
+											<div class="modal-footer">	
+												<button type="button" class="btn btn-info" data-dismiss="modal" style="font-size: 1.25em;">Cancel</button> 									
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					<?php
+											
+						$astring3 = "reply-".$row[0];
+						$astring4 =  "text-".$row[0];
+						$reply    =	$_POST[$astring4];			
+						if($_SERVER["REQUEST_METHOD"] == "POST") {
+							
+							if(isset($_POST[$astring3]))
+							{
+								$question_id=$row[0];
+								$my_id=$_SESSION['user_id'];
+								$query="INSERT INTO replies (quest_id,user_id,reply)
+			     				VALUES ('$question_id','$my_id','$reply')";
+			     				if(mysqli_query($conn,$query))
+			     				{
+			     					echo "reply registered";	
+			     					send_notification_like($my_id,$user_id,$category[0],$question_id);
+			     				}
+			     				else
+			     				{
+			     					echo "error";
+			     				}
+							}
+						}
+					
+					
+				
+						?>
+				</div> <!-- end col-md-7 -->
+			</div> <!-- end row -->
+		</div> <!-- end container --> 
+
+		<!-- Modal Window -->
 
 </body>
 </html>
