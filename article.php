@@ -19,7 +19,7 @@ $question_id=$_GET['quest_id'];
 $query="SELECT * FROM question WHERE question_id='$question_id'";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_array($result);
-
+$quest_user_id=$row['user_id'];
 	?>
 						   			<!--Question-->	
 								   	<h3 id="question_heading"><strong><?php	echo $row['question_heading'] ?></strong>
@@ -172,6 +172,7 @@ W
 			     				if(mysqli_query($conn,$query))
 			     				{
 			     					echo "reply registered";	
+			     					send_notification($user_id,$quest_user_id,"reply",$question_id);
 			     					
 			     				}
 			     				else

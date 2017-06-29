@@ -149,4 +149,11 @@ function store_score_replies()
   
 
  }
+ function get_question($question_id)
+ {
+  $query2="SELECT * FROM question WHERE question_id='$question_id'";
+  $result=mysqli_query($conn,$query);
+  $row=mysqli_fetch_array($result);
+  return $row['question'];
+ }
 ?>

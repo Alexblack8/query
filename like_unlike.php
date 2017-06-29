@@ -28,9 +28,7 @@
 		$updateQuery = "UPDATE like_unlike SET type='$type' WHERE user_id='$user_id' AND question_id='$question_id' ";
 		mysqli_query($conn,$updateQuery);
      //send_notification($my_id,$user_id,"question",$question_id);
-		$query="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
-  VALUES ('$my_id','$user_id','question','$question_id')";
-  mysqli_query($conn,$query);
+		
 	}
 
 	//count likes and dislikes
