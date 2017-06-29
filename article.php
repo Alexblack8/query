@@ -172,7 +172,7 @@ W
 			     				if(mysqli_query($conn,$query))
 			     				{
 			     					echo "reply registered";	
-			     					send_notification_like($my_id,$user_id,$category[0],$question_id);
+			     					
 			     				}
 			     				else
 			     				{

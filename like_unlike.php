@@ -1,6 +1,6 @@
 <?php
 	include 'connectuser.php';
-
+   //include  'notification.php';
 	//user_id
 	$user_id = $_POST['user_id'];
 	$my_id = $_POST['my_id'];
@@ -19,16 +19,18 @@
 	if($count_like == 0) {
 		$insertQuery = "INSERT INTO like_unlike(user_id,question_id,type) VALUES('$user_id','$question_id','$type')";
 		mysqli_query($conn,$insertQuery);
-
-		/*$Notiquery="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
-		  VALUES ('$user_id','$my_id','question','$question_id')";
-		  
-		  mysqli_query($conn,$Notiquery);*/
+        $query="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
+  VALUES ('$my_id','$user_id','question','$question_id')";
+  mysqli_query($conn,$query);
+		//send_notification($my_id,$user_id,"question",$question_id);
 	}
 	else{
 		$updateQuery = "UPDATE like_unlike SET type='$type' WHERE user_id='$user_id' AND question_id='$question_id' ";
 		mysqli_query($conn,$updateQuery);
-
+     //send_notification($my_id,$user_id,"question",$question_id);
+		$query="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
+  VALUES ('$my_id','$user_id','question','$question_id')";
+  mysqli_query($conn,$query);
 	}
 
 	//count likes and dislikes

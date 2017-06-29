@@ -21,7 +21,7 @@ $result=mysqli_query($conn,$query1);
    	 	VALUES ('$first','$last','$username','$password','$email','$description')";
 	if(mysqli_query($conn,$query2))
 	{
-		header("http://localhost/webproject/sign-up-login-form/register.php");
+		header("http://localhost/webproject/sign-up-login-form/homepage.php");
 	}
 }
 

@@ -49,7 +49,7 @@ function print_notification()
   	if($id!=$my_id)
   	{
   	  $category=$row[4];
-  	  $ref_id=$row[6];
+  	  $ref_id=$row['ref_id'];
   	  if($category=='reply')
   	    {
           echo "<a href=''><h3>".get_user2($row[1])." replied to your post<br/> </a></h3><br/> "; 
@@ -63,7 +63,7 @@ function print_notification()
   		  $result2=mysqli_query($conn,$query);
   		  $row2=mysqli_fetch_array($result2);
   		  $question=$row2[2];
-  		  echo "<h3>".get_user2($row[1])." liked  your post<br/>Question: ".$question."</h3><br/> "; 
+  		  echo "<a href='article.php?quest_id=".  $ref_id ."'><h3>".get_user2($row[1])." liked  your post<br/>Question: ".$question."</h3><br/></a> "; 
         $query2="UPDATE notificationlike SET unread='0' WHERE id='$row[0]'";
         mysqli_query($conn,$query2);
         $temp=1;

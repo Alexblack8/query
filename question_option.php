@@ -102,7 +102,9 @@ $category=array('question','reply','question','feedback');
 								   	echo '<a href="user_profile.php?userId='.$get_user_id.'">'.ucfirst($name).'</a>';
 								   	?></strong></h3>
 									<p>
-						   			<blockquote><?php echo $row[2];?></blockquote>
+						   			<a href="article.php?quest_id=<?php echo $row[question_id];?>">
+						   			<blockquote><?php echo $row['question'];?></blockquote>
+						   			</a>
 									</p>
 							       	
 									<!-- counting likes and dislikes -->
