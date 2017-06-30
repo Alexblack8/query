@@ -120,8 +120,8 @@ $quest_user_id=$row['user_id'];
 									       		<button type="button" class="btn btn-link reply_dislike" id="replyDislike-<?php echo $row2['reply_id']."-".$my_id;?>"><span class="glyphicon glyphicon-thumbs-down" id="logo1"></span></button><br/>
 									       		</h3>
 
-									       		<label id="label-like-<?php echo $row2['reply_id'];?>">Likes:  <?php echo $total_likes1;?></label><br/>
-									       		<label id="label-dislike-<?php echo $row2['reply_id'];?>">DisLikes:  <?php echo $total_dislikes1;?></label><br/>
+									       		<span class="text-info" style="padding-top: 1px !important"><strong>Likes:  <span id="label-like-<?php echo $row2['reply_id'];?>"><?php echo $total_likes1;?></strong></span></span>
+									       		<span class="text-danger" ><strong>DisLikes:  <span id="label-dislike-<?php echo $row2['reply_id'];?>"><?php echo $total_dislikes1;?></span></strong></span>
 
 									       		
 									       		</form>

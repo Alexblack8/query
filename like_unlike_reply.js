@@ -26,8 +26,8 @@ $(document).ready(function() {
 				//to check that data is being fetched or not	
 				//alert("the likes are "+likes+" the dislikes are "+dislikes+" the reply_id is: "+reply_id);
 				
-				$("#label-like-"+reply_id).html("Likes: "+likes);
-				$("#label-dislike-"+reply_id).html("DisLikes: "+dislikes);
+				$("#label-like-"+reply_id).html(likes);
+				$("#label-dislike-"+reply_id).html(dislikes);
 			}
 
 		});
