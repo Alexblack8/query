@@ -108,3 +108,12 @@ body {
       text-align: center;
       font-size: 30px;
   }
+
+.cards_animation {
+	transition: .40s;
+}
+
+.cards_animation:hover {
+	transform: scale(1.05);
+  	box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
