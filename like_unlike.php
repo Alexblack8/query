@@ -11,9 +11,10 @@
 
 	//count likes and dislikes
 	$question_id = $_POST['question_id'];
-	$like_query = "SELECT COUNT(*) AS cntpost FROM like_unlike WHERE question_id=".$question_id." and user_id=".$user_id;
+	$like_query = "SELECT COUNT(*) AS cntpost FROM like_unlike WHERE question_id='$question_id' and user_id='$user_id'";
 	$like_result = mysqli_query($conn, $like_query);
 	$fetch_like = mysqli_fetch_array($like_result);
+
 	$count_like = $fetch_like['cntpost'];
 	
 	if($count_like == 0) {
@@ -32,7 +33,7 @@
 	}
 
 	//count likes and dislikes
-	$query = "SELECT COUNT(*) AS cntLike FROM like_unlike WHERE type=1 and question_id=".$question_id;
+	$query = "SELECT COUNT(*) AS cntLike FROM like_unlike WHERE type=1 AND question_id=".$question_id;
 	$result = mysqli_query($conn,$query);
 	$fetchlikes = mysqli_fetch_array($result);
 	$total_likes = $fetchlikes['cntLike'];

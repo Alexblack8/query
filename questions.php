@@ -251,6 +251,7 @@ $category=array('question','reply','question','feedback');
 			     				if(mysqli_query($conn,$query))
 			     				{
 			     					echo "reply registered";	
+			     					send_notification($_SESSION['user_id'],$row['user_id'],"reply",$row['question_id']);
 			     					
 			     				}
 			     				else
