@@ -11,22 +11,22 @@
 
 	//count likes and dislikes
 	$question_id = $_POST['question_id'];
-	$like_query = "SELECT COUNT(*) AS cntpost FROM like_unlike WHERE question_id='$question_id' and user_id='$user_id'";
+	$like_query = "SELECT COUNT(*) AS cntpost FROM like_unlike WHERE question_id='$question_id' and user_id='$my_id'";
 	$like_result = mysqli_query($conn, $like_query);
 	$fetch_like = mysqli_fetch_array($like_result);
 
 	$count_like = $fetch_like['cntpost'];
 	
 	if($count_like == 0) {
-		$insertQuery = "INSERT INTO like_unlike(user_id,question_id,type) VALUES('$user_id','$question_id','$type')";
+		$insertQuery = "INSERT INTO like_unlike(user_id,question_id,type) VALUES('$my_id','$question_id','$type')";
 		mysqli_query($conn,$insertQuery);
         $query="INSERT INTO notificationlike (sender_id,receiver_id,category,ref_id)
-  VALUES ('$my_id','$user_id','question','$question_id')";
-  mysqli_query($conn,$query);
+		VALUES ('$my_id','$user_id','question','$question_id')";
+		mysqli_query($conn,$query);
 		//send_notification($my_id,$user_id,"question",$question_id);
 	}
 	else{
-		$updateQuery = "UPDATE like_unlike SET type='$type' WHERE user_id='$user_id' AND question_id='$question_id' ";
+		$updateQuery = "UPDATE like_unlike SET type='$type' WHERE user_id='$my_id' AND question_id='$question_id' ";
 		mysqli_query($conn,$updateQuery);
      //send_notification($my_id,$user_id,"question",$question_id);
 		
