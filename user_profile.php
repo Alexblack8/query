@@ -95,7 +95,7 @@
 								if($color_var != 4) $color_var++;
 								else $color_var = 1;
 						?>
-						<div id="card-<?php echo $color_var ;?>">
+						<div class="cards_animation" id="card-<?php echo $color_var ;?>">
 							<!-- question heading -->
 							<h2 style="color: #f4b042;"><strong><?php echo $question_dis_array[7];?></strong></h2>
 							<!-- question content -->
@@ -129,7 +129,7 @@
 							$retrieve_q_heading_result = mysqli_query($conn,$retrieve_q_heading);
 							$retrieve_q_heading_array = mysqli_fetch_array($retrieve_q_heading_result);
 						?>
-							<div id="card-<?php echo $color_var ;?>">
+							<div class="cards_animation" id="card-<?php echo $color_var ;?>">
 								<!-- reply heading -->
 								<h2 style="color: #d3970c;"><strong><?php echo $retrieve_q_heading_array['q_heading']; ?></strong></h2>
 								<!-- reply content -->

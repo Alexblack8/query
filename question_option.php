@@ -93,7 +93,7 @@ $category=array('question','reply','question','feedback');
 								else $color_var = 1;
 						?>
                           
-					   			<div id="card-<?php echo $color_var ;?>">
+					   			<div class="cards_animation" id="card-<?php echo $color_var ;?>">
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
