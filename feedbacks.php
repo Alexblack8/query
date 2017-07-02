@@ -3,7 +3,8 @@ session_start();
 
 include 'connectuser.php';
 include 'notification.php';
-include 'nav_bar.php';
+include 'nav_bar.php'
+
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 $category=array('reply','question','feedback');
 ?>
@@ -64,23 +65,28 @@ $category=array('reply','question','feedback');
 				    	$query="SELECT * FROM feedback 
                          WHERE tags='$counter'
 						 ORDER BY reg_time DESC
+						 LIMIT 0,4
 						 ";
 				         $result=mysqli_query($conn,$query);
 				    	$color_var = 1;
+				    	?>
+				    	<h1><?php echo "<a href='feedback_option.php?tag_id=". 
+						    $i."'>".$tags[$i-1]."</a>";?></h1>
+						    <?php
 				    	while($row=mysqli_fetch_array($result))
 					{
+						$get_user_id = $row['user_id'];
 						 if($color_var != 4) $color_var++;
 								else $color_var = 1;
 						?>	
 						<div class="container-fluid">				
-								   <h1><?php echo "<a href='feedback_option.php?tag_id=". 
-						    $row[6]."'>".$tags[$i-1]."</a>";?></h1>
+								   
 					   		<div class="container-fluid">
 					   			<div id="card-<?php echo $color_var ;?>">
 						   			
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
-								   	echo "<a href='#	'>$name</a>";
+								   	echo "<a href=user_profile.php?userId=".$get_user_id.">".$name."</a>";
 								   	?></strong></h3>
 									<p>
 						   			<blockquote><?php echo $row[2];?></blockquote>

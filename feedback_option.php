@@ -14,15 +14,25 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 	    <title>Transport Feedbacks!!</title>
 	    <link href="question_display.css" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
+	    
+	   
+
+	    
+	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 	    <style>
-			.sidenav li {
+			body {
+	    		margin: 0;
+	    	}
+			
+			.sidenav {
 				font-family: tangerine;
 				font-size: 20px;
 			}
 
 			html {
 				margin-left: 0;
-				margin-top: 50px;
+				margin-top: 70px;
 			}
 
 			.sidenav {
@@ -30,6 +40,10 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 		      padding-top: 20px;
 		      background-color: #f1f1f1;		 
 		      height: 100%;
+		    }
+
+		    .main-content1 {
+		    	padding-right: 2em;
 		    }
 	    </style>
 	</head>
@@ -63,12 +77,15 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 						 ORDER BY score DESC
 						 ";
 				         $result=mysqli_query($conn,$query);
-				    	
+				         ?>
+
+				    	<h1><?php echo $tags[$counter];?></h1>
+				    	<?php
 				    	while($row=mysqli_fetch_array($result))
 					{
 						 
 						?>	
-						<div class="container-fluid"><hr id="hr_top">								   <h1><?php echo $tags[$counter];?></h1>
+						<div class="container-fluid"><hr id="hr_top">
 					   		<div class="container-fluid"><hr id="hr_top">
 					   			<div id="card">
 						   			

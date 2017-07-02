@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connectuser.php';
+include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
 ?>
 <!-- HTML PART OF THE PAGE -->
 <!DOCTYPE html>
@@ -158,16 +158,24 @@ include 'connectuser.php';
 	    	if(!$conn) die("database missing");
 
 			$query = "INSERT INTO feedback (user_id,feedback,tags) VALUES ('$my_id','$get_feedback','$get_category')";
+			header("Location:http://localhost/webproject/sign-up-login-form/homepage.php");
 			if(!mysqli_query($conn,$query))
 			{
                echo "error<br/>";
 			}
+              else
+              {
+
+
 			echo "<script>
 	         $(window).load(function(){
 	             $('#modal-3').modal('show');
 	         });
 	    	</script>";
-    		
+    	   	
+    	    	
+    	    
+    	   	}
     	}
 	}
 ?>

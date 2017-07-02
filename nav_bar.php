@@ -45,7 +45,8 @@
 						<li><a href="feedbacks.php" style="font-size: 20px;"  >Feedback</a></li>
 					</ul>
 					
-					<a href="ask_question.php" class="btn btn-warning btn-md navbar-btn">Ask A Question</a>
+					<a href="ask_question.php" class="btn btn-warning btn-md navbar-btn">Ask a Question</a>
+					<a href="feedback/feedback.php" class="btn btn-warning btn-md navbar-btn">Post a Feedback</a>
 
 					<ul class="nav navbar-nav navbar-right">
 						<?php
