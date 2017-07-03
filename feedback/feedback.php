@@ -156,8 +156,14 @@ include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
 	    else {
 	    
 	    	if(!$conn) die("database missing");
-
-			$query = "INSERT INTO feedback (user_id,feedback,tags) VALUES ('$my_id','$get_feedback','$get_category')";
+            $query3="SELECT FLOOR(10000 + RAND() * 89999) AS random_number
+FROM feedback
+WHERE 'random_number' NOT IN (SELECT user_id FROM feedback)
+LIMIT 1";
+  $result=mysqli_query($conn,$query3);
+  $row=mysqli_fetch_array($result);
+  $feedback_id=$row['random_number'];
+			$query = "INSERT INTO feedback (feedback_id,user_id,feedback,tags) VALUES ('$feedback_id','$my_id','$get_feedback','$get_category')";
 			header("Location:http://localhost/webproject/sign-up-login-form/homepage.php");
 			if(!mysqli_query($conn,$query))
 			{
