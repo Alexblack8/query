@@ -1,6 +1,11 @@
 <?php
 session_start();
 include 'nav_bar.php';
+include 'function.php';
+if(!isloggedin())
+{
+  header("Location:http://localhost/webproject/sign-up-login-form/register.php");
+}
 ?>
 <!DOCTYPE html>
 <html >

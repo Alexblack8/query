@@ -1,3 +1,7 @@
+<?php
+session_start();
+include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
+?>
 <!-- HTML PART OF THE PAGE -->
 <!DOCTYPE html>
 <!-- only for Vishal Maurya - always refer to the photo saved in the pictures for form-controls -->
@@ -133,6 +137,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST") {
     	$get_category = $_POST['category'];
 		$get_feedback = $_POST['feedback'];
+		$my_id=$_SESSION['user_id'];
 		if ($get_feedback == NULL) {
 	    	echo "<script>
 	         $(window).load(function(){
@@ -149,16 +154,34 @@
     	
 	    }
 	    else {
-	    	$connect = mysqli_connect("localhost","root","","webproject");
-	    	if(!$connect) die("database missing");
-			$insert_in_table = "INSERT INTO feedback (feedback,tags) VALUES ('$get_feedback','$get_category')";
-			mysqli_query($connect,$insert_in_table);
+	    
+	    	if(!$conn) die("database missing");
+            $query3="SELECT FLOOR(10000 + RAND() * 89999) AS random_number
+FROM feedback
+WHERE 'random_number' NOT IN (SELECT user_id FROM feedback)
+LIMIT 1";
+  $result=mysqli_query($conn,$query3);
+  $row=mysqli_fetch_array($result);
+  $feedback_id=$row['random_number'];
+			$query = "INSERT INTO feedback (feedback_id,user_id,feedback,tags) VALUES ('$feedback_id','$my_id','$get_feedback','$get_category')";
+			header("Location:http://localhost/webproject/sign-up-login-form/homepage.php");
+			if(!mysqli_query($conn,$query))
+			{
+               echo "error<br/>";
+			}
+              else
+              {
+
+
 			echo "<script>
 	         $(window).load(function(){
 	             $('#modal-3').modal('show');
 	         });
 	    	</script>";
-    		session_destroy();
+    	   	
+    	    	
+    	    
+    	   	}
     	}
 	}
 ?>

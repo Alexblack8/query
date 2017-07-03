@@ -52,36 +52,48 @@ function print_notification()
   	{
   	  $category=$row['category'];
   	  $ref_id=$row['ref_id'];
-            
+       //Notifications of reply     
   	  if($category=='reply')
   	    {
           $question=get_question($ref_id);
-          echo "<a href='article.php?quest_id=".  $ref_id ."'><h3>".get_user2($row[1])." Question: ".$question."</h3></a> replied to your post<br/> </a></h3><br/> "; 
-        
+          ?>
+          <div class="col-md-1 main-content1" bgcolor="#eee">
+          </div>
+          <div class="col-md-7 main-content1" bgcolor="#eee">
+          <div class="cards_animation" id="card-<?php echo $color_var ;?>">
+          <a href="article.php?quest_id=<?php echo $ref_id;?>"><h3><?php $name=get_user2($row[1]);echo $name;?> Question: <?php echo$question;?></h3></a> replied to your post<br/></h3></a><br/> 
+          </div>
+          </div>
+        <?php
 
           $query2="UPDATE notificationlike SET unread='0' WHERE id='$row[0]'";
           mysqli_query($conn,$query2);
            $temp=1;
   	    }
+
+  	    //notification of like of question
   	  else if($category=="question")
   	 {
+
   	  	$query="SELECT * FROM question WHERE question_id='$ref_id' ORDER BY reg_time DESC";
   		  $result2=mysqli_query($conn,$query);
   		  $row2=mysqli_fetch_array($result2);
   		  $question=$row2[2];
-  		  echo "<a href='article.php?quest_id=".  $ref_id ."'><h3>".get_user2($row[1])." liked  your post<br/>Question: ".$question."</h3><br/></a> "; 
+  		  ?>
+  		  <div class="col-md-1 main-content1" bgcolor="#eee">
+          </div>
+  		  <div class="col-md-7 main-content1" bgcolor="#eee">
+  		  <div class="cards_animation" id="card-<?php echo $color_var ;?>">
+  		  <a href="article.php?quest_id=<?php echo $ref_id ;?>"><h3><?php $name=get_user2($row[1]);echo $name;?> liked  your post<br/> <?php echo $question;?></h3><br/></a>
+  		  </div>
+  		  </div>
+  		  <?php 
         $query2="UPDATE notificationlike SET unread='0' WHERE id='$row[0]'";
         mysqli_query($conn,$query2);
         $temp=1;
         
   	}
-  	 else if($category=='like')
-  	 {
-  		  echo "<h3>".get_user2($row[1])." liked  your post</h3><br/> "; 
-        $query2="UPDATE notificationlike SET unread='0' WHERE id='$row[0]'";
-        mysqli_query($conn,$query2);
-        $temp=1;
-  	 }
+  	 
 
   	
     
