@@ -156,4 +156,15 @@ function store_score_replies()
   $row=mysqli_fetch_array($result);
   return $row['question'];
  }
+ function generate_id()
+ {
+  $query="SELECT FLOOR(10000 + RAND() * 89999) AS random_number
+FROM user
+WHERE 'random_number' NOT IN (SELECT user_id FROM user)
+LIMIT 1";
+  $result=mysqli_query($conn,$query);
+  $row=mysqli_fetch_array($result);
+  $user_id=$row['random_number'];
+  return $user_id;
+ }
 ?>

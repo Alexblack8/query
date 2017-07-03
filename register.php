@@ -71,7 +71,7 @@ include 'connectuser.php';
           
            <div class="field-wrap">
              <textarea rows='4' cols='50' name="description" maxlength="150" 
-            required autocomplete="off" placeholder="Give your description in not more than 150 words"> </textarea> 
+            required autocomplete="off" >Please give a description in not more than 150 words</textarea> 
           </div>
 
           <button type="submit" class="button button-block"/>Get Started</button>
