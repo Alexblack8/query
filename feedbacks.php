@@ -17,6 +17,7 @@ $category=array('reply','question','feedback');
 	    <link href="question_display.css" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <style>
 			.sidenav li {
 				font-family: tangerine;
@@ -33,6 +34,13 @@ $category=array('reply','question','feedback');
 		      padding-top: 20px;
 		      background-color: #f1f1f1;		 
 		      height: 100%;
+		    }
+
+		    @media screen and (max-width: 641px) {
+		    	.sidenav {
+		    		position: relative;
+		    		padding-top: 10px;
+		    	}
 		    }
 	    </style>
 	</head>

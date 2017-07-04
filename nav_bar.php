@@ -17,6 +17,12 @@
 		    letter-spacing: 3px;
 		}
 
+		@media screen and (max-width: 641px) {
+			.sidenav {
+				position: relative;
+			}
+		}
+
 		.navbar-nav li a:hover {
 		    color: #1abc9c !important;
 		}
@@ -25,6 +31,9 @@
 			border-radius: 0 !important;
 		}
 	</style>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<nav class="navbar navbar-default navbar-fixed-top" id="navigation-bar" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
