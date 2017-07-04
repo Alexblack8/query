@@ -201,6 +201,6 @@ $quest_user_id=$row['user_id'];
 		</div> <!-- end container --> 
 
 		<!-- Modal Window -->
-
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>

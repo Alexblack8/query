@@ -45,6 +45,12 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 		    .main-content1 {
 		    	padding-right: 2em;
 		    }
+
+		    @media screen and (max-width: 641px) {
+		    	.sidenav{
+		    		position: relative;
+		    	}
+		    }
 	    </style>
 	</head>
 	<body>
