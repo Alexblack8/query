@@ -12,7 +12,6 @@
 	<head>
 		<title><?php echo ucfirst($user_array['first_name']);?>'s Profile</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<link rel="stylesheet" href="question_display.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
@@ -38,7 +37,12 @@
 		      background-color: #f1f1f1;		 
 		      height: 100%;
 		    }
-
+				
+			@media screen and (max-width: 641px) {
+			.sidenav {
+				position: relative;
+			}
+		}
 		</style>
 	</head>
 
@@ -144,5 +148,8 @@
 			</div>
 		</div>
 
+
+		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	</body>
 </html>

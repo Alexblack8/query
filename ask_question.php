@@ -22,6 +22,13 @@ include 'connectuser.php';
       html {
         margin-top: 50px;
       }
+
+      @media screen and (max-width: 640px) {
+                * {
+          font-family: 'Josefin Sans', sans-serif;
+          /*border: 1px solid blue;*/
+        }
+      }
     </style>
   </head>
   <body>

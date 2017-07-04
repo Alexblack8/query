@@ -13,13 +13,12 @@ $category=array('question','reply','question','feedback');
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
 	    <title>Questions!!</title>
-	    <link href="question_display.css" rel="stylesheet">
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-
+		<link href="question_display.css" rel="stylesheet">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <style>
 
@@ -45,10 +44,17 @@ $category=array('question','reply','question','feedback');
 		      height: 100%;
 		    }
 
-		    @media screen and (max-width: 481px) {
+		    @media screen and (max-width: 641px) {
 		    	.sidenav {
 		    		position: relative;
 		    	}
+
+		    	.navbar {
+					border: 0;
+				    border-radius: 0;
+				    font-size: 12px;
+				    letter-spacing: 3px;
+				}
 		    }
 
 		    .main-content1 {

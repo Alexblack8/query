@@ -22,6 +22,7 @@ $category=array('question','reply','question','feedback');
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <style>
 			
 			.sidenav li {
@@ -39,6 +40,12 @@ $category=array('question','reply','question','feedback');
 		      padding-top: 20px;
 		      background-color: #f1f1f1;		 
 		      height: 100%;
+		    }
+
+		    @media screen and (max-width: 641px) {
+		    	.sidenav {
+		    		position: relative;
+		    	}
 		    }
 	    </style>
 	</head>
