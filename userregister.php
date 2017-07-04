@@ -28,7 +28,7 @@ LIMIT 1";
 	if(mysqli_query($conn,$query2))
 	{
 
-		header("Location:http://localhost/webproject/sign-up-login-form/homepage.php");
+		header("Location:http://ee6ad0a4.ngrok.io/soc-project/homepage.php");
 	}
 }
 else

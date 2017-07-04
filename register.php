@@ -11,7 +11,7 @@ include 'connectuser.php';
   <title>Sign-Up/Login Form</title>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
       <link rel="stylesheet" href="css/style.css">
 
@@ -71,7 +71,7 @@ include 'connectuser.php';
           
            <div class="field-wrap">
              <textarea rows='4' cols='50' name="description" maxlength="150" 
-            required autocomplete="off" >Please give a description in not more than 150 words</textarea> 
+            required autocomplete="off" placeholder="Please give a description in not more than 150 words"></textarea> 
           </div>
 
           <button type="submit" class="button button-block"/>Get Started</button>

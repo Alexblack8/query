@@ -47,6 +47,17 @@ $category=array('question','reply','question','feedback');
 		      background-color: #f1f1f1;		 
 		      height: 100%;
 		    }
+			
+			.nav-pills > li.active > a,
+			.nav-pills > li.active > a:focus,
+			.nav-pills > li.active > a:hover {
+				background-color: #1d8913;
+				border-radius: 0;
+			}
+
+			.nav-pills > li > a:hover {
+				
+			}		
 
 		    @media screen and (max-width: 641px) {
 		    	.sidenav {

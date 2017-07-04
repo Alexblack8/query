@@ -2,7 +2,6 @@
 session_start();
 include 'function.php';
 include 'connectuser.php';
-include 'nav_bar.php';
 $tag_id=$_GET['tag_id'];
 $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 ?>
@@ -51,12 +50,25 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 		    		position: relative;
 		    	}
 		    }
+
+		    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+			  html {
+			    transform: rotate(-90deg);
+			    transform-origin: left top;
+			    width: 100vh;
+			    overflow-x: hidden;
+			    position: absolute;
+			    top: 100%;
+			    left: 0;
+			  }
+			}
 	    </style>
 	</head>
 	<body>
 		<!-- header and heading -->
 
-		<div class="container-fluid">
+		<div class="container-fluid" id="rotate">
+			<?php include 'nav_bar.php'; ?>
 			<div class="row content">
 				<div class="col-md-3">
 					<div class="col-md-3 affix sidenav">
