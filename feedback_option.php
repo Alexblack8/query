@@ -101,7 +101,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 				    	<?php
 				    	while($row=mysqli_fetch_array($result))
 					{
-						 
+						 $get_user_id = $row['user_id'];
 						?>	
 						<div class="container-fluid"><hr id="hr_top">
 					   		<div class="container-fluid"><hr id="hr_top">
@@ -109,7 +109,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 						   			
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
-								   	echo "<a href='#	'>$name</a>";
+								   	echo "<a href=user_profile.php?userId=".$get_user_id.">".$name."</a>";
 								   	?></strong></h3>
 									<p>
 						   			<blockquote><?php echo $row[2];?></blockquote>
