@@ -56,7 +56,7 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 	<body>
 		<!-- header and heading -->
 
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row content">
 				<div class="col-md-3">
 					<div class="col-md-3 affix sidenav">
