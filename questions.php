@@ -20,7 +20,10 @@ $category=array('question','reply','question','feedback');
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-	    
+
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	    <style>
 
 	    	body {
@@ -38,10 +41,17 @@ $category=array('question','reply','question','feedback');
 			}
 
 			.sidenav {
+			  position: fixed;
 			  margin-right: 2px;
 		      padding-top: 20px;
 		      background-color: #f1f1f1;		 
 		      height: 100%;
+		    }
+
+		    @media screen and (max-width: 481px) {
+		    	.sidenav {
+		    		position: relative;
+		    	}
 		    }
 
 		    .main-content1 {
@@ -55,7 +65,7 @@ $category=array('question','reply','question','feedback');
 		<div class="container-fluid">
 			<div class="row content">
 				<div class="col-md-3">
-					<div class="col-md-3 affix sidenav">
+					<div class="col-md-3 sidenav">
 						<h4 class="helpblock" style="font-size: 30px; font-family: tangerine;">Categories:</h4>
 						<ul class="nav nav-pills nav-stacked">						
 							    <li class="active"><a href="questions.php">All questions</a></li>
@@ -148,7 +158,6 @@ $category=array('question','reply','question','feedback');
 							   			</div>
 							       	</form>
 									<!-- end reply like unlike button -->
-																	       								     
 								</div>					
 					   		
 					   		<div class="container">

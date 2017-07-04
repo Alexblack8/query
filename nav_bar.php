@@ -25,10 +25,10 @@
 			border-radius: 0 !important;
 		}
 	</style>
-<nav class="navbar navbar-default navbar-fixed-top" id="navigation-bar" role="navigation">
+		<nav class="navbar navbar-default navbar-fixed-top" id="navigation-bar" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-nav-collapse">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-it">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -36,7 +36,7 @@
 					<a href="#" class="navbar-brand" >QUERY!!</a>
 				</div>
 
-				<div class="collapse navbar-collapse" id="nav-collapse">
+				<div class="collapse navbar-collapse" id="collapse-it">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="homepage.php" ><span class="glyphicon glyphicon-home"></span></a></li>
 						<li class="navbar-divider"></li>
@@ -58,7 +58,8 @@
 
 					<form action="logout.php" class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-						<button type="submit" class="btn btn-info btn-md"><strong><span class="glyphicon glyphicon-log-out"></span> Log Out</strong></button>
+						<button type="submit" class="btn btn-info btn-md"><strong><span class="glyphicon glyphicon-log-out"></span> Log Out</strong>
+						</button>
 					</form>
 				</div>
 			</div>	
