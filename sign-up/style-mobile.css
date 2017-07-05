@@ -59,6 +59,14 @@ html,body {
 	border-top: 10px solid #B388FF;
 }
 
+.text-area {
+	resize: none;
+}
+
+.text-area:focus {
+	border-color: rebeccapurple;
+}
+
 .divider {
 	height: 30px;
 }

@@ -118,6 +118,7 @@ p {
   border: 2px solid #ccc;
   border-radius: 4px;
   resize: none;
+  transition: ease .5s;
 }
 
 .text-area:focus {
