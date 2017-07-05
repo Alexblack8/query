@@ -113,6 +113,10 @@ p {
   font-size: 1.2em;
 }
 
+.text-area {
+  margin-top: 20px;
+}
+
 @media screen and (min-width: 800px) {
 	.mobile-hide {
 		display: none;

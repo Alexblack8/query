@@ -5,8 +5,8 @@ $(document).ready(function() {
 			$("form").animate({
 				left: "440px",
 				right: null
-			},"swing");
-			$("input[name*='Name']").fadeOut("fast").slideUp("fast");
+			});
+			$("input[name*='Name'],.text-area").fadeOut("fast").slideUp("fast");
 			$(".formButton").text("Login");
 		}
 		else if(id == 'signup') {
@@ -14,7 +14,7 @@ $(document).ready(function() {
 				left: null,
 				right: "440px"
 			},"swing");
-			$("input[name*='Name']").fadeIn("fast").slideDown("fast");
+			$("input[name*='Name'],.text-area").fadeIn("fast").slideDown("fast");
 			$(".formButton").text("Sign Up");
 		}
 	});

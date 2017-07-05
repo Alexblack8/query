@@ -8,16 +8,17 @@
 	border-radius: 0;
 }
 
-.form-control {
+.inputs {
 	border-radius: 0;
 	border: none;
 	outline: none;
 	box-shadow: none;
 	border-bottom: 2px solid lightgray;
 	transition: ease .5s;
+	margin-bottom: 20px;
 }
 
-.form-control:focus {
+.inputs:focus {
 	border-bottom: 2px solid rebeccapurple;
 	box-shadow: none;
 }
