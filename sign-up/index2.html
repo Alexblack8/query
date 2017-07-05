@@ -14,12 +14,13 @@
 <body>
 	<div class="container desktop">
 
-		<form action="">
-			<input type="text" name="firstName" id="fname" placeholder="First Name">
-			<input type="text" name="lastName" id="fname" placeholder="Last Name">
-			<input type="username" name="username" id="fname" placeholder="Username">
-			<input type="password" name="Password" id="fname" placeholder="Password">
-			<textarea rows='5' cols="56" class="text-area" name="description" maxlength="150" 
+		<form id="desktop_form" action="../userregister.php" method="post">
+			<input type="text" name="first_name" id="fname" placeholder="First Name">
+			<input type="text" name="last_name" id="lname" placeholder="Last Name">
+			<input type="email" name="email" id="email" placeholder="Email">
+			<input type="username" name="username" id="username" placeholder="Username">
+			<input type="password" name="password" id="password" placeholder="Password">
+			<textarea rows='4' cols="56" class="text-area" name="description" maxlength="150" 
             		required autocomplete="off" placeholder="Please give a description in not more than 150 words"></textarea>
 			<button type="submit" class="formButton">Sign Up</button>
 		</form>
@@ -32,7 +33,7 @@
 
 			<div class="login">
 				<p>Already have an account?</p>
-				<button type="button" id="login" action="userlogin.php" class="outline">Login</button>
+				<button type="button" id="login" class="outline">Login</button>
 			</div>
 
 		</div>
@@ -47,7 +48,7 @@
 					<header class="text-center">
 						<h1 class="text-info">Create An Account</h1>
 					</header>
-				<form action="">
+				<form action="userregister.php" name="mobile_form" novalidate>
 				<div class="form-group ">
 					<input type="text" class="form-control inputs" name="firstName" id="fname" placeholder="First Name">
 				</div>
