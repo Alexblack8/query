@@ -48,12 +48,15 @@
 					<header class="text-center">
 						<h1 class="text-info">Create An Account</h1>
 					</header>
-				<form action="userregister.php" name="mobile_form" novalidate>
+				<form action="../userregister.php" name="mobile_form" method="post">
 				<div class="form-group ">
-					<input type="text" class="form-control inputs" name="firstName" id="fname" placeholder="First Name">
+					<input type="text" class="form-control inputs" name="last_name" id="fname" placeholder="First Name">
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control inputs" name="lastName" id="lname" placeholder="Last Name">
+					<input type="text" class="form-control inputs" name="last_name" id="lname" placeholder="Last Name">
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control inputs" name="email" id="email" placeholder="Email">
 				</div>
 				<div class="form-group">
 					<input type="username" class="form-control inputs" name="username" id="username" placeholder="Username">
@@ -73,13 +76,15 @@
 
 				<div class="login-part">
 					<h1>Login</h1>
-					<div class="form-group">
-						<input type="username" class="form-control inputs" name="username" id="username" placeholder="username">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control inputs" name="Password" id="pass" placeholder="Password">
-					</div>
-					<button type="submit" class="btn btn-success btn-block">Log In</button>
+					<form action="../userlogin.php" method="post">
+						<div class="form-group">
+							<input type="username" class="form-control inputs" name="username" id="username" placeholder="Username">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control inputs" name="password" id="pass" placeholder="Password">
+						</div>
+						<button type="submit" class="btn btn-success btn-block">Log In</button>
+					</form>
 					<hr>
 					<p class="help-block text-center">New To Querry!!</p>
 					<button type="button" class="btn btn-warning btn-block crtAcc">Create An Account</button>
