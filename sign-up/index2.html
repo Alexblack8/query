@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css" media="screen and (min-device-width: 800px)" type="text/css">
+	<title>sign-up</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style-mobile.css" rel="stylesheet" media="screen and (max-device-width: 800px)">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+</head>
+<body>
+	<div class="container desktop">
+
+		<form action="">
+			<input type="text" name="firstName" id="fname" placeholder="First Name">
+			<input type="text" name="lastName" id="fname" placeholder="Last Name">
+			<input type="username" name="username" id="fname" placeholder="Username">
+			<input type="password" name="Password" id="fname" placeholder="Password">
+			<button type="submit" class="formButton">Sign Up</button>
+		</form>
+		<div class="sections">
+			
+			<div class="signup">
+				<p>Not with us? Sign up Now!</p>
+				<button type="button" name="signup" id="signup" class="outline">Sign Up</button>
+			</div>
+
+			<div class="login">
+				<p>Already have an account?</p>
+				<button type="button" id="login" action="userlogin.php" class="outline">Login</button>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="mobile-hide">
+		<div class="style-header"></div>
+		<div class="mobile">
+			<div class="container">
+				<div class="signup-part">
+
+					<header class="text-center">
+						<h1 class="text-info">Create An Account</h1>
+					</header>
+				<form action="">
+				<div class="form-group ">
+					<input type="text" class="form-control" name="firstName" id="fname" placeholder="First Name">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="lastName" id="lname" placeholder="Last Name">
+				</div>
+				<div class="form-group">
+					<input type="username" class="form-control" name="username" id="username" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" name="Password" id="pass" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+				</div>
+			</form>
+			</div>
+
+				<div class="login-part">
+					<h1>Login</h1>
+					<div class="form-group">
+						<input type="username" class="form-control" name="username" id="username" placeholder="username">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="Password" id="pass" placeholder="Password">
+					</div>
+					<button type="submit" class="btn btn-success btn-block">Log In</button>
+					<hr>
+					<p class="help-block text-center">New To Querry!!</p>
+					<button type="button" class="btn btn-warning btn-block crtAcc">Create An Account</button>
+				</div>
+
+				<hr>
+				<p class="help-block text-center" id="member-info">Already A Member?</p>
+				<button type="button" class="btn btn-success btn-block loginBtn">Log In</button>
+				<div class="divider"></div> 
+			</div>
+		</div>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>

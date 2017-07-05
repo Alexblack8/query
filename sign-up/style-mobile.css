@@ -1,0 +1,69 @@
+@media screen and (max-width: 800px) {
+	.desktop {
+		display: none;
+	}
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.form-control {
+	border-radius: 0;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	border-bottom: 2px solid lightgray;
+	transition: ease .5s;
+}
+
+.form-control:focus {
+	border-bottom: 2px solid rebeccapurple;
+	box-shadow: none;
+}
+
+.login-part {
+	display: none;
+}
+
+header > h1 {
+	margin-top: 50px !important;
+	font-family: 'Josefin Sans',sans-serif !important;
+	color: black !important;
+	margin-bottom: 13px !important;
+	font-weight: 700 !important;
+}
+
+h1 {
+	margin-top: 50px;
+	font-family: 'Josefin Sans',sans-serif !important;
+	color: black !important;
+	margin-bottom: 13px !important;
+	font-weight: 700;
+}
+
+html,body {
+	background: #EDE7F6;
+}
+
+.mobile {
+	position: absolute;
+	margin-right: auto;
+	margin-right: auto;
+	left: 20px;
+	right: 20px;
+	top: 40px;
+	background: #fff;
+	box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.3);
+	border-top: 10px solid #B388FF;
+}
+
+.divider {
+	height: 30px;
+}
+
+.style-header {
+	background: #673AB7;
+	height: 25vh;
+	width: 100%;
+}
