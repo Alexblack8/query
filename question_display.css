@@ -117,3 +117,10 @@ body {
 	transform: scale(1.05);
   	box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
 }
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+	background-color: #1d8913 !important;
+	border-radius: 0 !important;
+}
