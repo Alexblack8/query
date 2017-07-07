@@ -114,6 +114,7 @@ p {
 }
 
 .text-area {
+  width: 360px;
   margin-top: 10px;
   border: 2px solid #ccc;
   border-radius: 4px;
