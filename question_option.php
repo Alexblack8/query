@@ -104,14 +104,14 @@ $category=array('question','reply','question','feedback');
 						   			<p class="help-block" id="heading_helpblock">Answer and Undiscovered Questions</p>	
 								   	<h3 id="question_heading"><strong><?php
 							       	$name=get_user2($row[1]);
-
 							       	$get_user_id = $row['user_id'];
-								   	echo '<a href="user_profile.php?userId='.$get_user_id.'">'.ucfirst($name).'</a>';
-								   	?></strong></h3>
+							       	?>
+							       	<a href="article.php?quest_id=<?php echo $row['question_id']; ?>"><?php echo $row['question_heading']; ?></a><br>							   	
+								   	</strong></h3>
+								   	<?php echo '<a class="label label-success" style="border-radius: 0 !important; padding:auto 0; font-size: 12px;" href="user_profile.php?userId='.$get_user_id.'">'.ucfirst($name).'</a>';?>
+									
 									<p>
-						   			<a href="article.php?quest_id=<?php echo $row[question_id];?>">
 						   			<blockquote><?php echo $row['question'];?></blockquote>
-						   			</a>
 									</p>
 							       	
 									<!-- counting likes and dislikes -->
