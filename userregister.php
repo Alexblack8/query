@@ -58,6 +58,7 @@ else
 {
  
     $msg='The username is taken.Please choose another one,PLEASE HIT THE BACK BUTTON';
+}
 	?>
 	
 	<div class="container">
@@ -93,6 +94,6 @@ else
 	         });
 	    	</script>";	
 	//header("Location:http://7b84ae04.ngrok.io/webproject/sign-up-login-form/register.php");
-}
+
 
 ?>
