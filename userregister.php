@@ -80,7 +80,7 @@ else
 						</div>
 
 						<div class="modal-footer">
-							<a href="register.php" class="btn btn-primary" data-dismiss="modal">Proceed</a>
+							<a href="register.php" class="btn btn-primary" >Proceed</a>
 							
 						</div>
 					</div>
