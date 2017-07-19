@@ -65,7 +65,7 @@ else
 	
 	<div class="demo-area">
 		<div class="container">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Demo modal</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Proceed</button>
 
 			<div class="modal fade" id="modal-1" tabindex="-1" role="dialog">
 				<div class="modal-dialog">
