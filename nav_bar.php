@@ -1,3 +1,6 @@
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+</head>
 	<style>
 		#navigation-bar {
 			border-top: 3px solid #a33939;
@@ -30,6 +33,10 @@
 		.btn {
 			border-radius: 0 !important;
 		}
+		#query
+		{
+			font-family: 'Permanent Marker', cursive;
+		}
 	</style>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +49,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="#" class="navbar-brand" >QUERY!!</a>
+					<a href="#" class="navbar-brand" id="query" style="color:black">QUERY!!</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="collapse-it">
