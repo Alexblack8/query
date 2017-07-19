@@ -2,7 +2,7 @@
 <?php 
 session_start();//for session variables defined in function.php
 include 'function.php';
-include 'connectuser.php';
+include 'connectuser.php';  
 ?>
 <!DOCTYPE html>
 <html >
@@ -14,7 +14,8 @@ include 'connectuser.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
       <link rel="stylesheet" href="css/style.css">
-
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>  
   
 </head>
 
@@ -74,7 +75,8 @@ include 'connectuser.php';
             required autocomplete="off" placeholder="Please give a description in not more than 150 words"></textarea> 
           </div>
 
-          <button type="submit" class="button button-block"/>Get Started</button>
+          <button type="submit" class="button button-block" >Get Started</button>
+         
           
           </form>
 

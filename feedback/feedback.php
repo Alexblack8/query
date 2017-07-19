@@ -8,8 +8,19 @@ include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
 <html lang="en">
 <head>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-	<meta charset="UTF-8">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+	   
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="like_unlike.js" type="text/javascript"></script>
+	    <script src="like_unlike_reply.js" type="text/javascript"></script>
+	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+		
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>	
 	<title>Feedback</title>
 </head>
 <body>

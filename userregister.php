@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include 'function.php';
 include 'connectuser.php';
 ?>
@@ -8,7 +8,7 @@ include 'connectuser.php';
 	<title>Register User</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-	    <title>Questions!!</title>
+	   
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
@@ -18,6 +18,8 @@ include 'connectuser.php';
 		<link href="question_display.css" rel="stylesheet">
 
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>	
 </head>
 <body>
 
@@ -50,49 +52,44 @@ LIMIT 1";
 	
 	if(mysqli_query($conn,$query2))
 	{
-        $msg="You have been registered";   
-		//header("Location:http://localhost/soc-project/homepage.php");
+        $msg="You have been registered,please login";   
+		
 	}
 }
 else
 {
  
-    $msg='The username is taken.Please choose another one,PLEASE HIT THE BACK BUTTON';
+    $msg='The username is taken.Please choose another one';
 }
 	?>
 	
-	<div class="container">
-								<div class="modal animation fade" id="modal1" tabindex="-1" role="dialog">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal">&times;</button>
-												<h4 class="modal-title"><strong style="font-size: 2em;"><?php echo $row[2];?></strong></h4>
-											</div>
+	<div class="demo-area">
+		<div class="container">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Demo modal</button>
 
-											<div class="modal-body">
-												<form method="post">
-													
-													<div class="form-group">
-														<button type="submit"  class="btn btn-success btn-block" style="font-size: 1.25em;"><?php $msg;?></button>
-													</div>
-												</form>
-											</div>
+			<div class="modal fade" id="modal-1" tabindex="-1" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Registration message</h4>
+						</div>
 
-											<div class="modal-footer">	
-												<button type="button" class="btn btn-info" data-dismiss="modal" style="font-size: 1.25em;">Proceed</button> 									
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+						<div class="modal-body">
+							<?php echo $msg;?>
+						</div>
 
+						<div class="modal-footer">
+							<a href="register.php" class="btn btn-primary" data-dismiss="modal">Proceed</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- end demo-area -->
 	<?php
-	 echo "<script>
-	         $(window).load(function(){
-	             $('#modal1').modal('show');
-	         });
-	    	</script>";	
+	
 	//header("Location:http://7b84ae04.ngrok.io/webproject/sign-up-login-form/register.php");
 
 
