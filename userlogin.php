@@ -56,7 +56,7 @@ include 'connectuser.php';
             </div>
 
             <div class="modal-body">
-              <?php echo "username or password is incorrect";?>
+              <h1><?php echo "username or password is incorrect";?></h1>
             </div>
 
             <div class="modal-footer">
