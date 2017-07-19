@@ -8,15 +8,15 @@ body, .container, form, .sections, .signup, .login {
 }
 
 body {
-	  background: #673AB7;
-	  margin: 0;
-	  padding: 0;
-	  font-size: 1em;
-	  font-family: 'Roboto', sans-serif;
-	  width: 100%;
-	  height: 100vh;
-	  justify-content: center;
-	  align-items: center;
+    background: #673AB7;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -56,9 +56,9 @@ form {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-	left: 40px;
+  left: 40px;
   bottom: 40px;
-	margin-left: auto; margin-right: auto;
+  margin-left: auto; margin-right: auto;
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -88,7 +88,7 @@ button.formButton {
   background: #3A8EFF;
   font-weight: 500;
   margin-bottom: 80px;
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 button.outline {
@@ -114,6 +114,7 @@ p {
 }
 
 .text-area {
+  width: 360px;
   margin-top: 10px;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -129,7 +130,7 @@ p {
 }
 
 @media screen and (min-width: 800px) {
-	.mobile-hide {
-		display: none;
-	}
+  .mobile-hide {
+    display: none;
+  }
 }
