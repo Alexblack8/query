@@ -77,7 +77,7 @@ else
 						</div>
 
 						<div class="modal-footer">
-							<a href="register.php" class="btn btn-primary" >Proceed</a>
+							<a href="index.php" class="btn btn-primary" >Proceed</a>
 							
 						</div>
 					</div>
