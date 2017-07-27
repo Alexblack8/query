@@ -31,7 +31,7 @@ include 'connectuser.php';
       }
     </style>
 
-    <script src="//cdn.ckeditor.com/4.7.1/basic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
   </head>
   <body>
 
@@ -45,7 +45,7 @@ include 'connectuser.php';
     </header>
 
     <div class="container">
-      <form action="post_question.php" method="post">
+      <form action="ask_question.php" method="post">
       
       <div class="form-group">
         <p class="help-block">Username: 
@@ -65,9 +65,7 @@ include 'connectuser.php';
           <textarea name="ask_question" id="ask_question" cols="50" rows="10" class="form-control"></textarea>
        </div>
        
-       <script>
-            CKEDITOR.replace( 'ask_question' );
-        </script>
+       
 
        <div class="form-group">
         <select class="selectpicker" data-style="btn-danger" id="category" multiple data-max-options="1" data-live-search="true">
