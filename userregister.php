@@ -1,5 +1,4 @@
 <?php
-
 include 'function.php';
 include 'connectuser.php';
 ?>
@@ -26,7 +25,6 @@ include 'connectuser.php';
 </body>
 </html>
 <?php
-
 //to get the text fields of register part of register.php
 $first=$_POST['first_name'];
 $last=$_POST['last_name'];
@@ -53,8 +51,7 @@ LIMIT 1";
 	if(mysqli_query($conn,$query2))
 	{
         $msg="You have been registered,please login";   
-		
-	}
+    }
 }
 else
 {
@@ -91,6 +88,4 @@ else
 	<?php
 	
 	//header("Location:http://7b84ae04.ngrok.io/webproject/sign-up-login-form/register.php");
-
-
 ?>
