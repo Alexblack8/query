@@ -6,6 +6,7 @@
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
+	    <script src="//cdn.ckeditor.com/4.7.1/basic/ckeditor.js"></script>
 </head>
 <body>
 
@@ -145,7 +146,7 @@ $quest_user_id=$row['user_id'];
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
-												<h4 class="modal-title"><strong style="font-size: 2em;"><?php echo $row[2];?></strong></h4>
+												<h4 class="modal-title"><strong style="font-size: 2em;"><?php echo $row["question_heading"];?></strong></h4>
 											</div>
 
 											<div class="modal-body">
@@ -167,6 +168,10 @@ $quest_user_id=$row['user_id'];
 									</div>
 								</div>
 							</div>
+
+							<script>
+					            CKEDITOR.replace( 'text-<?php echo $row[0];?>' );
+					        </script>
 					<?php
 											
 						$astring3 = "reply-".$row[0];
