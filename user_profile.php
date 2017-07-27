@@ -101,7 +101,7 @@
 						?>
 						<div class="cards_animation" id="card-<?php echo $color_var ;?>">
 							<!-- question heading -->
-							<h2 style="color: #f4b042;"><strong><?php echo $question_dis_array[7];?></strong></h2>
+							<a href="article.php?quest_id=<?php echo $question_dis_array['question_id']; ?>"><h2 style="color: #f4b042;"><strong><?php echo $question_dis_array[7];?></strong></h2></a>
 							<!-- question content -->
 							<blockquote>
 								<p><?php echo $question_dis_array[2]; ?></p>

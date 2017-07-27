@@ -18,6 +18,7 @@ $category=array('question','reply','question','feedback');
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
 	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+	    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
 		<link href="question_display.css" rel="stylesheet">

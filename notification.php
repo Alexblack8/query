@@ -2,14 +2,20 @@
 <head>
   <link href="css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Permanent+Marker" rel="stylesheet">
 <style>
       html {
         margin-top: 90px;
+      }
+      #no_notification
+      {
+        font-family: 'Leckerli One', cursive;
       }
       </style>
       
       <link href="question_display.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
 </head>
 </html>
 
@@ -102,7 +108,8 @@ function print_notification()
 }
 if($temp!='1')
 {
-  echo "no new notifications to display";
+  ?><h1 id="no_notification">no new notifications to display</h1>
+  <?php
 }
 
 

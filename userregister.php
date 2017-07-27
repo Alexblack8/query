@@ -76,7 +76,7 @@ else
 						</div>
 
 						<div class="modal-body">
-							<?php echo $msg;?>
+							<h1><?php echo $msg;?></h1>
 						</div>
 
 						<div class="modal-footer">
