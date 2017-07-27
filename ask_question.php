@@ -30,6 +30,8 @@ include 'connectuser.php';
         }
       }
     </style>
+
+    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
   </head>
   <body>
 
@@ -63,6 +65,10 @@ include 'connectuser.php';
           <textarea name="question" id="ask_question" cols="50" rows="10" class="form-control"></textarea>
        </div>
        
+       <script>
+            CKEDITOR.replace( 'question' );
+        </script>
+
        <div class="form-group">
         <select class="selectpicker" data-style="btn-danger" id="category" multiple data-max-options="1" data-live-search="true">
           <option value="mess">Mess</option>

@@ -48,6 +48,10 @@ $category=array('question','reply','question','feedback');
 		    	}
 		    }
 	    </style>
+
+
+	    <script src="//cdn.ckeditor.com/4.7.1/basic/ckeditor.js"></script>
+		
 	</head>
 
 	<body>
@@ -227,7 +231,7 @@ $category=array('question','reply','question','feedback');
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal">&times;</button>
-												<h4 class="modal-title"><strong style="font-size: 2em;"><?php echo $row[2];?></strong></h4>
+												<h4 class="modal-title"><strong style="font-size: 2em;"><?php echo $row["question_heading"];?></strong></h4>
 											</div>
 
 											<div class="modal-body">
@@ -249,6 +253,10 @@ $category=array('question','reply','question','feedback');
 									</div>
 								</div>
 							</div>
+
+							<script>
+					            CKEDITOR.replace( 'text-<?php echo $row[0];?>' );
+					        </script>
 					<?php
 									
 						$astring3 = "reply-".$row[0];

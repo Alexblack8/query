@@ -1,6 +1,7 @@
 <?php
 session_start();
-include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
+include '../connectuser.php';
+include '../nav_bar.php';
 ?>
 <!-- HTML PART OF THE PAGE -->
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
 <head>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-	   
+	   <link rel="stylesheet" href="../question_display.css">
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
 	    <script src="like_unlike_reply.js" type="text/javascript"></script>
@@ -18,10 +19,16 @@ include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
 
 		
 
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>	
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<title>Feedback</title>
+	<style>
+		html {
+				margin-left: 0;
+				margin-top: 70px;
+			}
+	</style>
+
+	<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
 </head>
 <body>
 	<!-- heading of the file -->
@@ -42,6 +49,10 @@ include '/var/www/html/webproject/sign-up-login-form/connectuser.php';
 				<label for="feedback_input">Enter Your Valuable Feedback here:</label>
 				<textarea name="feedback" id="feedback_input" rows="16" placeholder="Enter your feedback here...." class="form-control"></textarea>
 			</div>
+
+			<script>
+	            CKEDITOR.replace( 'feedback' );
+	        </script>
 
 			<!-- category selector -->
 			<div class="form-group">
