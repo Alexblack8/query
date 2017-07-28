@@ -4,7 +4,7 @@ include 'nav_bar.php';
 include 'function.php';
 if(!isloggedin())
 {
-  header("Location:http://localhost/webproject/sign-up-login-form/register.php");
+  header("Location:index.php");
 }
 ?>
 <!DOCTYPE html>
