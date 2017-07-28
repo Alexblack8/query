@@ -7,7 +7,7 @@ include 'nav_bar.php';
 
 include 'connectuser.php';
 $tag_id=$_GET['tag_id'];
-$tags=array("Mess","Transport","Academics","Sports","Medical","Others");
+$tags=array("Mess","Transport","Academics","Sports","Medical","Hostel","Others");
 $category=array('question','reply','question','feedback');
 ?>
 <html>
@@ -75,7 +75,8 @@ $category=array('question','reply','question','feedback');
 								
 								<li class="<?php if($tag_id == 5) echo "active" ?>"><a href="question_option.php?tag_id=5">Medical</a></li>
 								
-								<li class="<?php if($tag_id == 6) echo "active" ?>"><a href="question_option.php?tag_id=6">Others</a></li>
+								<li class="<?php if($tag_id == 6) echo "active" ?>"><a href="question_option.php?tag_id=6">Hostel</a></li>
+								<li class="<?php if($tag_id == 7) echo "active" ?>"><a href="question_option.php?tag_id=7">Others</a></li>
 						</ul>
 					</div>
 				</div>

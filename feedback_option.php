@@ -3,7 +3,7 @@ session_start();
 include 'function.php';
 include 'connectuser.php';
 $tag_id=$_GET['tag_id'];
-$tags=array("Mess","Transport","Academics","Sports","Medical","Others");
+$tags=array("Mess","Transport","Academics","Sports","Medical","Hostel","Others");
 ?>
 <html>
 	<head>
@@ -80,7 +80,8 @@ $tags=array("Mess","Transport","Academics","Sports","Medical","Others");
 								<li><a href="feedback_option.php?tag_id=3">Academics</a></li>
 								<li><a href="feedback_option.php?tag_id=4">Sports</a></li>
 								<li><a href="feedback_option.php?tag_id=5">Medical</a></li>
-								<li><a href="feedback_option.php?tag_id=6">Others</a></li>
+								<li><a href="feedback_option.php?tag_id=6">Hostel</a></li>
+								<li><a href="feedback_option.php?tag_id=7">Others</a></li>
 						</ul>
 					</div>
 				</div>

@@ -74,6 +74,7 @@ include 'connectuser.php';
           <option value="academics">Academics</option>
           <option value="sports">Sports</option>
           <option value="medical">Medical</option>
+          <option value="hostel">Hostel</option>
           <option value="others">Others</option>
         </select>
       </div>

@@ -5,7 +5,7 @@ include 'connectuser.php';
 include 'notification.php';
 include 'nav_bar.php';
 
-$tags=array("Mess","Transport","Academics","Sports","Medical","Others");
+$tags=array("Mess","Transport","Academics","Sports","Medical","Hostel","Others");
 $category=array('reply','question','feedback');
 ?>
 <html>
@@ -57,7 +57,9 @@ $category=array('reply','question','feedback');
 								<li><a href="feedback_option.php?tag_id=3">Medical</a></li>
 								<li><a href="feedback_option.php?tag_id=4">Academics</a></li>
 								<li><a href="feedback_option.php?tag_id=5">Sports</a></li>
-								<li><a href="feedback_option.php?tag_id=6">Others</a></li>
+								<li><a href="feedback_option.php?tag_id=6">Hostel</a></li>
+								<li><a href="feedback_option.php?tag_id=7">Others</a></li>
+								
 						</ul>
 					</div>
 				</div>
