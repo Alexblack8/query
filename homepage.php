@@ -16,7 +16,7 @@ if(!isloggedin())
   
   <link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-	    <title>Questions!!</title>
+	    <title>Query!!</title>
 	    <link href="question_display.css" rel="stylesheet">
 	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 	    <script src="like_unlike.js" type="text/javascript"></script>
