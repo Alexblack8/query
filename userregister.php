@@ -28,8 +28,8 @@ include 'connectuser.php';
 //to get the text fields of register part of register.php
 $first=$_POST['first_name'];
 $last=$_POST['last_name'];
-$username=$_POST['username'];
-$password=$_POST['password'];
+$username=htmlspecialchars($_POST['username']);
+$password=htmlspecialchars($_POST['password']);
 $email=$_POST['email'];
 $description=$_POST['description'];
 //to check whether an user already exists in the database
