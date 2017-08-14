@@ -30,8 +30,8 @@ include 'connectuser.php';
       
           
            
-             $query="SELECT * FROM user WHERE password='$password' 
-             AND user_name='$username'";
+             $query="SELECT * FROM user WHERE password='htmlspecialchars($password)' 
+             AND user_name='htmlspecialchars($username)'";
              $result=mysqli_query($conn,$query);
              if(mysqli_num_rows($result)==1)//to check if the user exists 
              {
